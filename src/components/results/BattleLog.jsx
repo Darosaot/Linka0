@@ -14,6 +14,29 @@ const RESULTADO_LABEL = {
   ko:       '💀 K.O.',
 };
 
+function BossResult({ boss }) {
+  if (!boss) return null;
+  const style = boss.victoria
+    ? 'bg-amber-100 border-amber-400 text-amber-800'
+    : boss.resistencia
+    ? 'bg-blue-50 border-blue-300 text-blue-800'
+    : 'bg-red-50 border-red-300 text-red-800';
+
+  return (
+    <div className={`mt-2 rounded border px-3 py-2 text-xs ${style}`}>
+      <div className="flex items-center justify-between gap-2">
+        <span className="font-bold">
+          {boss.emoji} Jefe: {boss.jefe}
+        </span>
+        {boss.bonus > 0 && (
+          <span className="font-black text-zelda-gold">+{boss.bonus} ⭐</span>
+        )}
+      </div>
+      <p className="mt-0.5 opacity-90 leading-snug">{boss.descripcion}</p>
+    </div>
+  );
+}
+
 export default function BattleLog({ combatLog }) {
   if (!combatLog?.length) return null;
 
@@ -30,7 +53,7 @@ export default function BattleLog({ combatLog }) {
               <div>
                 <div className="font-bold text-zelda-ink text-sm">{c.mazmorra}</div>
                 <div className="text-xs text-zelda-muted">
-                  Ganó: <span className="font-semibold">{c.ko ? c.topRival : c.topRival}</span>
+                  Ganó: <span className="font-semibold">{c.topRival}</span>
                 </div>
               </div>
             </div>
@@ -42,6 +65,7 @@ export default function BattleLog({ combatLog }) {
             </div>
           </div>
           <p className="text-xs text-zelda-muted mt-2 leading-snug">{c.descripcion}</p>
+          <BossResult boss={c.bossResult} />
         </div>
       ))}
     </div>

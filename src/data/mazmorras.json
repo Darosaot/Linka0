@@ -1,218 +1,255 @@
 [
   {
+    "id": "nivel1_aguila",
+    "name": "Mazmorra del Águila",
+    "game": "The Legend of Zelda", "generation": "era_clasica",
+    "emoji": "🦅", "type": "clasica",
+    "boss_id": "aquamentus",
+    "modifiers": {
+      "fuerza_weight": 0.7, "defensa_weight": 0.6, "agilidad_weight": 0.7, "magia_weight": 0.5,
+      "lluvia_probability": 0.1, "emboscada_probability": 0.4, "dificultad_huida": 0.5, "penalizacion_corazones": 0.3
+    }
+  },
+  {
+    "id": "palacio_oscuro",
+    "name": "Palacio Oscuro",
+    "game": "A Link to the Past", "generation": "era_clasica",
+    "emoji": "🌑", "type": "oscura",
+    "boss_id": "agahnim",
+    "modifiers": {
+      "fuerza_weight": 0.7, "defensa_weight": 0.6, "agilidad_weight": 0.7, "magia_weight": 0.9,
+      "lluvia_probability": 0.15, "emboscada_probability": 0.55, "dificultad_huida": 0.7, "penalizacion_corazones": 0.45
+    }
+  },
+  {
+    "id": "torre_hera",
+    "name": "Torre de Hera",
+    "game": "A Link to the Past", "generation": "era_clasica",
+    "emoji": "🗼", "type": "torre",
+    "boss_id": "moldorm_alttp",
+    "modifiers": {
+      "fuerza_weight": 0.65, "defensa_weight": 0.55, "agilidad_weight": 0.9, "magia_weight": 0.5,
+      "lluvia_probability": 0.2, "emboscada_probability": 0.35, "dificultad_huida": 0.4, "penalizacion_corazones": 0.3
+    }
+  },
+  {
     "id": "templo_bosque",
     "name": "Templo del Bosque",
-    "game": "Ocarina of Time",
-    "generation": "era_3d",
-    "emoji": "🌳",
-    "type": "selva",
+    "game": "Ocarina of Time", "generation": "era_3d",
+    "emoji": "🌳", "type": "selva",
+    "boss_id": "phantom_ganon",
     "modifiers": {
-      "fuerza_weight": 0.6,
-      "defensa_weight": 0.5,
-      "agilidad_weight": 0.9,
-      "magia_weight": 0.7,
-      "lluvia_probability": 0.35,
-      "emboscada_probability": 0.55,
-      "dificultad_huida": 0.6,
-      "penalizacion_corazones": 0.3
+      "fuerza_weight": 0.6, "defensa_weight": 0.5, "agilidad_weight": 0.9, "magia_weight": 0.7,
+      "lluvia_probability": 0.35, "emboscada_probability": 0.55, "dificultad_huida": 0.6, "penalizacion_corazones": 0.3
     }
   },
   {
     "id": "templo_fuego",
     "name": "Templo del Fuego",
-    "game": "Ocarina of Time",
-    "generation": "era_3d",
-    "emoji": "🔥",
-    "type": "volcan",
+    "game": "Ocarina of Time", "generation": "era_3d",
+    "emoji": "🔥", "type": "volcan",
+    "boss_id": "twinrova",
     "modifiers": {
-      "fuerza_weight": 1.0,
-      "defensa_weight": 0.8,
-      "agilidad_weight": 0.5,
-      "magia_weight": 0.5,
-      "lluvia_probability": 0.05,
-      "emboscada_probability": 0.3,
-      "dificultad_huida": 0.8,
-      "penalizacion_corazones": 0.55
+      "fuerza_weight": 1.0, "defensa_weight": 0.8, "agilidad_weight": 0.5, "magia_weight": 0.5,
+      "lluvia_probability": 0.05, "emboscada_probability": 0.3, "dificultad_huida": 0.8, "penalizacion_corazones": 0.55
     }
   },
   {
     "id": "templo_agua",
     "name": "Templo del Agua",
-    "game": "Ocarina of Time",
-    "generation": "era_3d",
-    "emoji": "💧",
-    "type": "acuatico",
+    "game": "Ocarina of Time", "generation": "era_3d",
+    "emoji": "💧", "type": "acuatico",
+    "boss_id": "morpha",
     "modifiers": {
-      "fuerza_weight": 0.7,
-      "defensa_weight": 0.9,
-      "agilidad_weight": 0.7,
-      "magia_weight": 0.8,
-      "lluvia_probability": 0.7,
-      "emboscada_probability": 0.4,
-      "dificultad_huida": 0.7,
-      "penalizacion_corazones": 0.4
+      "fuerza_weight": 0.7, "defensa_weight": 0.9, "agilidad_weight": 0.7, "magia_weight": 0.8,
+      "lluvia_probability": 0.7, "emboscada_probability": 0.4, "dificultad_huida": 0.7, "penalizacion_corazones": 0.4
+    }
+  },
+  {
+    "id": "luna_clock_town",
+    "name": "Interior de la Luna",
+    "game": "Majora's Mask", "generation": "era_3d",
+    "emoji": "🌕", "type": "pesadilla",
+    "boss_id": "majora",
+    "modifiers": {
+      "fuerza_weight": 0.7, "defensa_weight": 0.6, "agilidad_weight": 0.85, "magia_weight": 1.0,
+      "lluvia_probability": 0.3, "emboscada_probability": 0.6, "dificultad_huida": 0.8, "penalizacion_corazones": 0.55
     }
   },
   {
     "id": "barco_fantasma",
-    "name": "Barco Fantasma",
-    "game": "The Wind Waker",
-    "generation": "era_viento",
-    "emoji": "⛵",
-    "type": "naval",
+    "name": "Fortaleza Forsaken",
+    "game": "The Wind Waker", "generation": "era_viento",
+    "emoji": "⛵", "type": "naval",
+    "boss_id": "helmaroc",
     "modifiers": {
-      "fuerza_weight": 0.8,
-      "defensa_weight": 0.6,
-      "agilidad_weight": 0.8,
-      "magia_weight": 0.6,
-      "lluvia_probability": 0.5,
-      "emboscada_probability": 0.6,
-      "dificultad_huida": 0.5,
-      "penalizacion_corazones": 0.35
+      "fuerza_weight": 0.8, "defensa_weight": 0.6, "agilidad_weight": 0.8, "magia_weight": 0.6,
+      "lluvia_probability": 0.5, "emboscada_probability": 0.6, "dificultad_huida": 0.5, "penalizacion_corazones": 0.35
     }
   },
   {
     "id": "templo_dios_viento",
     "name": "Templo del Dios del Viento",
-    "game": "The Wind Waker",
-    "generation": "era_viento",
-    "emoji": "🌀",
-    "type": "aéreo",
+    "game": "The Wind Waker", "generation": "era_viento",
+    "emoji": "🌀", "type": "aéreo",
+    "boss_id": "molgera",
     "modifiers": {
-      "fuerza_weight": 0.6,
-      "defensa_weight": 0.5,
-      "agilidad_weight": 1.0,
-      "magia_weight": 0.9,
-      "lluvia_probability": 0.4,
-      "emboscada_probability": 0.35,
-      "dificultad_huida": 0.4,
-      "penalizacion_corazones": 0.25
+      "fuerza_weight": 0.6, "defensa_weight": 0.5, "agilidad_weight": 1.0, "magia_weight": 0.9,
+      "lluvia_probability": 0.4, "emboscada_probability": 0.35, "dificultad_huida": 0.4, "penalizacion_corazones": 0.25
     }
   },
   {
     "id": "fortaleza_arbiter",
-    "name": "Fortaleza de Arbitro",
-    "game": "Twilight Princess",
-    "generation": "era_crepusculo",
-    "emoji": "💀",
-    "type": "oscura",
+    "name": "Fortaleza de Árbitro",
+    "game": "Twilight Princess", "generation": "era_crepusculo",
+    "emoji": "💀", "type": "oscura",
+    "boss_id": "stallord",
     "modifiers": {
-      "fuerza_weight": 0.9,
-      "defensa_weight": 0.8,
-      "agilidad_weight": 0.6,
-      "magia_weight": 0.7,
-      "lluvia_probability": 0.2,
-      "emboscada_probability": 0.7,
-      "dificultad_huida": 0.9,
-      "penalizacion_corazones": 0.6
+      "fuerza_weight": 0.9, "defensa_weight": 0.8, "agilidad_weight": 0.6, "magia_weight": 0.7,
+      "lluvia_probability": 0.2, "emboscada_probability": 0.7, "dificultad_huida": 0.9, "penalizacion_corazones": 0.6
+    }
+  },
+  {
+    "id": "templo_lago",
+    "name": "Templo del Lago Hylia",
+    "game": "Twilight Princess", "generation": "era_crepusculo",
+    "emoji": "🏊", "type": "acuatico",
+    "boss_id": "morpheel",
+    "modifiers": {
+      "fuerza_weight": 0.7, "defensa_weight": 0.8, "agilidad_weight": 0.75, "magia_weight": 0.7,
+      "lluvia_probability": 0.6, "emboscada_probability": 0.45, "dificultad_huida": 0.65, "penalizacion_corazones": 0.4
     }
   },
   {
     "id": "palacio_crepusculo",
     "name": "Palacio del Crepúsculo",
-    "game": "Twilight Princess",
-    "generation": "era_crepusculo",
-    "emoji": "🌑",
-    "type": "sombra",
+    "game": "Twilight Princess", "generation": "era_crepusculo",
+    "emoji": "👁️", "type": "sombra",
+    "boss_id": "zant",
     "modifiers": {
-      "fuerza_weight": 0.8,
-      "defensa_weight": 0.7,
-      "agilidad_weight": 0.7,
-      "magia_weight": 1.0,
-      "lluvia_probability": 0.15,
-      "emboscada_probability": 0.65,
-      "dificultad_huida": 0.85,
-      "penalizacion_corazones": 0.55
+      "fuerza_weight": 0.8, "defensa_weight": 0.7, "agilidad_weight": 0.7, "magia_weight": 1.0,
+      "lluvia_probability": 0.15, "emboscada_probability": 0.65, "dificultad_huida": 0.85, "penalizacion_corazones": 0.55
+    }
+  },
+  {
+    "id": "templo_desierto_ss",
+    "name": "Templo del Desierto",
+    "game": "Skyward Sword", "generation": "era_cielo",
+    "emoji": "🏜️", "type": "desierto",
+    "boss_id": "moldarach",
+    "modifiers": {
+      "fuerza_weight": 0.8, "defensa_weight": 0.7, "agilidad_weight": 0.8, "magia_weight": 0.6,
+      "lluvia_probability": 0.05, "emboscada_probability": 0.5, "dificultad_huida": 0.6, "penalizacion_corazones": 0.4
     }
   },
   {
     "id": "templo_anciano",
     "name": "Templo Antiguo",
-    "game": "Skyward Sword",
-    "generation": "era_cielo",
-    "emoji": "🏛️",
-    "type": "ruinas",
+    "game": "Skyward Sword", "generation": "era_cielo",
+    "emoji": "🏛️", "type": "ruinas",
+    "boss_id": "koloktos",
     "modifiers": {
-      "fuerza_weight": 0.8,
-      "defensa_weight": 0.8,
-      "agilidad_weight": 0.7,
-      "magia_weight": 0.8,
-      "lluvia_probability": 0.3,
-      "emboscada_probability": 0.45,
-      "dificultad_huida": 0.65,
-      "penalizacion_corazones": 0.45
+      "fuerza_weight": 0.8, "defensa_weight": 0.8, "agilidad_weight": 0.7, "magia_weight": 0.8,
+      "lluvia_probability": 0.3, "emboscada_probability": 0.45, "dificultad_huida": 0.65, "penalizacion_corazones": 0.45
+    }
+  },
+  {
+    "id": "santuario_espada",
+    "name": "Santuario de la Espada",
+    "game": "Skyward Sword", "generation": "era_cielo",
+    "emoji": "⚔️", "type": "sagrada",
+    "boss_id": "ghirahim",
+    "modifiers": {
+      "fuerza_weight": 0.75, "defensa_weight": 0.65, "agilidad_weight": 0.95, "magia_weight": 0.85,
+      "lluvia_probability": 0.1, "emboscada_probability": 0.4, "dificultad_huida": 0.75, "penalizacion_corazones": 0.5
+    }
+  },
+  {
+    "id": "lorule_castle",
+    "name": "Castillo de Lorule",
+    "game": "A Link Between Worlds", "generation": "era_cielo",
+    "emoji": "🖼️", "type": "espejo",
+    "boss_id": "yuga_ganon",
+    "modifiers": {
+      "fuerza_weight": 0.75, "defensa_weight": 0.7, "agilidad_weight": 0.8, "magia_weight": 0.9,
+      "lluvia_probability": 0.2, "emboscada_probability": 0.5, "dificultad_huida": 0.7, "penalizacion_corazones": 0.5
+    }
+  },
+  {
+    "id": "bestia_divina_vah_ruta",
+    "name": "Bestia Divina Vah Ruta",
+    "game": "Breath of the Wild", "generation": "era_abierta",
+    "emoji": "🐘", "type": "acuatico",
+    "boss_id": "waterblight_ganon",
+    "modifiers": {
+      "fuerza_weight": 0.7, "defensa_weight": 0.8, "agilidad_weight": 0.65, "magia_weight": 0.9,
+      "lluvia_probability": 0.65, "emboscada_probability": 0.5, "dificultad_huida": 0.8, "penalizacion_corazones": 0.55
+    }
+  },
+  {
+    "id": "bestia_divina_vah_medoh",
+    "name": "Bestia Divina Vah Medoh",
+    "game": "Breath of the Wild", "generation": "era_abierta",
+    "emoji": "🦅", "type": "aéreo",
+    "boss_id": "windblight_ganon",
+    "modifiers": {
+      "fuerza_weight": 0.6, "defensa_weight": 0.55, "agilidad_weight": 1.0, "magia_weight": 0.8,
+      "lluvia_probability": 0.3, "emboscada_probability": 0.4, "dificultad_huida": 0.35, "penalizacion_corazones": 0.3
     }
   },
   {
     "id": "castillo_hyrule_botw",
     "name": "Castillo de Hyrule",
-    "game": "Breath of the Wild",
-    "generation": "era_abierta",
-    "emoji": "🏰",
-    "type": "fortaleza",
+    "game": "Breath of the Wild", "generation": "era_abierta",
+    "emoji": "🏰", "type": "fortaleza",
+    "boss_id": "calamity_ganon",
     "modifiers": {
-      "fuerza_weight": 0.9,
-      "defensa_weight": 0.8,
-      "agilidad_weight": 0.6,
-      "magia_weight": 0.9,
-      "lluvia_probability": 0.25,
-      "emboscada_probability": 0.5,
-      "dificultad_huida": 0.9,
-      "penalizacion_corazones": 0.65
+      "fuerza_weight": 0.9, "defensa_weight": 0.8, "agilidad_weight": 0.6, "magia_weight": 0.9,
+      "lluvia_probability": 0.25, "emboscada_probability": 0.5, "dificultad_huida": 0.9, "penalizacion_corazones": 0.65
     }
   },
   {
     "id": "cima_akkala",
     "name": "Fortaleza de las Tierras Rojas",
-    "game": "Breath of the Wild",
-    "generation": "era_abierta",
-    "emoji": "⛰️",
-    "type": "montaña",
+    "game": "Breath of the Wild", "generation": "era_abierta",
+    "emoji": "⛰️", "type": "montaña",
+    "boss_id": "fireblight_ganon",
     "modifiers": {
-      "fuerza_weight": 0.85,
-      "defensa_weight": 0.75,
-      "agilidad_weight": 0.75,
-      "magia_weight": 0.5,
-      "lluvia_probability": 0.4,
-      "emboscada_probability": 0.45,
-      "dificultad_huida": 0.6,
-      "penalizacion_corazones": 0.4
+      "fuerza_weight": 0.85, "defensa_weight": 0.75, "agilidad_weight": 0.75, "magia_weight": 0.5,
+      "lluvia_probability": 0.4, "emboscada_probability": 0.45, "dificultad_huida": 0.6, "penalizacion_corazones": 0.4
     }
   },
   {
     "id": "profundidades_hyrule",
     "name": "Las Profundidades",
-    "game": "Tears of the Kingdom",
-    "generation": "era_abierta",
-    "emoji": "🕳️",
-    "type": "subterraneo",
+    "game": "Tears of the Kingdom", "generation": "era_abierta",
+    "emoji": "🕳️", "type": "subterraneo",
+    "boss_id": "king_gleeok",
     "modifiers": {
-      "fuerza_weight": 0.8,
-      "defensa_weight": 0.9,
-      "agilidad_weight": 0.7,
-      "magia_weight": 0.8,
-      "lluvia_probability": 0.0,
-      "emboscada_probability": 0.75,
-      "dificultad_huida": 0.85,
-      "penalizacion_corazones": 0.75
+      "fuerza_weight": 0.8, "defensa_weight": 0.9, "agilidad_weight": 0.7, "magia_weight": 0.8,
+      "lluvia_probability": 0.0, "emboscada_probability": 0.75, "dificultad_huida": 0.85, "penalizacion_corazones": 0.75
+    }
+  },
+  {
+    "id": "castillo_hyrule_totk",
+    "name": "Castillo de Hyrule (Era Zonai)",
+    "game": "Tears of the Kingdom", "generation": "era_abierta",
+    "emoji": "🐉", "type": "fortaleza",
+    "boss_id": "demon_king_ganondorf",
+    "modifiers": {
+      "fuerza_weight": 0.95, "defensa_weight": 0.9, "agilidad_weight": 0.7, "magia_weight": 0.95,
+      "lluvia_probability": 0.3, "emboscada_probability": 0.6, "dificultad_huida": 0.95, "penalizacion_corazones": 0.8
     }
   },
   {
     "id": "islas_cielo_totk",
     "name": "Islas del Cielo",
-    "game": "Tears of the Kingdom",
-    "generation": "era_abierta",
-    "emoji": "☁️",
-    "type": "aéreo",
+    "game": "Tears of the Kingdom", "generation": "era_abierta",
+    "emoji": "☁️", "type": "aéreo",
+    "boss_id": "windblight_ganon",
     "modifiers": {
-      "fuerza_weight": 0.6,
-      "defensa_weight": 0.5,
-      "agilidad_weight": 1.0,
-      "magia_weight": 0.7,
-      "lluvia_probability": 0.45,
-      "emboscada_probability": 0.3,
-      "dificultad_huida": 0.3,
-      "penalizacion_corazones": 0.2
+      "fuerza_weight": 0.6, "defensa_weight": 0.5, "agilidad_weight": 1.0, "magia_weight": 0.7,
+      "lluvia_probability": 0.45, "emboscada_probability": 0.3, "dificultad_huida": 0.3, "penalizacion_corazones": 0.2
     }
   }
 ]

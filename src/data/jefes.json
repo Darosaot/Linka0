@@ -1,0 +1,202 @@
+[
+  {
+    "id": "aquamentus",
+    "name": "Aquamentus",
+    "game": "The Legend of Zelda", "generation": "era_clasica", "year": 1986,
+    "emoji": "🐉",
+    "bio": "El dragón guardián del Nivel 1. Dispara tres proyectiles a la vez y su cuerno lo convierte en un ariete viviente.",
+    "attributes": { "fuerza": 45, "defensa": 38, "magia": 30, "resistencia": 40, "velocidad": 35 }
+  },
+  {
+    "id": "agahnim",
+    "name": "Agahnim el Hechicero",
+    "game": "A Link to the Past", "generation": "era_clasica", "year": 1991,
+    "emoji": "🧙",
+    "bio": "El alter ego oscuro de Ganondorf. Refleja hechizos propios y solo puede ser dañado con sus propias energías.",
+    "attributes": { "fuerza": 62, "defensa": 55, "magia": 92, "resistencia": 58, "velocidad": 70 }
+  },
+  {
+    "id": "moldorm_alttp",
+    "name": "Moldorm",
+    "game": "A Link to the Past", "generation": "era_clasica", "year": 1991,
+    "emoji": "🪱",
+    "bio": "El gusano de arena de la Torre de Hera. Cambios de dirección erráticos hacen imposible predecir su siguiente ataque.",
+    "attributes": { "fuerza": 55, "defensa": 30, "magia": 10, "resistencia": 50, "velocidad": 88 }
+  },
+  {
+    "id": "trinexx",
+    "name": "Trinexx",
+    "game": "A Link to the Past", "generation": "era_clasica", "year": 1991,
+    "emoji": "🐢",
+    "bio": "La tortuga de tres cabezas del Palacio de las Tortugas. Una cabeza de fuego, otra de hielo y el núcleo inmortal.",
+    "attributes": { "fuerza": 72, "defensa": 75, "magia": 65, "resistencia": 80, "velocidad": 25 }
+  },
+  {
+    "id": "phantom_ganon",
+    "name": "Phantom Ganon",
+    "game": "Ocarina of Time", "generation": "era_3d", "year": 1998,
+    "emoji": "👻",
+    "bio": "El espectro de Ganondorf, guardián del Templo del Bosque. Igual de letal que el original pero sin el poder de la Trifuerza.",
+    "attributes": { "fuerza": 70, "defensa": 58, "magia": 75, "resistencia": 62, "velocidad": 68 }
+  },
+  {
+    "id": "morpha",
+    "name": "Morpha",
+    "game": "Ocarina of Time", "generation": "era_3d", "year": 1998,
+    "emoji": "💧",
+    "bio": "El parásito acuático del Templo del Agua. Su núcleo es ínfimo pero sus tentáculos de agua inundan la arena.",
+    "attributes": { "fuerza": 60, "defensa": 45, "magia": 70, "resistencia": 55, "velocidad": 75 }
+  },
+  {
+    "id": "twinrova",
+    "name": "Twinrova",
+    "game": "Ocarina of Time", "generation": "era_3d", "year": 1998,
+    "emoji": "🔥",
+    "bio": "Las brujas Koume y Kotake fusionadas. Absorbe magia de fuego y hielo para lanzar la energía opuesta potenciada.",
+    "attributes": { "fuerza": 65, "defensa": 60, "magia": 95, "resistencia": 65, "velocidad": 60 }
+  },
+  {
+    "id": "majora",
+    "name": "Majora",
+    "game": "Majora's Mask", "generation": "era_3d", "year": 2000,
+    "emoji": "🌙",
+    "bio": "La máscara maldita con conciencia propia. Su última forma combina la luna caída con tentáculos que deforman la realidad.",
+    "attributes": { "fuerza": 80, "defensa": 72, "magia": 98, "resistencia": 75, "velocidad": 82 }
+  },
+  {
+    "id": "vitreous",
+    "name": "Vitreous",
+    "game": "A Link to the Past", "generation": "era_clasica", "year": 1991,
+    "emoji": "👁️",
+    "bio": "El ojo gigante de las Catacumbas Misery Mire. Rodeado de mini-ojos que protegen su núcleo vulnerable.",
+    "attributes": { "fuerza": 58, "defensa": 50, "magia": 72, "resistencia": 62, "velocidad": 40 }
+  },
+  {
+    "id": "helmaroc",
+    "name": "Helmaroc King",
+    "game": "The Wind Waker", "generation": "era_viento", "year": 2002,
+    "emoji": "🦅",
+    "bio": "El pájaro gigante al servicio de Ganon. Su pico acorazado solo tiene un punto débil: la máscara que lo cubre.",
+    "attributes": { "fuerza": 72, "defensa": 68, "magia": 30, "resistencia": 65, "velocidad": 80 }
+  },
+  {
+    "id": "molgera",
+    "name": "Molgera",
+    "game": "The Wind Waker", "generation": "era_viento", "year": 2002,
+    "emoji": "🌪️",
+    "bio": "El gran gusano del viento del Templo del Dios del Viento. Emerge de la arena y captura con su lengua extensible.",
+    "attributes": { "fuerza": 68, "defensa": 55, "magia": 45, "resistencia": 70, "velocidad": 62 }
+  },
+  {
+    "id": "zant",
+    "name": "Zant el Usurpador",
+    "game": "Twilight Princess", "generation": "era_crepusculo", "year": 2006,
+    "emoji": "🌑",
+    "bio": "El Rey Usurpador del Crepúsculo. Cada fase cambia las reglas del combate con teletransportación y ataques de magia oscura.",
+    "attributes": { "fuerza": 75, "defensa": 65, "magia": 88, "resistencia": 70, "velocidad": 85 }
+  },
+  {
+    "id": "morpheel",
+    "name": "Morpheel",
+    "game": "Twilight Princess", "generation": "era_crepusculo", "year": 2006,
+    "emoji": "🐍",
+    "bio": "El parásito del Templo del Lago. Controla la anguila colosal del Lago Hylia desde su propio interior.",
+    "attributes": { "fuerza": 70, "defensa": 62, "magia": 55, "resistencia": 72, "velocidad": 65 }
+  },
+  {
+    "id": "stallord",
+    "name": "Stallord",
+    "game": "Twilight Princess", "generation": "era_crepusculo", "year": 2006,
+    "emoji": "💀",
+    "bio": "El esqueleto del Rey Dragón en la Fortaleza de Árbitro. Resucita a sus secuaces muertos mientras su cráneo flota intocable.",
+    "attributes": { "fuerza": 80, "defensa": 70, "magia": 60, "resistencia": 78, "velocidad": 55 }
+  },
+  {
+    "id": "ghirahim",
+    "name": "Ghirahim el Señor Demonio",
+    "game": "Skyward Sword", "generation": "era_cielo", "year": 2011,
+    "emoji": "💎",
+    "bio": "El demonio encarnado de la Espada Oscura. Captura la hoja de Link con dos dedos y contraataca con velocidad sobrenatural.",
+    "attributes": { "fuerza": 78, "defensa": 72, "magia": 82, "resistencia": 68, "velocidad": 92 }
+  },
+  {
+    "id": "koloktos",
+    "name": "Koloktos",
+    "game": "Skyward Sword", "generation": "era_cielo", "year": 2011,
+    "emoji": "🤖",
+    "bio": "El antiguo autómata del Templo Antiguo. Con seis brazos armados y núcleo blindado, cambia de fase al perder miembros.",
+    "attributes": { "fuerza": 82, "defensa": 80, "magia": 40, "resistencia": 85, "velocidad": 42 }
+  },
+  {
+    "id": "moldarach",
+    "name": "Moldarach",
+    "game": "Skyward Sword", "generation": "era_cielo", "year": 2011,
+    "emoji": "🦂",
+    "bio": "El escorpión gigante del Desierto del Silencio. Sus pinzas aprisionan a Link mientras la cola letal golpea.",
+    "attributes": { "fuerza": 72, "defensa": 68, "magia": 35, "resistencia": 75, "velocidad": 58 }
+  },
+  {
+    "id": "yuga_ganon",
+    "name": "Yuga-Ganon",
+    "game": "A Link Between Worlds", "generation": "era_cielo", "year": 2013,
+    "emoji": "🖼️",
+    "bio": "El artista maldito fusionado con Ganon. Convierte a Link en pintura y ataca desde el interior de los muros.",
+    "attributes": { "fuerza": 75, "defensa": 70, "magia": 88, "resistencia": 72, "velocidad": 75 }
+  },
+  {
+    "id": "waterblight_ganon",
+    "name": "Agua Ganon",
+    "game": "Breath of the Wild", "generation": "era_abierta", "year": 2017,
+    "emoji": "🌊",
+    "bio": "La Calamidad que corrompió la Bestia Divina Vah Ruta. Acecha con una lanza de largo alcance desde plataformas elevadas.",
+    "attributes": { "fuerza": 78, "defensa": 65, "magia": 80, "resistencia": 70, "velocidad": 58 }
+  },
+  {
+    "id": "windblight_ganon",
+    "name": "Viento Ganon",
+    "game": "Breath of the Wild", "generation": "era_abierta", "year": 2017,
+    "emoji": "💨",
+    "bio": "La Calamidad de la Bestia Divina Vah Medoh. Sus tornados y vuelo alto lo hacen el más evasivo de los cuatro.",
+    "attributes": { "fuerza": 72, "defensa": 60, "magia": 85, "resistencia": 65, "velocidad": 92 }
+  },
+  {
+    "id": "thunderblight_ganon",
+    "name": "Rayo Ganon",
+    "game": "Breath of the Wild", "generation": "era_abierta", "year": 2017,
+    "emoji": "⚡",
+    "bio": "La Calamidad de la Bestia Divina Vah Naboris. Velocidad relámpago y campos electromagnéticos paralizan la espada.",
+    "attributes": { "fuerza": 85, "defensa": 62, "magia": 88, "resistencia": 68, "velocidad": 95 }
+  },
+  {
+    "id": "fireblight_ganon",
+    "name": "Fuego Ganon",
+    "game": "Breath of the Wild", "generation": "era_abierta", "year": 2017,
+    "emoji": "🔥",
+    "bio": "La Calamidad de la Bestia Divina Vah Rudania. Sus explosiones de fuego y el escudo de llamas lo hacen muy difícil de aproximar.",
+    "attributes": { "fuerza": 88, "defensa": 75, "magia": 80, "resistencia": 78, "velocidad": 52 }
+  },
+  {
+    "id": "calamity_ganon",
+    "name": "Calamidad Ganon",
+    "game": "Breath of the Wild", "generation": "era_abierta", "year": 2017,
+    "emoji": "🏰",
+    "bio": "La encarnación definitiva de la Calamidad que durmió 100 años. Combina los poderes de las cuatro Bestias Divinas.",
+    "attributes": { "fuerza": 95, "defensa": 85, "magia": 95, "resistencia": 90, "velocidad": 60 }
+  },
+  {
+    "id": "king_gleeok",
+    "name": "Rey Gleeok",
+    "game": "Tears of the Kingdom", "generation": "era_abierta", "year": 2023,
+    "emoji": "🐲",
+    "bio": "El Gleeok de tres cabezas que domina fuego, hielo y rayo. Sus cabezas atacan de forma independiente simultáneamente.",
+    "attributes": { "fuerza": 90, "defensa": 78, "magia": 85, "resistencia": 88, "velocidad": 65 }
+  },
+  {
+    "id": "demon_king_ganondorf",
+    "name": "Rey Demonio Ganondorf",
+    "game": "Tears of the Kingdom", "generation": "era_abierta", "year": 2023,
+    "emoji": "👑",
+    "bio": "El Rey Demonio Dragón en su forma definitiva. El enemigo más poderoso de la historia de Hyrule despertado de las profundidades.",
+    "attributes": { "fuerza": 98, "defensa": 92, "magia": 98, "resistencia": 95, "velocidad": 70 }
+  }
+]

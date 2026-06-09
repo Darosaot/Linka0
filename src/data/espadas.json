@@ -1,121 +1,267 @@
 [
   {
+    "id": "espada_madera",
+    "name": "Espada de Madera",
+    "type": "espada", "generation": "era_clasica", "year": 1986, "game": "The Legend of Zelda",
+    "bio": "Una espada de entrenamiento tallada en roble. La primera arma de cualquier aspirante a héroe.",
+    "attributes": { "poder": 15, "velocidad": 78, "alcance": 30, "magia": 2 }
+  },
+  {
+    "id": "espada_fighter",
+    "name": "Espada de Combate",
+    "type": "espada", "generation": "era_clasica", "year": 1986, "game": "The Legend of Zelda",
+    "bio": "Arma estándar de los caballeros de Hyrule. Fiable y equilibrada para el combate básico.",
+    "attributes": { "poder": 38, "velocidad": 65, "alcance": 40, "magia": 8 }
+  },
+  {
+    "id": "espada_blanca",
+    "name": "Espada Blanca",
+    "type": "espada", "generation": "era_clasica", "year": 1986, "game": "The Legend of Zelda",
+    "bio": "La espada bendita de los viejos sabios. Cada golpe se extiende como un rayo de luna.",
+    "attributes": { "poder": 48, "velocidad": 68, "alcance": 42, "magia": 30 }
+  },
+  {
+    "id": "espada_magica_loz",
+    "name": "Espada Mágica",
+    "type": "espada", "generation": "era_clasica", "year": 1986, "game": "The Legend of Zelda",
+    "bio": "La más poderosa del Hyrule clásico. Solo puede ser empuñada por quien tenga toda la vida completa.",
+    "attributes": { "poder": 58, "velocidad": 62, "alcance": 50, "magia": 45 }
+  },
+  {
+    "id": "espada_templada",
+    "name": "Espada Templada",
+    "type": "espada", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
+    "bio": "Forjada en el crisol de los herreros de Hyrule. Duplica el daño de la espada estándar.",
+    "attributes": { "poder": 65, "velocidad": 60, "alcance": 52, "magia": 20 }
+  },
+  {
+    "id": "espada_dorada_alttp",
+    "name": "Espada Dorada",
+    "type": "espada", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
+    "bio": "El arma definitiva del Hyrule medieval. Cuadruplica el daño de la espada de combate básica.",
+    "attributes": { "poder": 78, "velocidad": 58, "alcance": 55, "magia": 38 }
+  },
+  {
     "id": "espada_kokiri",
     "name": "Espada Kokiri",
-    "type": "espada",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
-    "bio": "La primera espada de Link. Pequeña pero bien equilibrada, perfecta para un joven héroe.",
+    "type": "espada", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
+    "bio": "La primera espada de Link en el mundo 3D. Pequeña pero perfectamente equilibrada.",
     "attributes": { "poder": 28, "velocidad": 72, "alcance": 35, "magia": 5 }
   },
   {
+    "id": "espada_ordon",
+    "name": "Espada de Ordona",
+    "type": "espada", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "La espada artesanal de los guardianes de la aldea de Ordona. Robusta y con buen peso.",
+    "attributes": { "poder": 42, "velocidad": 68, "alcance": 48, "magia": 10 }
+  },
+  {
+    "id": "espada_razor",
+    "name": "Espada Filo de Navaja",
+    "type": "espada", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
+    "bio": "La Espada Kokiri afilada con piedra lunar. Su hoja es tan delgada que puede partir un cabello.",
+    "attributes": { "poder": 55, "velocidad": 80, "alcance": 42, "magia": 12 }
+  },
+  {
     "id": "espada_gilded",
-    "name": "Espada Dorada",
-    "type": "espada",
-    "generation": "era_3d",
-    "year": 2000,
-    "game": "Majora's Mask",
-    "bio": "Forjada en las fraguas de la Montaña Muerte con Polvo de Biggoron. La espada más poderosa de Termina.",
+    "name": "Espada Dorada de Termina",
+    "type": "espada", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
+    "bio": "Forjada con Polvo de Biggoron en la fragua de la Montaña Muerte. La espada más poderosa de Termina.",
     "attributes": { "poder": 88, "velocidad": 65, "alcance": 60, "magia": 20 }
+  },
+  {
+    "id": "espada_biggoron",
+    "name": "Espada de Biggoron",
+    "type": "espada", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
+    "bio": "Forjada por el gigante Goron de la Montaña Muerte. Requiere dos manos pero causa el doble de daño.",
+    "attributes": { "poder": 85, "velocidad": 42, "alcance": 72, "magia": 10 }
+  },
+  {
+    "id": "espada_noble",
+    "name": "Espada Noble",
+    "type": "espada", "generation": "era_3d", "year": 2001, "game": "Oracle of Ages",
+    "bio": "Forjada por los herreros gemelos de las Tierras Vinculadas. Su filo rosa brilla con energía sagrada.",
+    "attributes": { "poder": 62, "velocidad": 70, "alcance": 55, "magia": 48 }
+  },
+  {
+    "id": "espada_hadas_gran",
+    "name": "Espada de la Gran Hada",
+    "type": "espada", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
+    "bio": "Bendecida por la Gran Hada de la Espada. Tiene el mayor alcance de todas las espadas de Termina.",
+    "attributes": { "poder": 78, "velocidad": 58, "alcance": 90, "magia": 55 }
   },
   {
     "id": "espada_maestra_oot",
     "name": "Espada Maestra",
-    "type": "espada",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
+    "type": "espada", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
     "bio": "La espada que aleja el mal, forjada en los tiempos primordiales. Su poder se despierta con el Coraje.",
     "attributes": { "poder": 92, "velocidad": 70, "alcance": 65, "magia": 88 }
   },
   {
+    "id": "espada_kokiri_ww",
+    "name": "Espada Kokiri (Gran Mar)",
+    "type": "espada", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
+    "bio": "La espada del nieto del Rey de los Mares. Ligera y adaptada al combate en cubierta de barco.",
+    "attributes": { "poder": 32, "velocidad": 76, "alcance": 38, "magia": 8 }
+  },
+  {
     "id": "espada_viento",
     "name": "Espada del Viento",
-    "type": "espada",
-    "generation": "era_viento",
-    "year": 2002,
-    "game": "The Wind Waker",
+    "type": "espada", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
     "bio": "La Espada Maestra heredada del Rey de las Hadas del Mar. Brilla con luz dorada al enfrentarse al mal.",
     "attributes": { "poder": 85, "velocidad": 75, "alcance": 70, "magia": 90 }
   },
   {
+    "id": "espada_darknut",
+    "name": "Espada de los Darknut",
+    "type": "espada", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
+    "bio": "Espada pesada arrebatada a un Darknut de las Ruinas Ancianas. Su acero negro corta el aire.",
+    "attributes": { "poder": 75, "velocidad": 45, "alcance": 68, "magia": 15 }
+  },
+  {
+    "id": "espada_ordon_tp",
+    "name": "Espada de Ordona Pulida",
+    "type": "espada", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "La espada forjada por Rusl, mejorada después de las primeras batallas del Crepúsculo.",
+    "attributes": { "poder": 50, "velocidad": 70, "alcance": 52, "magia": 12 }
+  },
+  {
     "id": "espada_medianoche",
     "name": "Espada de Medianoche",
-    "type": "espada",
-    "generation": "era_crepusculo",
-    "year": 2006,
-    "game": "Twilight Princess",
-    "bio": "Una espada oscura de las tierras del Crepúsculo. Canaliza la energía de las sombras en cada golpe.",
+    "type": "espada", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "Una espada forjada en el Crepúsculo. Canaliza la energía de las sombras en cada golpe.",
     "attributes": { "poder": 78, "velocidad": 62, "alcance": 55, "magia": 45 }
   },
   {
     "id": "espada_maestra_tp",
     "name": "Espada Maestra (Crepúsculo)",
-    "type": "espada",
-    "generation": "era_crepusculo",
-    "year": 2006,
-    "game": "Twilight Princess",
-    "bio": "La mítica Espada Maestra en su forma más poderosa. Purificada en el Templo del Tiempo, arde con luz sagrada.",
+    "type": "espada", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "Purificada en el Templo del Tiempo, arde con luz sagrada que destruye el mal oscuro.",
     "attributes": { "poder": 95, "velocidad": 68, "alcance": 72, "magia": 92 }
   },
   {
+    "id": "espada_diosa",
+    "name": "Espada de la Diosa",
+    "type": "espada", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "El origen de todo. La Espada de la Diosa antes de ser purificada. Potente pero sin su poder máximo.",
+    "attributes": { "poder": 72, "velocidad": 82, "alcance": 58, "magia": 75 }
+  },
+  {
+    "id": "espada_diosa_larga",
+    "name": "Espada Larga de la Diosa",
+    "type": "espada", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "Primera mejora de la Espada de la Diosa. Mayor alcance y potencia tras ser purificada en el Fuego Sagrado.",
+    "attributes": { "poder": 80, "velocidad": 76, "alcance": 68, "magia": 82 }
+  },
+  {
     "id": "espada_cielo",
-    "name": "Espada del Cielo",
-    "type": "espada",
-    "generation": "era_cielo",
-    "year": 2011,
-    "game": "Skyward Sword",
-    "bio": "El origen de la Espada Maestra. Dotada del espíritu de Fi, puede cargarse con energía de Sello.",
-    "attributes": { "poder": 80, "velocidad": 78, "alcance": 62, "magia": 95 }
+    "name": "Espada del Cielo (Hoja Verdadera)",
+    "type": "espada", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "Dotada del espíritu de Fi, puede cargarse con energía de Sello. Precursora de la Espada Maestra.",
+    "attributes": { "poder": 88, "velocidad": 78, "alcance": 65, "magia": 95 }
+  },
+  {
+    "id": "espada_traveler",
+    "name": "Espada del Viajero",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Espada ligera de uso común en Hyrule. Barata y frecuente, pero en las manos correctas es suficiente.",
+    "attributes": { "poder": 38, "velocidad": 82, "alcance": 42, "magia": 5 }
+  },
+  {
+    "id": "espada_soldado",
+    "name": "Espadón del Soldado",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Arma de los soldados del Castillo de Hyrule. Equilibrio entre poder y velocidad de ataque.",
+    "attributes": { "poder": 52, "velocidad": 72, "alcance": 55, "magia": 8 }
+  },
+  {
+    "id": "espada_caballero",
+    "name": "Espadón del Caballero",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Espada de los caballeros de élite de Hyrule. Forjada para resistir los ataques más devastadores.",
+    "attributes": { "poder": 65, "velocidad": 68, "alcance": 60, "magia": 12 }
+  },
+  {
+    "id": "espada_real",
+    "name": "Espadón Real",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Usada exclusivamente por la Guardia Real del Castillo de Hyrule. Un arma de gran prestigio.",
+    "attributes": { "poder": 75, "velocidad": 65, "alcance": 62, "magia": 22 }
+  },
+  {
+    "id": "espada_flameblade",
+    "name": "Espada Ígnea",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Imbuida con fuego interior. Quema a los enemigos con cada golpe y explota al romperse.",
+    "attributes": { "poder": 72, "velocidad": 65, "alcance": 55, "magia": 68 }
+  },
+  {
+    "id": "espada_frostblade",
+    "name": "Espada Glacial",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Forjada en el frío eterno de las cumbres de Hebra. Congela a los enemigos al contacto.",
+    "attributes": { "poder": 68, "velocidad": 62, "alcance": 52, "magia": 65 }
+  },
+  {
+    "id": "espada_thunderblade",
+    "name": "Espada del Trueno",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Imbuida con energía eléctrica. Sus golpes paralizan a los enemigos durante unos segundos.",
+    "attributes": { "poder": 70, "velocidad": 64, "alcance": 54, "magia": 62 }
+  },
+  {
+    "id": "espada_guardia_real",
+    "name": "Espada de la Guardia Real",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "La mejor espada de los forjadores del Castillo. Increíblemente poderosa pero se degrada muy rápido.",
+    "attributes": { "poder": 90, "velocidad": 70, "alcance": 65, "magia": 28 }
   },
   {
     "id": "espada_lynel",
     "name": "Espada de Lynel Salvaje",
-    "type": "espada",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
-    "bio": "El arma más poderosa que porta un Lynel de las llanuras. Su filo puede destrozar cualquier armadura.",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "El arma más poderosa que porta un Lynel de las llanuras. Puede destrozar cualquier armadura.",
     "attributes": { "poder": 98, "velocidad": 60, "alcance": 75, "magia": 10 }
+  },
+  {
+    "id": "espada_edge_duality",
+    "name": "Espada de la Dualidad",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Arma de doble filo hallada en ruinas de Guardianes. Combina tecnología y artesanía Sheikah.",
+    "attributes": { "poder": 78, "velocidad": 68, "alcance": 62, "magia": 40 }
   },
   {
     "id": "espada_maestra_botw",
     "name": "Espada Maestra (Era Abierta)",
-    "type": "espada",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
-    "bio": "Tras 100 años de sueño, recupera su poder completo. La única arma que nunca se rompe en las manos del Elegido.",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Tras 100 años de sueño, recupera su poder completo. La única arma que nunca se rompe en manos del Elegido.",
     "attributes": { "poder": 96, "velocidad": 72, "alcance": 68, "magia": 98 }
   },
   {
     "id": "espada_ancient",
-    "name": "Espada Ancestral",
-    "type": "espada",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
-    "bio": "Forjada con tecnología Sheikah por Robbie. Especialmente efectiva contra la Calamidad y los Guardianes.",
+    "name": "Espada Ancestral Sheikah",
+    "type": "espada", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Forjada por Robbie en el Laboratorio Akkala. Especialmente efectiva contra la Calamidad y Guardianes.",
     "attributes": { "poder": 82, "velocidad": 65, "alcance": 60, "magia": 55 }
+  },
+  {
+    "id": "espada_fierce_deity",
+    "name": "Espada de la Deidad Feroz",
+    "type": "espada", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "El arma legendaria de la Deidad Feroz. Dispara rayos cruzados de energía con cada ataque cargado.",
+    "attributes": { "poder": 99, "velocidad": 65, "alcance": 80, "magia": 99 }
   },
   {
     "id": "espada_zonai",
     "name": "Espada de Zonanio",
-    "type": "espada",
-    "generation": "era_abierta",
-    "year": 2023,
-    "game": "Tears of the Kingdom",
+    "type": "espada", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
     "bio": "Forjada con el misterioso Zonanio de las Profundidades. Su energía verde nunca se agota completamente.",
     "attributes": { "poder": 88, "velocidad": 70, "alcance": 65, "magia": 72 }
   },
   {
     "id": "espada_gloom",
     "name": "Espada de la Penumbra",
-    "type": "espada",
-    "generation": "era_abierta",
-    "year": 2023,
-    "game": "Tears of the Kingdom",
+    "type": "espada", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
     "bio": "Impregnada de Penumbra de las Profundidades. Devastadora pero peligrosa incluso para quien la empuña.",
     "attributes": { "poder": 94, "velocidad": 55, "alcance": 70, "magia": 80 }
   }

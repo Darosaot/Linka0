@@ -1,82 +1,128 @@
 [
   {
+    "id": "pendientes_poder",
+    "name": "Pendientes del Poder",
+    "type": "habilidad", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
+    "bio": "Los tres pendientes de las diosas. Reunirlos otorga fuerza sobrenatural capaz de mover rocas y romper armaduras.",
+    "attributes": { "poder": 82, "versatilidad": 65, "coste_magia": 20, "recarga": 75 }
+  },
+  {
+    "id": "capa_magica",
+    "name": "Capa Mágica",
+    "type": "habilidad", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
+    "bio": "La capa de invisibilidad del Mago. Vuelve a Link completamente invisible al costo de magia constante.",
+    "attributes": { "poder": 45, "versatilidad": 90, "coste_magia": 75, "recarga": 55 }
+  },
+  {
+    "id": "varita_gamelon",
+    "name": "Varita de Gamelon",
+    "type": "habilidad", "generation": "era_clasica", "year": 1993, "game": "Link's Awakening",
+    "bio": "Varita que lanza haces de energía telequinética. Puede mover bloques y noquear enemigos a distancia.",
+    "attributes": { "poder": 62, "versatilidad": 75, "coste_magia": 45, "recarga": 68 }
+  },
+  {
     "id": "ocarina_tiempo",
     "name": "Ocarina del Tiempo",
-    "type": "habilidad",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
+    "type": "habilidad", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
     "bio": "El instrumento sagrado de la familia real de Hyrule. Sus melodías controlan el tiempo y abren puertas selladas.",
     "attributes": { "poder": 70, "versatilidad": 95, "coste_magia": 30, "recarga": 85 }
   },
   {
+    "id": "lente_verdad",
+    "name": "Lente de la Verdad",
+    "type": "habilidad", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
+    "bio": "Revela lo oculto: trampas invisibles, enemigos fantasma y pasajes secretos. Magia que desvela toda ilusión.",
+    "attributes": { "poder": 48, "versatilidad": 88, "coste_magia": 50, "recarga": 72 }
+  },
+  {
     "id": "mascara_fierro",
     "name": "Máscara de Fierro",
-    "type": "habilidad",
-    "generation": "era_3d",
-    "year": 2000,
-    "game": "Majora's Mask",
+    "type": "habilidad", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
     "bio": "Transforma a Link en Goron de Fierro. Invulnerable al daño mientras dure la transformación.",
     "attributes": { "poder": 88, "versatilidad": 50, "coste_magia": 70, "recarga": 45 }
   },
   {
+    "id": "mascara_bunny",
+    "name": "Máscara de Conejo",
+    "type": "habilidad", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
+    "bio": "Duplica la velocidad de movimiento de Link. Ideal para evadir ataques y cubrir distancias rápidamente.",
+    "attributes": { "poder": 35, "versatilidad": 82, "coste_magia": 15, "recarga": 92 }
+  },
+  {
+    "id": "mascara_deku_fierce",
+    "name": "Máscara de la Divinidad Feroz",
+    "type": "habilidad", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
+    "bio": "La transformación definitiva de Majora's Mask. Un dios guerrero despierta — poder puro e incontenible.",
+    "attributes": { "poder": 98, "versatilidad": 62, "coste_magia": 88, "recarga": 38 }
+  },
+  {
     "id": "boton_panico",
     "name": "Varita de los Vientos",
-    "type": "habilidad",
-    "generation": "era_viento",
-    "year": 2002,
-    "game": "The Wind Waker",
+    "type": "habilidad", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
     "bio": "Controla el viento de la Gran Mar. Puede repeler proyectiles y crear tornados que desestabilizan a los rivales.",
     "attributes": { "poder": 65, "versatilidad": 82, "coste_magia": 40, "recarga": 70 }
   },
   {
     "id": "forma_lobo",
     "name": "Transformación de Lobo",
-    "type": "habilidad",
-    "generation": "era_crepusculo",
-    "year": 2006,
-    "game": "Twilight Princess",
+    "type": "habilidad", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
     "bio": "La forma maldita de Link en el Crepúsculo. Velocidad y sentidos sobrehumanos, ataques que ignoran la defensa.",
     "attributes": { "poder": 78, "versatilidad": 72, "coste_magia": 55, "recarga": 62 }
   },
   {
+    "id": "arte_escudo",
+    "name": "Arte del Escudo Sagrado",
+    "type": "habilidad", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "Técnica secreta del Héroe de las Sombras. Convierte cada bloqueo en un contraataque devastador.",
+    "attributes": { "poder": 72, "versatilidad": 70, "coste_magia": 35, "recarga": 78 }
+  },
+  {
     "id": "ataque_giraspin",
     "name": "Gran Ataque Giratorio",
-    "type": "habilidad",
-    "generation": "era_cielo",
-    "year": 2011,
-    "game": "Skyward Sword",
+    "type": "habilidad", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
     "bio": "La habilidad final de la Espada del Cielo. Un torbellino de energía pura que golpea a todos los enemigos cercanos.",
     "attributes": { "poder": 92, "versatilidad": 60, "coste_magia": 80, "recarga": 40 }
   },
   {
+    "id": "golpe_fatal",
+    "name": "Golpe Fatal",
+    "type": "habilidad", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "Estocada definitiva aprendida en la Academia del Cielo. Elimina a los enemigos aturdidos de un solo golpe.",
+    "attributes": { "poder": 95, "versatilidad": 45, "coste_magia": 60, "recarga": 50 }
+  },
+  {
     "id": "tablero_sheikah",
     "name": "Tablero Sheikah",
-    "type": "habilidad",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
+    "type": "habilidad", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
     "bio": "Tecnología Sheikah que otorga Magnesis, Stasis, Cryo y Bombas Remotas. La herramienta más versátil de Hyrule.",
     "attributes": { "poder": 75, "versatilidad": 98, "coste_magia": 20, "recarga": 90 }
   },
   {
     "id": "ultrahand",
     "name": "Ultrahand",
-    "type": "habilidad",
-    "generation": "era_abierta",
-    "year": 2023,
-    "game": "Tears of the Kingdom",
+    "type": "habilidad", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
     "bio": "Habilidad Zonai de construcción. En combate permite arrojar objetos del entorno a gran velocidad.",
     "attributes": { "poder": 68, "versatilidad": 99, "coste_magia": 25, "recarga": 88 }
   },
   {
     "id": "ascenso",
     "name": "Ascenso",
-    "type": "habilidad",
-    "generation": "era_abierta",
-    "year": 2023,
-    "game": "Tears of the Kingdom",
+    "type": "habilidad", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
     "bio": "Permite atravesar techos y superficies desde abajo. Crea ventajas de posición imposibles para cualquier enemigo.",
     "attributes": { "poder": 55, "versatilidad": 88, "coste_magia": 30, "recarga": 82 }
+  },
+  {
+    "id": "recall",
+    "name": "Retroceso",
+    "type": "habilidad", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Invierte el tiempo de un objeto. En combate devuelve proyectiles enemigos y revierte estados negativos.",
+    "attributes": { "poder": 65, "versatilidad": 90, "coste_magia": 40, "recarga": 75 }
+  },
+  {
+    "id": "fuse",
+    "name": "Fusión",
+    "type": "habilidad", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Fusiona materiales con armas en tiempo real. Una piedra de fuego en la espada lo cambia todo en combate.",
+    "attributes": { "poder": 80, "versatilidad": 92, "coste_magia": 15, "recarga": 95 }
   }
 ]

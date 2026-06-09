@@ -1,8 +1,9 @@
-import { getAllMazmorras } from './dataQueries.js';
+import { getAllMazmorras, getJefeById } from './dataQueries.js';
 import { calcTeamRating } from './ratingEngine.js';
 import { buildBokoblinRivalesForEra } from './rivalBuilder.js';
 
 const PUNTOS_TRIFORCE = [25, 18, 15, 12, 10, 8, 6, 4, 2, 1, 0, 0, 0, 0, 0];
+const BOSS_BONUS = [15, 8, 4, 0]; // victoria, resistencia, derrota, ko
 
 const DIFICULTAD_MULT = {
   explorador: 0.82,
@@ -15,18 +16,15 @@ function avgModifier(mods) {
 }
 
 function calcLinkPerf(build, mazmorra) {
-  // Team rating is already a 0-100 normalized score
   const base = calcTeamRating(build);
   const mod = avgModifier(mazmorra.modifiers);
-  // Rain gives a small bonus if Link has agility boots
   const rainBonus = Math.random() < mazmorra.modifiers.lluvia_probability && build.botas ? 3 : 0;
-  const variance = (Math.random() - 0.5) * 18; // ±9
+  const variance = (Math.random() - 0.5) * 18;
   return Math.max(0, base * mod + rainBonus + variance);
 }
 
 function calcBokoblinPerf(bokoblin, mazmorra, dificultadMult) {
   const { fuerza = 0, defensa = 0, agilidad = 0, astucia = 0, resistencia = 0 } = bokoblin.attributes;
-  // Same scale as calcTeamRating: weighted average 0-100
   const base = fuerza * 0.35 + defensa * 0.20 + agilidad * 0.25 + astucia * 0.15 + resistencia * 0.05;
   const mod = avgModifier(mazmorra.modifiers);
   const ambushBonus = Math.random() < mazmorra.modifiers.emboscada_probability ? 4 : 0;
@@ -34,9 +32,26 @@ function calcBokoblinPerf(bokoblin, mazmorra, dificultadMult) {
   return Math.max(0, base * mod * dificultadMult + ambushBonus + variance);
 }
 
+function calcBossPerf(jefe, mazmorra, dificultadMult) {
+  const { fuerza = 0, defensa = 0, magia = 0, resistencia = 0, velocidad = 0 } = jefe.attributes;
+  const base = fuerza * 0.30 + defensa * 0.20 + magia * 0.25 + resistencia * 0.15 + velocidad * 0.10;
+  const mod = avgModifier(mazmorra.modifiers);
+  const variance = (Math.random() - 0.5) * 14;
+  // Bosses are naturally harder — 1.3x multiplier
+  return Math.max(0, base * mod * dificultadMult * 1.3 + variance);
+}
+
 function calcProbKO(build) {
   const corazones = build.corazones ?? 50;
   return Math.max(0.02, (100 - corazones) / 100 * 0.13);
+}
+
+function makeBossDescription(linkPerf, bossPerf, jefe, ko) {
+  if (ko) return `💀 ¡${jefe.name} venció a Link! El jefe era demasiado poderoso esta vez.`;
+  if (linkPerf > bossPerf * 1.2) return `🏆 ¡Victoria sobre ${jefe.name}! Link dominó la batalla sin apenas recibir daño.`;
+  if (linkPerf > bossPerf) return `⚔️ ¡${jefe.name} derrotado! Fue un combate reñido, pero el héroe prevaleció.`;
+  if (linkPerf > bossPerf * 0.75) return `🛡️ ${jefe.name} resistió la embestida. Link sobrevivió pero no pudo terminar el combate.`;
+  return `💀 ${jefe.name} fue demasiado para Link esta vez. El jefe sigue en pie.`;
 }
 
 function makeDescription(linkPos, mazmorra, ko, topRivalName) {
@@ -72,19 +87,16 @@ export function simularTorneo(build, era, dificultad = 'normal') {
   const rivales = buildBokoblinRivalesForEra(era, 10);
   const dificultadMult = DIFICULTAD_MULT[dificultad] ?? 1.0;
 
-  const linkStats = { puntos: 0, victorias: 0, podios: 0, kos: 0, derrotas: 0 };
+  const linkStats = { puntos: 0, victorias: 0, podios: 0, kos: 0, derrotas: 0, jefesVencidos: 0 };
   const rivalStandings = rivales.map(b => ({ ...b, puntos: 0, victorias: 0 }));
   const combatLog = [];
 
   for (const mazmorra of mazmorras) {
-    // KO check for Link
     const ko = Math.random() < calcProbKO(build);
-
-    // Performances
     const linkPerf = ko ? -1 : calcLinkPerf(build, mazmorra);
     const bokoblinPerfs = rivales.map(b => calcBokoblinPerf(b, mazmorra, dificultadMult));
 
-    // Sort all participants by performance (KO goes last)
+    // Full-field sort
     const allPerfs = [
       { id: 'link', name: 'Link', perf: linkPerf, ko },
       ...rivales.map((b, i) => ({ id: b.id, name: b.name, perf: bokoblinPerfs[i], ko: false })),
@@ -95,7 +107,6 @@ export function simularTorneo(build, era, dificultad = 'normal') {
       return b.perf - a.perf;
     });
 
-    // Award PUNTOS_TRIFORCE by finishing position
     allPerfs.forEach((p, posIdx) => {
       const pts = p.ko ? 0 : (PUNTOS_TRIFORCE[posIdx] ?? 0);
       if (p.id === 'link') {
@@ -117,6 +128,38 @@ export function simularTorneo(build, era, dificultad = 'normal') {
     const topRival = allPerfs.find(p => p.id !== 'link');
     const puntosRonda = ko ? 0 : (PUNTOS_TRIFORCE[linkPos - 1] ?? 0);
 
+    // Boss combat
+    let bossResult = null;
+    const jefe = mazmorra.boss_id ? getJefeById(mazmorra.boss_id) : null;
+    if (jefe && !ko) {
+      const linkBossPerf = calcLinkPerf(build, mazmorra);
+      const bossPerf = calcBossPerf(jefe, mazmorra, dificultadMult);
+      const bossVictoria = linkBossPerf > bossPerf;
+      const bossResistencia = !bossVictoria && linkBossPerf > bossPerf * 0.75;
+      let bossBonus = 0;
+      if (bossVictoria) { bossBonus = BOSS_BONUS[0]; linkStats.jefesVencidos++; }
+      else if (bossResistencia) bossBonus = BOSS_BONUS[1];
+      else bossBonus = BOSS_BONUS[2];
+      linkStats.puntos += bossBonus;
+      bossResult = {
+        jefe: jefe.name,
+        emoji: jefe.emoji,
+        victoria: bossVictoria,
+        resistencia: bossResistencia,
+        bonus: bossBonus,
+        descripcion: makeBossDescription(linkBossPerf, bossPerf, jefe, false),
+      };
+    } else if (jefe && ko) {
+      bossResult = {
+        jefe: jefe.name,
+        emoji: jefe.emoji,
+        victoria: false,
+        resistencia: false,
+        bonus: 0,
+        descripcion: makeBossDescription(0, 1, jefe, true),
+      };
+    }
+
     combatLog.push({
       mazmorra: mazmorra.name,
       emoji: mazmorra.emoji,
@@ -126,6 +169,7 @@ export function simularTorneo(build, era, dificultad = 'normal') {
       topRival: topRival?.name ?? '???',
       resultado: resultadoTag(linkPos, ko),
       descripcion: makeDescription(linkPos, mazmorra, ko, topRival?.name ?? 'un Bokoblin'),
+      bossResult,
     });
   }
 
