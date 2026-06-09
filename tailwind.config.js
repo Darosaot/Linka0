@@ -8,12 +8,22 @@ export default {
     extend: {
       colors: {
         zelda: {
-          gold: '#C8A832',
-          green: '#1a4a1a',
+          // Light palette (main UI) — warm sage green
+          bg: '#f0f5e8',        // very light sage, clearly green but airy
+          surface: '#f8faf4',   // card surface (near white with green tint)
+          border: '#d0ddc0',    // soft green border
+          // Text
+          ink: '#1c2e1c',       // near-black dark green
+          muted: '#627052',     // muted body text
+          // Accents
+          gold: '#8a6e00',      // gold readable on light bg
+          goldlight: '#C8A832', // gold for dark backgrounds
+          // Dark surfaces (simulation screen, badges)
+          green: '#2a5a2a',
           darkgreen: '#0d2b0d',
-          brown: '#5c3a1e',
-          blue: '#1a3a5c',
+          // Status
           red: '#8b1a1a',
+          blue: '#1a3a5c',
         }
       },
       fontFamily: {

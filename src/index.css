@@ -6,7 +6,7 @@
 
 @layer base {
   body {
-    @apply bg-zelda-darkgreen text-white;
+    @apply bg-zelda-bg text-zelda-ink;
     font-family: 'Segoe UI', system-ui, sans-serif;
   }
 

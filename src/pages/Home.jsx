@@ -1,9 +1,6 @@
 import { useState } from 'react';
 import useGameStore from '../stores/gameStore.js';
-import { ERA_LABELS } from '../utils/dataQueries.js';
 import Button from '../components/ui/Button.jsx';
-
-const ERAS = Object.entries(ERA_LABELS);
 
 const DIFICULTADES = [
   { id: 'explorador', label: '🌿 Explorador', desc: 'Los Bokoblins son más débiles. Ideal para empezar.' },
@@ -12,85 +9,97 @@ const DIFICULTADES = [
 ];
 
 export default function Home() {
-  const { setEra, setDificultad, startGame, era, dificultad } = useGameStore();
-  const [selEra, setSelEra] = useState(era || 'era_abierta');
-  const [selDif, setSelDif] = useState(dificultad || 'normal');
+  const { setDificultad, startGame } = useGameStore();
+  const [selDif, setSelDif] = useState('normal');
 
   function handleStart() {
-    setEra(selEra);
     setDificultad(selDif);
     startGame();
   }
 
   return (
-    <div className="min-h-screen bg-zelda-darkgreen flex flex-col items-center justify-center px-4 py-10 gap-8">
-      {/* Title */}
-      <div className="text-center">
-        <h1 className="text-5xl sm:text-6xl font-bold text-zelda-gold tracking-widest drop-shadow-lg">
-          LINKA0
-        </h1>
-        <p className="text-zelda-gold/70 text-sm mt-2 tracking-widest">⚔️ LINK vs BOKOBLINS ⚔️</p>
-        <p className="text-gray-300 text-xs mt-1">El torneo de las generaciones</p>
-      </div>
+    <div className="min-h-screen bg-zelda-bg px-6 py-10">
+      <div className="max-w-4xl mx-auto">
 
-      {/* Description */}
-      <div className="max-w-md text-center text-gray-300 text-sm leading-relaxed bg-zelda-green/50 border border-zelda-gold/30 rounded-xl px-6 py-4">
-        <p>
-          Equipa a <span className="text-zelda-gold font-bold">Link</span> con armas, armadura y compañeros
-          a través de un <span className="text-zelda-gold">sistema de cartas</span>. Luego, enfréntate
-          a <span className="text-zelda-gold">Bokoblins de distintas generaciones</span> en un torneo épico por las mazmorras de Hyrule.
+        {/* Top label */}
+        <p className="text-zelda-muted text-xs tracking-widest uppercase mb-4">
+          Torneo de las Generaciones · Hyrule
         </p>
-      </div>
 
-      {/* Era selection */}
-      <div className="w-full max-w-lg">
-        <h2 className="text-zelda-gold text-sm font-bold mb-3 tracking-wider">SELECCIONA UNA ERA</h2>
-        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-          {ERAS.map(([id, label]) => (
-            <button
-              key={id}
-              onClick={() => setSelEra(id)}
-              className={`rounded-lg border-2 px-3 py-2 text-sm font-semibold transition-all duration-150
-                ${selEra === id
-                  ? 'border-zelda-gold bg-zelda-green text-zelda-gold scale-[1.02]'
-                  : 'border-gray-600 bg-gray-900/50 text-gray-300 hover:border-zelda-gold/50 hover:text-zelda-gold/80'
-                }`}
-            >
-              {label}
-            </button>
+        {/* Title block */}
+        <div className="mb-10">
+          <h1 className="text-6xl sm:text-7xl font-black text-zelda-ink leading-none tracking-tight">
+            LINK<span className="text-zelda-gold">—</span>0
+          </h1>
+          <p className="text-zelda-ink font-black text-xl sm:text-2xl mt-3 uppercase leading-tight">
+            TIRA LA OCARINA.<br />
+            EQUIPA AL HÉROE.<br />
+            DERROTA A LOS BOKOBLINS.
+          </p>
+          <p className="text-zelda-muted text-sm mt-4 max-w-lg leading-relaxed">
+            Tira la ocarina: te aparece un ítem de cualquier era de Zelda. Elige uno,
+            completa los 10 huecos con ítems de distintas generaciones y simula —
+            ¿puede Link ganar el torneo de las generaciones?
+          </p>
+        </div>
+
+        {/* Difficulty selection */}
+        <div className="mb-8 max-w-lg">
+          <p className="text-zelda-muted text-xs font-bold tracking-widest uppercase mb-3">DIFICULTAD</p>
+          <div className="flex flex-col gap-2">
+            {DIFICULTADES.map(d => (
+              <button
+                key={d.id}
+                onClick={() => setSelDif(d.id)}
+                className={`rounded border px-4 py-3 text-left transition-all duration-100
+                  ${selDif === d.id
+                    ? 'bg-zelda-ink text-white border-zelda-ink'
+                    : 'bg-white text-zelda-ink border-zelda-border hover:border-zelda-ink'
+                  }`}
+              >
+                <span className="font-bold text-sm">{d.label}</span>
+                <span className={`block text-xs mt-0.5 ${selDif === d.id ? 'text-gray-300' : 'text-zelda-muted'}`}>
+                  {d.desc}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
+
+        {/* CTA */}
+        <Button onClick={handleStart} size="lg">
+          JUGAR AHORA →
+        </Button>
+
+        {/* Stats strip */}
+        <div className="mt-10 pt-6 border-t border-zelda-border grid grid-cols-3 gap-4 text-center max-w-sm">
+          {[
+            { n: '21', label: 'bokoblins' },
+            { n: '60+', label: 'ítems únicos' },
+            { n: '12', label: 'mazmorras' },
+          ].map(s => (
+            <div key={s.label}>
+              <div className="font-black text-xl text-zelda-ink">{s.n}</div>
+              <div className="text-zelda-muted text-xs uppercase tracking-wider">{s.label}</div>
+            </div>
           ))}
         </div>
-      </div>
 
-      {/* Difficulty selection */}
-      <div className="w-full max-w-lg">
-        <h2 className="text-zelda-gold text-sm font-bold mb-3 tracking-wider">DIFICULTAD</h2>
-        <div className="flex flex-col gap-2">
-          {DIFICULTADES.map(d => (
-            <button
-              key={d.id}
-              onClick={() => setSelDif(d.id)}
-              className={`rounded-lg border-2 px-4 py-3 text-left transition-all duration-150
-                ${selDif === d.id
-                  ? 'border-zelda-gold bg-zelda-green'
-                  : 'border-gray-600 bg-gray-900/50 hover:border-zelda-gold/40'
-                }`}
-            >
-              <div className={`font-bold text-sm ${selDif === d.id ? 'text-zelda-gold' : 'text-gray-300'}`}>{d.label}</div>
-              <div className="text-xs text-gray-400 mt-0.5">{d.desc}</div>
-            </button>
+        {/* Steps */}
+        <div className="mt-8 grid grid-cols-3 gap-0 border border-zelda-border rounded overflow-hidden text-sm">
+          {[
+            { n: '01', icon: '🎵', label: 'TOCA',   desc: 'Obtén ítems aleatorios de todas las eras de Zelda' },
+            { n: '02', icon: '⚙️', label: 'EQUIPA', desc: 'Combina espadas, armaduras y compañeros de distintas generaciones' },
+            { n: '03', icon: '⚔️', label: 'SIMULA', desc: 'Compite contra Bokoblins de toda la historia de Hyrule' },
+          ].map((s, i) => (
+            <div key={s.n} className={`bg-white p-4 ${i < 2 ? 'border-r border-zelda-border' : ''}`}>
+              <div className="text-zelda-gold font-black text-xs mb-1">{s.n} {s.icon} {s.label}</div>
+              <div className="text-zelda-muted text-xs leading-snug">{s.desc}</div>
+            </div>
           ))}
         </div>
+
       </div>
-
-      {/* Start button */}
-      <Button onClick={handleStart} size="lg" className="w-full max-w-lg">
-        ⚔️ COMENZAR AVENTURA
-      </Button>
-
-      <p className="text-gray-600 text-xs text-center">
-        Inspirado en F1sim · La leyenda continúa...
-      </p>
     </div>
   );
 }
