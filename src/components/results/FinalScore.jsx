@@ -12,19 +12,19 @@ function BuildSummary({ build }) {
           const item = build[slot.key];
           if (item === undefined || item === null) return null;
           const name = item.name;
-          const sub = item.game ? `${item.game}` : null;
+          const sub = item.game ?? null;
           const era = item.generation ? item.generation.replace('era_', '').replace('_', ' ') : null;
           return (
-            <div key={slot.key} className="flex items-center justify-between px-4 py-2 text-sm gap-4">
-              <div className="flex items-center gap-2 min-w-0">
-                <span className="text-zelda-muted text-xs shrink-0 w-32">{slot.label}</span>
-                <span className="font-bold text-zelda-ink truncate">{name}</span>
+            <div key={slot.key} className="px-4 py-2">
+              <div className="text-xs text-zelda-muted mb-0.5">{slot.label}</div>
+              <div className="flex items-baseline justify-between gap-2">
+                <span className="font-bold text-zelda-ink text-sm">{name}</span>
+                {sub && (
+                  <span className="text-xs text-zelda-muted whitespace-nowrap shrink-0">
+                    {sub}{era ? ` · ${era}` : ''}
+                  </span>
+                )}
               </div>
-              {sub && (
-                <span className="text-xs text-zelda-muted whitespace-nowrap shrink-0">
-                  {sub}{era ? ` · ${era}` : ''}
-                </span>
-              )}
             </div>
           );
         })}
