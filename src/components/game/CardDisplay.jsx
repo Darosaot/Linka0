@@ -1,13 +1,8 @@
 import StatBar from '../ui/StatBar.jsx';
 import GenerationBadge from '../ui/GenerationBadge.jsx';
 import { SLOT_LABELS } from '../../utils/dataQueries.js';
+import { calcSlotScore } from '../../utils/ratingEngine.js';
 import useGameStore from '../../stores/gameStore.js';
-
-function avgRating(attributes) {
-  if (!attributes) return 0;
-  const vals = Object.values(attributes);
-  return Math.round(vals.reduce((s, v) => s + v, 0) / vals.length);
-}
 
 function RatingBadge({ value }) {
   const color =
@@ -27,7 +22,7 @@ function ItemCard({ slotKey, item, onPick, disabled }) {
 
   const attrEntries = Object.entries(item.attributes || {}).slice(0, 4);
   const label = SLOT_LABELS[slotKey] || slotKey;
-  const avg = avgRating(item.attributes);
+  const avg = Math.round(calcSlotScore(slotKey, item));
 
   return (
     <div

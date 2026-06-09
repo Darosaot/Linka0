@@ -1,12 +1,53 @@
-import { calcTeamRating, getVeredicto } from '../../utils/ratingEngine.js';
+import { calcTeamRating, getVeredicto, SLOT_CONFIG } from '../../utils/ratingEngine.js';
+
+function BuildSummary({ build }) {
+  return (
+    <div className="bg-white border border-zelda-border rounded-xl overflow-hidden">
+      <div className="px-4 py-2 font-bold text-zelda-ink text-sm border-b border-zelda-border bg-zelda-surface">
+        🎒 Tu Equipamiento Final
+      </div>
+      <div className="divide-y divide-zelda-border">
+        {SLOT_CONFIG.map(slot => {
+          const item = build[slot.key];
+          if (item === undefined || item === null) return null;
+          const isNumeric = slot.key === 'rupias' || slot.key === 'corazones';
+          const name = isNumeric ? `${item} pts` : item.name;
+          const sub = !isNumeric && item.game ? `${item.game}` : null;
+          const era = !isNumeric && item.generation ? item.generation.replace('era_', '').replace('_', ' ') : null;
+          return (
+            <div key={slot.key} className="flex items-center justify-between px-4 py-2 text-sm gap-4">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="text-zelda-muted text-xs shrink-0 w-32">{slot.label}</span>
+                <span className="font-bold text-zelda-ink truncate">{name}</span>
+              </div>
+              {sub && (
+                <span className="text-xs text-zelda-muted whitespace-nowrap shrink-0">
+                  {sub}{era ? ` · ${era}` : ''}
+                </span>
+              )}
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
 
 export default function FinalScore({ build, resultados }) {
   if (!resultados) return null;
 
-  const { linkStats, totalRondas, maxPuntos } = resultados;
+  const { linkStats, totalRondas, maxPuntos, rivalAvgRating } = resultados;
   const rating = calcTeamRating(build);
   const { titulo, descripcion } = getVeredicto(rating);
   const pct = maxPuntos > 0 ? Math.round((linkStats.puntos / maxPuntos) * 100) : 0;
+
+  const ratingDiff = rating - (rivalAvgRating ?? rating);
+  const ratingDiffLabel = ratingDiff > 0
+    ? `+${ratingDiff} por encima de la media`
+    : ratingDiff < 0
+    ? `${ratingDiff} por debajo de la media`
+    : 'igual que la media';
+  const ratingDiffColor = ratingDiff > 0 ? 'text-green-700' : ratingDiff < 0 ? 'text-red-600' : 'text-zelda-muted';
 
   return (
     <div className="flex flex-col gap-5">
@@ -18,12 +59,16 @@ export default function FinalScore({ build, resultados }) {
         <div className="text-sm text-zelda-muted max-w-md mx-auto">{descripcion}</div>
         <div className="mt-3 flex justify-center gap-6 text-sm flex-wrap">
           <span className="text-zelda-muted">
-            Rating de equipamiento: <span className="font-black text-zelda-ink">{rating}/100</span>
+            Tu rating: <span className="font-black text-zelda-ink">{rating}/100</span>
           </span>
           <span className="text-zelda-muted">
-            Puntuación: <span className="font-black text-zelda-ink">{linkStats.puntos}/{maxPuntos}</span>
-            <span className="text-xs ml-1">({pct}%)</span>
+            Media rivales: <span className="font-black text-zelda-ink">{rivalAvgRating}/100</span>
           </span>
+          <span className={`text-xs font-bold ${ratingDiffColor}`}>{ratingDiffLabel}</span>
+        </div>
+        <div className="mt-2 text-sm text-zelda-muted">
+          Puntuación: <span className="font-black text-zelda-ink">{linkStats.puntos}/{maxPuntos}</span>
+          <span className="text-xs ml-1">({pct}%)</span>
         </div>
       </div>
 
@@ -55,6 +100,9 @@ export default function FinalScore({ build, resultados }) {
           />
         </div>
       </div>
+
+      {/* Build summary */}
+      <BuildSummary build={build} />
 
     </div>
   );
