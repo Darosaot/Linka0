@@ -1,4 +1,5 @@
 import bokoblinsData from '../data/bokoblins.json';
+import linksRivalesData from '../data/links_rivales.json';
 import espadasData from '../data/espadas.json';
 import armasSecundarasData from '../data/armas_secundarias.json';
 import armadurasData from '../data/armaduras.json';
@@ -84,6 +85,10 @@ export function getBokoblinsByGeneration(gen) {
 
 export function getAllBokoblins() {
   return bokoblinsData;
+}
+
+export function getAllLinksRivales() {
+  return linksRivalesData;
 }
 
 export function getAllMazmorras() {

@@ -1,5 +1,53 @@
 [
   {
+    "id": "ganon_nes",
+    "name": "Ganon",
+    "game": "The Legend of Zelda", "generation": "era_clasica", "year": 1986,
+    "emoji": "🐷",
+    "bio": "El Príncipe de las Tinieblas en su primera aparición. Invisible y letal, empuña un tridente que rompe cualquier escudo.",
+    "attributes": { "fuerza": 80, "defensa": 70, "magia": 75, "resistencia": 78, "velocidad": 50 }
+  },
+  {
+    "id": "ganon_alttp",
+    "name": "Ganon (El Oscuro)",
+    "game": "A Link to the Past", "generation": "era_clasica", "year": 1991,
+    "emoji": "🔱",
+    "bio": "Ganondorf transformado en bestia colosal en el Castillo Oscuro. Sus tres Trifuerzas lo hacen casi invulnerable.",
+    "attributes": { "fuerza": 88, "defensa": 82, "magia": 88, "resistencia": 85, "velocidad": 55 }
+  },
+  {
+    "id": "ganondorf_oot",
+    "name": "Ganondorf (Rey del Mal)",
+    "game": "Ocarina of Time", "generation": "era_3d", "year": 1998,
+    "emoji": "👹",
+    "bio": "El Gran Rey del Mal que convirtió Hyrule en un reino de sombras durante 7 años. Maestro de la magia oscura.",
+    "attributes": { "fuerza": 85, "defensa": 78, "magia": 95, "resistencia": 82, "velocidad": 65 }
+  },
+  {
+    "id": "ganondorf_ww",
+    "name": "Ganondorf (El Último Deseo)",
+    "game": "The Wind Waker", "generation": "era_viento", "year": 2002,
+    "emoji": "💧",
+    "bio": "Un Ganondorf que despertó bajo el Gran Mar. Quiso usar la Trifuerza para traer lluvia a su pueblo, pero la oscuridad lo consumió.",
+    "attributes": { "fuerza": 80, "defensa": 72, "magia": 90, "resistencia": 78, "velocidad": 70 }
+  },
+  {
+    "id": "ganondorf_tp",
+    "name": "Ganondorf (El Ejecutado)",
+    "game": "Twilight Princess", "generation": "era_crepusculo", "year": 2006,
+    "emoji": "🐺",
+    "bio": "El reo que sobrevivió su ejecución gracias a la Trifuerza. La Espada del Ocaso hundida en su pecho no fue suficiente.",
+    "attributes": { "fuerza": 92, "defensa": 85, "magia": 88, "resistencia": 90, "velocidad": 72 }
+  },
+  {
+    "id": "demise",
+    "name": "Demise",
+    "game": "Skyward Sword", "generation": "era_cielo", "year": 2011,
+    "emoji": "⛈️",
+    "bio": "El Dios Demonio original, fuente de todo mal. Su maldición creó el ciclo eterno de Ganondorf. El enemigo definitivo de la historia.",
+    "attributes": { "fuerza": 95, "defensa": 88, "magia": 92, "resistencia": 95, "velocidad": 68 }
+  },
+  {
     "id": "aquamentus",
     "name": "Aquamentus",
     "game": "The Legend of Zelda", "generation": "era_clasica", "year": 1986,
