@@ -1,6 +1,7 @@
 import { getAllMazmorras } from './dataQueries.js';
 import { calcTeamRating } from './ratingEngine.js';
 import { buildLinksRivales } from './rivalBuilder.js';
+import { calcSetMultiplier, getActiveSets } from './setEngine.js';
 
 const PUNTOS_DUELO = { victoria_clara: 25, victoria_ajustada: 18, derrota_ajustada: 8, derrota: 4, ko: 0 };
 
@@ -10,12 +11,12 @@ function avgModifier(mods) {
   return (mods.fuerza_weight + mods.defensa_weight + mods.agilidad_weight + mods.magia_weight) / 4;
 }
 
-function calcLinkPerf(build, mazmorra) {
+function calcLinkPerf(build, mazmorra, setMult) {
   const base = calcTeamRating(build);
   const mod = avgModifier(mazmorra.modifiers);
   const rainBonus = Math.random() < mazmorra.modifiers.lluvia_probability && build.botas ? 3 : 0;
   const variance = (Math.random() - 0.5) * 18;
-  return Math.max(0, base * mod + rainBonus + variance);
+  return Math.max(0, base * mod * setMult + rainBonus + variance);
 }
 
 function calcRivalLinkPerf(rival, mazmorra, dificultadMult) {
@@ -79,12 +80,13 @@ export function simularTorneo(build, _era, dificultad = 'normal') {
     kos: 0,
   };
   const combatLog = [];
+  const setMult = calcSetMultiplier(build);
 
   for (const rival of rivales) {
     const mazmorra = allMazmorras[Math.floor(Math.random() * allMazmorras.length)];
     const ko = Math.random() < calcProbKO();
 
-    const linkPerfDuel = ko ? -1 : calcLinkPerf(build, mazmorra);
+    const linkPerfDuel = ko ? -1 : calcLinkPerf(build, mazmorra, setMult);
     const rivalPerf = calcRivalLinkPerf(rival, mazmorra, dificultadMult);
     const duelo = duelResult(linkPerfDuel, rivalPerf, ko);
 
@@ -124,5 +126,6 @@ export function simularTorneo(build, _era, dificultad = 'normal') {
     totalRondas: rivales.length,
     maxPuntos,
     rivalAvgRating,
+    activeSets: getActiveSets(build),
   };
 }

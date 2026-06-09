@@ -1,4 +1,5 @@
 import { calcTeamRating, getVeredicto, SLOT_CONFIG } from '../../utils/ratingEngine.js';
+import { SET_ERA_COLORS } from '../../utils/setEngine.js';
 
 function BuildSummary({ build }) {
   return (
@@ -41,10 +42,40 @@ function RatingBar({ value, max = 100, color = 'bg-zelda-gold' }) {
   );
 }
 
+function ActiveSetsPanel({ activeSets }) {
+  if (!activeSets?.length) return null;
+  return (
+    <div className="bg-white border-2 border-zelda-gold rounded-xl overflow-hidden">
+      <div className="px-4 py-2 font-bold text-zelda-ink text-sm border-b border-amber-200 bg-amber-50">
+        ⚡ Sets Activados ({activeSets.length})
+      </div>
+      <div className="divide-y divide-zelda-border">
+        {activeSets.map(set => {
+          const colors = SET_ERA_COLORS[set.era] ?? SET_ERA_COLORS.era_abierta;
+          return (
+            <div key={set.id} className="px-4 py-3 flex items-start gap-3">
+              <span className="text-2xl shrink-0">{set.emoji}</span>
+              <div className="flex-1 min-w-0">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <span className="font-black text-zelda-ink text-sm">{set.name}</span>
+                  <span className={`text-xs font-bold px-2 py-0.5 rounded border ${colors.bg} ${colors.text} ${colors.border}`}>
+                    {set.bonus_label}
+                  </span>
+                </div>
+                <p className="text-xs text-zelda-muted mt-0.5 leading-snug">{set.descripcion}</p>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
+}
+
 export default function FinalScore({ build, resultados }) {
   if (!resultados) return null;
 
-  const { linkStats, maxPuntos, rivalAvgRating } = resultados;
+  const { linkStats, maxPuntos, rivalAvgRating, activeSets } = resultados;
   const rating = calcTeamRating(build);
   const pct = maxPuntos > 0 ? Math.round((linkStats.puntos / maxPuntos) * 100) : 0;
   const { titulo, descripcion } = getVeredicto(pct);
@@ -134,6 +165,9 @@ export default function FinalScore({ build, resultados }) {
           </div>
         ))}
       </div>
+
+      {/* Active set bonuses */}
+      <ActiveSetsPanel activeSets={activeSets} />
 
       {/* Build summary */}
       <BuildSummary build={build} />

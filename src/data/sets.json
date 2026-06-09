@@ -1,0 +1,222 @@
+[
+  {
+    "id": "set_heroe_clasico",
+    "name": "Set del Héroe Clásico",
+    "emoji": "⚔️",
+    "era": "era_clasica",
+    "piezas": ["espada_dorada_alttp", "arco_plata", "botas_pegaso"],
+    "bonus_mult": 1.15,
+    "bonus_label": "+15%",
+    "descripcion": "La Espada Dorada, el Arco de Plata y las Botas Pegaso: el arsenal completo del héroe que venció a Ganon por primera vez."
+  },
+  {
+    "id": "set_capa_magica",
+    "name": "Set de la Capa Mágica",
+    "emoji": "🪄",
+    "era": "era_clasica",
+    "piezas": ["red_mail", "capa_magica"],
+    "bonus_mult": 1.10,
+    "bonus_label": "+10%",
+    "descripcion": "El Correo Rojo y la Capa Mágica combinan defensa física con invulnerabilidad temporal. Un combo devastador."
+  },
+  {
+    "id": "set_heroe_tiempo",
+    "name": "Set del Héroe del Tiempo",
+    "emoji": "⏰",
+    "era": "era_3d",
+    "piezas": ["espada_maestra_oot", "ocarina_tiempo", "arco_luz"],
+    "bonus_mult": 1.18,
+    "bonus_label": "+18%",
+    "descripcion": "La Espada Maestra, la Ocarina del Tiempo y el Arco de Luz: la trinidad sagrada que selló a Ganondorf en el Sagrado Reino."
+  },
+  {
+    "id": "set_gran_hada",
+    "name": "Set de la Gran Hada",
+    "emoji": "🧚",
+    "era": "era_3d",
+    "piezas": ["espada_hadas_gran", "gran_hada"],
+    "bonus_mult": 1.10,
+    "bonus_label": "+10%",
+    "descripcion": "La Espada de la Gran Hada, forjada con su magia, alcanza su pleno potencial cuando la Gran Hada misma guía al héroe."
+  },
+  {
+    "id": "set_zora",
+    "name": "Set del Pueblo Zora",
+    "emoji": "🐟",
+    "era": "era_3d",
+    "piezas": ["armadura_zora", "sabio_zora", "arco_hadas"],
+    "bonus_mult": 1.12,
+    "bonus_label": "+12%",
+    "descripcion": "La Armadura Zora, el apoyo de la Princesa Ruto y el Arco de las Hadas forman el equipo perfecto para combatir en cualquier entorno."
+  },
+  {
+    "id": "set_mascaras",
+    "name": "Set de las Máscaras",
+    "emoji": "🎭",
+    "era": "era_3d",
+    "piezas": ["mascara_deku_fierce", "botas_conejo", "tatl"],
+    "bonus_mult": 1.15,
+    "bonus_label": "+15%",
+    "descripcion": "La Máscara de la Divinidad Feroz desata un poder inigualable. Las Botas de Conejo y Tatl completan el arsenal de Termina."
+  },
+  {
+    "id": "set_heroe_viento",
+    "name": "Set del Héroe del Viento",
+    "emoji": "⛵",
+    "era": "era_viento",
+    "piezas": ["espada_viento", "boton_panico", "arco_viento"],
+    "bonus_mult": 1.18,
+    "bonus_label": "+18%",
+    "descripcion": "La Espada del Viento, la Varita de los Vientos y el Arco del Viento: el equipo completo del Toon Link que surcó el Gran Mar."
+  },
+  {
+    "id": "set_gran_mar",
+    "name": "Set del Gran Mar",
+    "emoji": "🌊",
+    "era": "era_viento",
+    "piezas": ["armadura_magica_ww", "botas_mar", "rey_hadas_mar"],
+    "bonus_mult": 1.12,
+    "bonus_label": "+12%",
+    "descripcion": "La Armadura Mágica, las Botas del Navegante y la sabiduría del Rey de las Hadas del Mar: el poder del océano de Hyrule."
+  },
+  {
+    "id": "set_heroe_sombras",
+    "name": "Set del Héroe de las Sombras",
+    "emoji": "🐺",
+    "era": "era_crepusculo",
+    "piezas": ["espada_maestra_tp", "forma_lobo", "midna"],
+    "bonus_mult": 1.20,
+    "bonus_label": "+20%",
+    "descripcion": "La Espada Maestra del Crepúsculo, la Transformación de Lobo y Midna forman el vínculo más poderoso de la historia de Hyrule."
+  },
+  {
+    "id": "set_crepusculo",
+    "name": "Set del Crepúsculo",
+    "emoji": "🌒",
+    "era": "era_crepusculo",
+    "piezas": ["armadura_crepusculo", "botas_crepusculo", "hero_shade"],
+    "bonus_mult": 1.15,
+    "bonus_label": "+15%",
+    "descripcion": "La Armadura y Botas del Crepúsculo, con la guía de la Sombra del Héroe, otorgan el legado completo del héroe caído."
+  },
+  {
+    "id": "set_goron",
+    "name": "Set Goron",
+    "emoji": "🪨",
+    "era": "era_crepusculo",
+    "piezas": ["armadura_goron", "botas_goron_tp", "darunia"],
+    "bonus_mult": 1.13,
+    "bonus_label": "+13%",
+    "descripcion": "La Armadura Goron, las Botas Goron y la amistad de Darunia ofrecen una resistencia al fuego y un poder de ataque sin igual."
+  },
+  {
+    "id": "set_caballero_cielo",
+    "name": "Set del Caballero del Cielo",
+    "emoji": "☁️",
+    "era": "era_cielo",
+    "piezas": ["espada_cielo", "armadura_cielo", "fi"],
+    "bonus_mult": 1.18,
+    "bonus_label": "+18%",
+    "descripcion": "La Espada del Cielo forjada como Espada Maestra, la Armadura del Caballero y la guía de Fi: el héroe de la Academia del Cielo al máximo."
+  },
+  {
+    "id": "set_diosa",
+    "name": "Set de la Diosa",
+    "emoji": "✨",
+    "era": "era_cielo",
+    "piezas": ["espada_diosa", "fuelle_sagrado", "arco_sacred_llamas"],
+    "bonus_mult": 1.15,
+    "bonus_label": "+15%",
+    "descripcion": "La Espada de la Diosa, el Fuelle Sagrado y el Arco de la Llama Sagrada: armas benditas por la propia Hylia."
+  },
+  {
+    "id": "set_ancestral",
+    "name": "Set Ancestral",
+    "emoji": "🤖",
+    "era": "era_abierta",
+    "piezas": ["armadura_ancient", "botas_ancient", "arco_ancient"],
+    "bonus_mult": 1.18,
+    "bonus_label": "+18%",
+    "descripcion": "Armadura, Botas y Arco Ancestrales: la tecnología Sheikah al máximo activa la Proficiencia Antigua, aumentando el daño contra Guardianes."
+  },
+  {
+    "id": "set_divinidad_feroz",
+    "name": "Set de la Divinidad Feroz",
+    "emoji": "💀",
+    "era": "era_abierta",
+    "piezas": ["espada_fierce_deity", "botas_fierce_deity"],
+    "bonus_mult": 1.12,
+    "bonus_label": "+12%",
+    "descripcion": "La Espada de la Deidad Feroz y sus Botas despiertan el espíritu del guerrero más poderoso jamás conocido en Termina."
+  },
+  {
+    "id": "set_zonai",
+    "name": "Set Zonai",
+    "emoji": "🐉",
+    "era": "era_abierta",
+    "piezas": ["armadura_zonaite", "botas_zonaite", "konstrukt_lanza", "fuse"],
+    "bonus_mult": 1.22,
+    "bonus_label": "+22%",
+    "descripcion": "Armadura y Botas Zonaite, Lanza Konstrukt y la habilidad de Fusión: el poder de los constructores del cielo completamente desbloqueado."
+  },
+  {
+    "id": "set_penumbra",
+    "name": "Set de la Penumbra",
+    "emoji": "🌑",
+    "era": "era_abierta",
+    "piezas": ["espada_gloom", "armadura_profundidades", "arco_gloom"],
+    "bonus_mult": 1.16,
+    "bonus_label": "+16%",
+    "descripcion": "La Espada de la Penumbra, la Armadura de las Profundidades y el Arco de la Penumbra: el poder oscuro del reino subterráneo."
+  },
+  {
+    "id": "set_rito",
+    "name": "Set Rito",
+    "emoji": "🦅",
+    "era": "era_abierta",
+    "piezas": ["armadura_rito", "botas_rito", "revali"],
+    "bonus_mult": 1.13,
+    "bonus_label": "+13%",
+    "descripcion": "La Armadura Rito, las Botas Rito y el dominio de Revali sobre el viento otorgan una movilidad y velocidad de ataque excepcionales."
+  },
+  {
+    "id": "set_sheikah",
+    "name": "Set Sheikah",
+    "emoji": "👁️",
+    "era": "era_abierta",
+    "piezas": ["armadura_divinidad", "tablero_sheikah", "purah"],
+    "bonus_mult": 1.15,
+    "bonus_label": "+15%",
+    "descripcion": "La Armadura de la Divinidad, el Tablero Sheikah y la inventiva de Purah combinan mística y tecnología para un rendimiento óptimo."
+  },
+  {
+    "id": "set_zelda_champion",
+    "name": "Set del Campeón",
+    "emoji": "🏆",
+    "era": "era_abierta",
+    "piezas": ["espada_maestra_botw", "zelda_botw", "rauru"],
+    "bonus_mult": 1.18,
+    "bonus_label": "+18%",
+    "descripcion": "La Espada Maestra era abierta, la guía de Zelda y la sabiduría del Rey Rauru: el equipo que salvó Hyrule de Ganondorf una vez más."
+  },
+  {
+    "id": "set_nieve",
+    "name": "Set de Nieve",
+    "emoji": "❄️",
+    "era": "era_abierta",
+    "piezas": ["armadura_nieve", "botas_nieve"],
+    "bonus_mult": 1.08,
+    "bonus_label": "+8%",
+    "descripcion": "El Conjunto de Plumón y las Botas de Nieve ofrecen resistencia al frío y movilidad perfecta en terrenos nevados."
+  },
+  {
+    "id": "set_gerudo",
+    "name": "Set Gerudo",
+    "emoji": "🌵",
+    "era": "era_abierta",
+    "piezas": ["armadura_voe_desierto", "lanza_gerudo"],
+    "bonus_mult": 1.10,
+    "bonus_label": "+10%",
+    "descripcion": "La Armadura Voe del Desierto y la Lanza Gerudo: el equipo de los guerreros del desierto que han resistido las tormentas de arena durante siglos."
+  }
+]

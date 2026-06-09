@@ -2,6 +2,7 @@ import StatBar from '../ui/StatBar.jsx';
 import GenerationBadge from '../ui/GenerationBadge.jsx';
 import { SLOT_LABELS } from '../../utils/dataQueries.js';
 import { calcSlotScore } from '../../utils/ratingEngine.js';
+import { getSetForItem, getPartialSets, SET_ERA_COLORS } from '../../utils/setEngine.js';
 import useGameStore from '../../stores/gameStore.js';
 
 function RatingBadge({ value }) {
@@ -17,7 +18,34 @@ function RatingBadge({ value }) {
   );
 }
 
-function ItemCard({ slotKey, item, onPick, disabled }) {
+function SetBadge({ item, build }) {
+  const set = getSetForItem(item?.id);
+  if (!set) return null;
+
+  const partial = getPartialSets(build).find(p => p.set.id === set.id);
+  const count = partial?.count ?? 0;
+  const total = set.piezas.length;
+  const complete = count >= total;
+
+  const colors = SET_ERA_COLORS[set.era] ?? SET_ERA_COLORS.era_abierta;
+
+  if (complete) {
+    return (
+      <span className="inline-flex items-center gap-1 rounded border px-1.5 py-0.5 text-xs font-bold bg-zelda-gold text-white border-amber-500">
+        {set.emoji} {set.name} ✓
+      </span>
+    );
+  }
+
+  return (
+    <span className={`inline-flex items-center gap-1 rounded border px-1.5 py-0.5 text-xs font-medium ${colors.bg} ${colors.text} ${colors.border}`}>
+      {set.emoji} {set.name}
+      {count > 0 && <span className="font-bold">{count}/{total}</span>}
+    </span>
+  );
+}
+
+function ItemCard({ slotKey, item, onPick, disabled, build }) {
   if (!item) return null;
 
   const attrEntries = Object.entries(item.attributes || {}).slice(0, 4);
@@ -39,6 +67,7 @@ function ItemCard({ slotKey, item, onPick, disabled }) {
         <RatingBadge value={avg} />
       </div>
       <GenerationBadge generation={item.generation} />
+      <SetBadge item={item} build={build} />
       <p className="text-xs text-zelda-muted leading-snug line-clamp-2">{item.bio}</p>
       <div className="flex flex-col gap-1 mt-1">
         {attrEntries.map(([k, v]) => (
@@ -68,6 +97,7 @@ export default function CardDisplay() {
             item={items[slot]}
             onPick={pickItem}
             disabled={build[slot] !== undefined}
+            build={build}
           />
         );
       })}
