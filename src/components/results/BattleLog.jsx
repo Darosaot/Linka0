@@ -45,7 +45,6 @@ export default function BattleLog({ combatLog }) {
             </div>
             <div className="text-right">
               <div className="text-xs text-zelda-muted">Arena: {c.arenaEmoji} {c.mazmorra}</div>
-              <div className="font-black text-zelda-gold text-sm">+{c.puntosRonda} ⭐</div>
             </div>
           </div>
 
