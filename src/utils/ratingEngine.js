@@ -1,28 +1,24 @@
 // Slot weights — must sum to 1.0
 export const SLOT_WEIGHTS = {
-  espada1: 0.24,
-  armadura: 0.17,
-  habilidad: 0.16,
-  espada2: 0.10,
-  companero: 0.10,
-  botas: 0.06,
+  espada1: 0.26,
+  armadura: 0.18,
+  habilidad: 0.17,
+  espada2: 0.11,
+  companero: 0.11,
+  botas: 0.07,
   maestro: 0.05,
   arco: 0.05,
-  rupias: 0.04,
-  corazones: 0.03,
 };
 
 export const SLOT_CONFIG = [
-  { key: 'espada1',   label: '⚔️ Espada Principal',   weight: 0.24 },
-  { key: 'armadura',  label: '🛡️ Armadura',            weight: 0.17 },
-  { key: 'habilidad', label: '✨ Habilidad Especial',  weight: 0.16 },
-  { key: 'espada2',   label: '🗡️ Arma Secundaria',     weight: 0.10 },
-  { key: 'companero', label: '🧚 Compañero',           weight: 0.10 },
-  { key: 'botas',     label: '👟 Botas',               weight: 0.06 },
+  { key: 'espada1',   label: '⚔️ Espada Principal',   weight: 0.26 },
+  { key: 'armadura',  label: '🛡️ Armadura',            weight: 0.18 },
+  { key: 'habilidad', label: '✨ Habilidad Especial',  weight: 0.17 },
+  { key: 'espada2',   label: '🗡️ Arma Secundaria',     weight: 0.11 },
+  { key: 'companero', label: '🧚 Compañero',           weight: 0.11 },
+  { key: 'botas',     label: '👟 Botas',               weight: 0.07 },
   { key: 'maestro',   label: '📜 Maestro',             weight: 0.05 },
   { key: 'arco',      label: '🏹 Arco',                weight: 0.05 },
-  { key: 'rupias',    label: '💎 Rupias',              weight: 0.04 },
-  { key: 'corazones', label: '❤️ Corazones',           weight: 0.03 },
 ];
 
 function scoreEspada(item) {
@@ -99,15 +95,7 @@ export function calcTeamRating(build) {
     const item = build[slot.key];
     if (!item) continue;
 
-    let rawScore;
-    if (slot.key === 'rupias') {
-      rawScore = typeof item === 'number' ? item : 0;
-    } else if (slot.key === 'corazones') {
-      rawScore = typeof item === 'number' ? item : 0;
-    } else {
-      rawScore = calcSlotScore(slot.key, item);
-    }
-
+    const rawScore = calcSlotScore(slot.key, item);
     weightedScore += rawScore * slot.weight;
     totalWeight += slot.weight;
   }

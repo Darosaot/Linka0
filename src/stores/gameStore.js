@@ -14,8 +14,6 @@ const EMPTY_BUILD = {
   botas: undefined,
   maestro: undefined,
   arco: undefined,
-  rupias: undefined,
-  corazones: undefined,
 };
 
 const useGameStore = create((set, get) => ({
@@ -50,10 +48,8 @@ const useGameStore = create((set, get) => ({
     const { build } = get();
 
     const emptySlots = ITEM_SLOTS.filter(slot => build[slot] === undefined);
-    const needsRupias = build.rupias === undefined;
-    const needsCorazones = build.corazones === undefined;
 
-    if (emptySlots.length === 0 && !needsRupias && !needsCorazones) {
+    if (emptySlots.length === 0) {
       get().triggerSimulation();
       return;
     }
@@ -67,13 +63,6 @@ const useGameStore = create((set, get) => ({
       }
     }
 
-    if (needsRupias) {
-      items.rupias = 35 + Math.floor(Math.random() * 55); // 35–90
-    }
-    if (needsCorazones) {
-      items.corazones = 35 + Math.floor(Math.random() * 55); // 35–90
-    }
-
     set(state => ({
       cartaActual: { items },
       rollCount: state.rollCount + 1,
@@ -84,10 +73,7 @@ const useGameStore = create((set, get) => ({
     const { build } = get();
     const newBuild = { ...build, [slotKey]: item };
 
-    const allFilled =
-      ITEM_SLOTS.every(s => newBuild[s] !== undefined) &&
-      newBuild.rupias !== undefined &&
-      newBuild.corazones !== undefined;
+    const allFilled = ITEM_SLOTS.every(s => newBuild[s] !== undefined);
 
     set({ build: newBuild, cartaActual: null });
 
@@ -128,20 +114,12 @@ const useGameStore = create((set, get) => ({
 
   getEmptySlots: () => {
     const { build } = get();
-    return SLOT_CONFIG.filter(s => {
-      if (s.key === 'rupias') return build.rupias === undefined;
-      if (s.key === 'corazones') return build.corazones === undefined;
-      return build[s.key] === undefined;
-    });
+    return SLOT_CONFIG.filter(s => build[s.key] === undefined);
   },
 
   getFilledSlotCount: () => {
     const { build } = get();
-    return SLOT_CONFIG.filter(s => {
-      if (s.key === 'rupias') return build.rupias !== undefined;
-      if (s.key === 'corazones') return build.corazones !== undefined;
-      return build[s.key] !== undefined;
-    }).length;
+    return SLOT_CONFIG.filter(s => build[s.key] !== undefined).length;
   },
 }));
 
