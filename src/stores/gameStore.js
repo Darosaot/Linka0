@@ -110,7 +110,6 @@ const useGameStore = create((set, get) => ({
     const { build, dificultad } = get();
 
     setTimeout(() => {
-      // Era is 'todas' — Bokoblins drawn from all generations
       const resultados = simularTorneo(build, 'todas', dificultad);
       set({ resultados, fase: 'resultados' });
     }, 1400);
