@@ -46,8 +46,8 @@ export default function FinalScore({ build, resultados }) {
 
   const { linkStats, maxPuntos, rivalAvgRating } = resultados;
   const rating = calcTeamRating(build);
-  const { titulo, descripcion } = getVeredicto(rating);
   const pct = maxPuntos > 0 ? Math.round((linkStats.puntos / maxPuntos) * 100) : 0;
+  const { titulo, descripcion } = getVeredicto(pct);
 
   const ratingDiff = rating - (rivalAvgRating ?? rating);
   const diffPositive = ratingDiff > 0;
