@@ -1,38 +1,22 @@
-const RESULTADO_STYLES = {
-  victoria: 'border-amber-400 bg-amber-50',
-  podio:    'border-green-400 bg-green-50',
-  neutral:  'border-zelda-border bg-white',
-  derrota:  'border-red-400 bg-red-50',
-  ko:       'border-red-600 bg-red-100',
-};
-
-const RESULTADO_LABEL = {
-  victoria: '🏆 1.º',
-  podio:    '🥈 Podio',
-  neutral:  '— Mid',
-  derrota:  '❌ Derrota',
-  ko:       '💀 K.O.',
-};
-
-function BossResult({ boss }) {
-  if (!boss) return null;
-  const style = boss.victoria
-    ? 'bg-amber-100 border-amber-400 text-amber-800'
-    : boss.resistencia
-    ? 'bg-blue-50 border-blue-300 text-blue-800'
-    : 'bg-red-50 border-red-300 text-red-800';
+function DuelRow({ label, result, desc }) {
+  const color = (result?.tag === 'victoria_clara' || result?.tag === 'victoria')
+    ? 'text-green-700'
+    : (result?.tag === 'victoria_ajustada')
+    ? 'text-amber-700'
+    : (result?.tag === 'derrota_ajustada' || result?.tag === 'resistencia')
+    ? 'text-blue-700'
+    : 'text-red-600';
 
   return (
-    <div className={`mt-2 rounded border px-3 py-2 text-xs ${style}`}>
+    <div className="mt-2 text-xs">
       <div className="flex items-center justify-between gap-2">
-        <span className="font-bold">
-          {boss.emoji} Jefe: {boss.jefe}
-        </span>
-        {boss.bonus > 0 && (
-          <span className="font-black text-zelda-gold">+{boss.bonus} ⭐</span>
-        )}
+        <span className="font-bold text-zelda-ink">{label}</span>
+        <div className="flex items-center gap-2">
+          <span className={`font-bold ${color}`}>{result?.label}</span>
+          <span className="font-black text-zelda-gold">+{result?.puntos ?? 0} ⭐</span>
+        </div>
       </div>
-      <p className="mt-0.5 opacity-90 leading-snug">{boss.descripcion}</p>
+      {desc && <p className="mt-0.5 text-zelda-muted leading-snug">{desc}</p>}
     </div>
   );
 }
@@ -41,31 +25,52 @@ export default function BattleLog({ combatLog }) {
   if (!combatLog?.length) return null;
 
   return (
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-3">
       {combatLog.map((c, i) => (
-        <div
-          key={i}
-          className={`rounded border-2 p-4 ${RESULTADO_STYLES[c.resultado] ?? RESULTADO_STYLES.neutral}`}
-        >
+        <div key={i} className={`rounded border-2 p-4 ${c.cardStyle}`}>
+
+          {/* Header: rival Link */}
           <div className="flex items-start justify-between gap-2 flex-wrap">
             <div className="flex items-center gap-2">
-              <span className="text-xl">{c.emoji}</span>
+              <span className="text-2xl">{c.rival.emoji}</span>
               <div>
-                <div className="font-bold text-zelda-ink text-sm">{c.mazmorra}</div>
-                <div className="text-xs text-zelda-muted">
-                  Ganó: <span className="font-semibold">{c.topRival}</span>
-                </div>
+                <div className="font-black text-zelda-ink text-sm">{c.rival.name}</div>
+                <div className="text-xs text-zelda-muted">{c.rival.game} · {c.rival.year}</div>
               </div>
             </div>
-            <div className="flex flex-col items-end gap-0.5">
-              <span className="font-bold text-sm text-zelda-ink">
-                {RESULTADO_LABEL[c.resultado]} · Pos {c.linkPos}
-              </span>
-              <span className="font-black text-zelda-gold text-sm">+{c.puntos} ⭐</span>
+            <div className="text-right">
+              <div className="text-xs text-zelda-muted">Arena: {c.arenaEmoji} {c.mazmorra}</div>
+              <div className="font-black text-zelda-gold text-sm">+{c.puntosRonda} ⭐ esta ronda</div>
             </div>
           </div>
-          <p className="text-xs text-zelda-muted mt-2 leading-snug">{c.descripcion}</p>
-          <BossResult boss={c.bossResult} />
+
+          {/* Gear preview */}
+          <div className="mt-1.5 flex flex-wrap gap-1">
+            {c.rival.equipamiento?.map(item => (
+              <span key={item} className="text-xs bg-white border border-zelda-border rounded px-1.5 py-0.5 text-zelda-muted">
+                {item}
+              </span>
+            ))}
+          </div>
+
+          <div className="mt-2 border-t border-zelda-border pt-2 flex flex-col gap-0.5">
+            {/* Duel result */}
+            <DuelRow
+              label={`⚔️ Duelo vs ${c.rival.alias ?? c.rival.name}`}
+              result={c.duelo}
+              desc={c.duelDesc}
+            />
+
+            {/* Boss result */}
+            {c.jefe && (
+              <DuelRow
+                label={`${c.jefe.emoji} Jefe: ${c.jefe.name}`}
+                result={c.boss}
+                desc={c.bossDesc}
+              />
+            )}
+          </div>
+
         </div>
       ))}
     </div>

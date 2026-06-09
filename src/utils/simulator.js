@@ -1,15 +1,13 @@
 import { getAllMazmorras, getJefeById } from './dataQueries.js';
 import { calcTeamRating } from './ratingEngine.js';
-import { buildBokoblinRivalesForEra } from './rivalBuilder.js';
+import { buildLinksRivales } from './rivalBuilder.js';
 
-const PUNTOS_TRIFORCE = [25, 18, 15, 12, 10, 8, 6, 4, 2, 1, 0, 0, 0, 0, 0];
-const BOSS_BONUS = [15, 8, 4, 0]; // victoria, resistencia, derrota, ko
+// Points for duel vs rival Link
+const PUNTOS_DUELO = { victoria_clara: 25, victoria_ajustada: 18, derrota_ajustada: 8, derrota: 4, ko: 0 };
+// Points for boss fight
+const PUNTOS_JEFE = { victoria: 15, resistencia: 8, derrota: 4, ko: 0 };
 
-const DIFICULTAD_MULT = {
-  explorador: 0.82,
-  normal: 1.00,
-  leyenda: 1.18,
-};
+const DIFICULTAD_MULT = { explorador: 0.80, normal: 1.00, leyenda: 1.22 };
 
 function avgModifier(mods) {
   return (mods.fuerza_weight + mods.defensa_weight + mods.agilidad_weight + mods.magia_weight) / 4;
@@ -23,9 +21,9 @@ function calcLinkPerf(build, mazmorra) {
   return Math.max(0, base * mod + rainBonus + variance);
 }
 
-function calcBokoblinPerf(bokoblin, mazmorra, dificultadMult) {
-  const { fuerza = 0, defensa = 0, agilidad = 0, astucia = 0, resistencia = 0 } = bokoblin.attributes;
-  const base = fuerza * 0.35 + defensa * 0.20 + agilidad * 0.25 + astucia * 0.15 + resistencia * 0.05;
+function calcRivalLinkPerf(rival, mazmorra, dificultadMult) {
+  const { poder = 0, defensa = 0, agilidad = 0, magia = 0, resistencia = 0 } = rival.attributes;
+  const base = poder * 0.35 + defensa * 0.20 + agilidad * 0.25 + magia * 0.15 + resistencia * 0.05;
   const mod = avgModifier(mazmorra.modifiers);
   const ambushBonus = Math.random() < mazmorra.modifiers.emboscada_probability ? 4 : 0;
   const variance = (Math.random() - 0.5) * 16;
@@ -37,154 +35,126 @@ function calcBossPerf(jefe, mazmorra, dificultadMult) {
   const base = fuerza * 0.30 + defensa * 0.20 + magia * 0.25 + resistencia * 0.15 + velocidad * 0.10;
   const mod = avgModifier(mazmorra.modifiers);
   const variance = (Math.random() - 0.5) * 14;
-  // Bosses are naturally harder — 1.3x multiplier
   return Math.max(0, base * mod * dificultadMult * 1.3 + variance);
 }
 
 function calcProbKO(build) {
   const corazones = build.corazones ?? 50;
-  return Math.max(0.02, (100 - corazones) / 100 * 0.13);
+  return Math.max(0.02, (100 - corazones) / 100 * 0.12);
 }
 
-function makeBossDescription(linkPerf, bossPerf, jefe, ko) {
-  if (ko) return `💀 ¡${jefe.name} venció a Link! El jefe era demasiado poderoso esta vez.`;
-  if (linkPerf > bossPerf * 1.2) return `🏆 ¡Victoria sobre ${jefe.name}! Link dominó la batalla sin apenas recibir daño.`;
-  if (linkPerf > bossPerf) return `⚔️ ¡${jefe.name} derrotado! Fue un combate reñido, pero el héroe prevaleció.`;
-  if (linkPerf > bossPerf * 0.75) return `🛡️ ${jefe.name} resistió la embestida. Link sobrevivió pero no pudo terminar el combate.`;
-  return `💀 ${jefe.name} fue demasiado para Link esta vez. El jefe sigue en pie.`;
+function duelResult(linkPerf, rivalPerf, ko) {
+  if (ko) return { tag: 'ko', puntos: PUNTOS_DUELO.ko, label: '💀 K.O.' };
+  const diff = (linkPerf - rivalPerf) / Math.max(rivalPerf, 1);
+  if (diff > 0.15)  return { tag: 'victoria_clara',    puntos: PUNTOS_DUELO.victoria_clara,    label: '🏆 Victoria' };
+  if (diff > 0)     return { tag: 'victoria_ajustada', puntos: PUNTOS_DUELO.victoria_ajustada, label: '⚔️ Victoria ajustada' };
+  if (diff > -0.15) return { tag: 'derrota_ajustada',  puntos: PUNTOS_DUELO.derrota_ajustada,  label: '🛡️ Resistió' };
+  return              { tag: 'derrota',               puntos: PUNTOS_DUELO.derrota,            label: '❌ Derrota' };
 }
 
-function makeDescription(linkPos, mazmorra, ko, topRivalName) {
-  if (ko) {
-    return `💀 K.O. en ${mazmorra.name}. ${topRivalName} tendió una emboscada perfecta antes de que Link pudiera reaccionar.`;
-  }
-  if (linkPos === 1) {
-    return `🏆 ¡Primer puesto en ${mazmorra.name}! Link dominó el combate y no dejó opciones a sus rivales.`;
-  }
-  if (linkPos === 2) {
-    return `🥈 Segundo puesto en ${mazmorra.name}. ${topRivalName} fue imparable, pero Link se llevó un sólido resultado.`;
-  }
-  if (linkPos === 3) {
-    return `🥉 Tercer puesto en ${mazmorra.name}. Un buen resultado, aunque quedó algo lejos del ganador.`;
-  }
-  if (linkPos <= 6) {
-    return `⚠️ ${linkPos}º puesto en ${mazmorra.name}. Los Bokoblins más poderosos superaron a Link esta vez.`;
-  }
-  return `❌ ${linkPos}º puesto en ${mazmorra.name}. Una jornada muy dura — el equipo no fue suficiente aquí.`;
+function bossResult(linkPerf, bossPerf, ko) {
+  if (ko) return { tag: 'ko', puntos: PUNTOS_JEFE.ko, label: '💀 K.O.' };
+  const diff = (linkPerf - bossPerf) / Math.max(bossPerf, 1);
+  if (diff > 0)      return { tag: 'victoria',   puntos: PUNTOS_JEFE.victoria,   label: '🏆 Jefe derrotado' };
+  if (diff > -0.20)  return { tag: 'resistencia', puntos: PUNTOS_JEFE.resistencia, label: '🛡️ Resistió al jefe' };
+  return               { tag: 'derrota',         puntos: PUNTOS_JEFE.derrota,     label: '❌ Derrotado por el jefe' };
 }
 
-function resultadoTag(linkPos, ko) {
-  if (ko) return 'ko';
-  if (linkPos === 1) return 'victoria';
-  if (linkPos <= 3) return 'podio';
-  if (linkPos <= 6) return 'neutral';
-  return 'derrota';
+function makeDuelDesc(tag, linkName, rivalName, game) {
+  switch (tag) {
+    case 'victoria_clara':    return `🏆 Link arrasó a ${rivalName}. El equipamiento elegido fue claramente superior al de ${game}.`;
+    case 'victoria_ajustada': return `⚔️ Victoria ajustada sobre ${rivalName}. Ambos Links estaban al límite, pero el nuestro salió victorioso.`;
+    case 'derrota_ajustada':  return `🛡️ ${rivalName} ganó por los pelos. El Link de ${game} contaba con una ventaja de equipamiento mínima.`;
+    case 'derrota':           return `❌ ${rivalName} dominó el combate. El equipamiento de ${game} fue claramente superior.`;
+    case 'ko':                return `💀 K.O. fulminante. ${rivalName} no dejó a Link ni reaccionar.`;
+    default:                  return '';
+  }
 }
 
-export function simularTorneo(build, era, dificultad = 'normal') {
+function makeBossDesc(tag, jefeName) {
+  switch (tag) {
+    case 'victoria':   return `🏆 ¡${jefeName} derrotado! Link venció al guardián definitivo de la era.`;
+    case 'resistencia': return `🛡️ ${jefeName} resistió, pero Link sobrevivió para contarlo. Cerca.`;
+    case 'derrota':    return `❌ ${jefeName} fue demasiado poderoso. Link no pudo terminar el combate.`;
+    case 'ko':         return `💀 ${jefeName} eliminó a Link antes de que pudiera intentarlo.`;
+    default:           return '';
+  }
+}
+
+// Map duel tag → card border color class
+function roundStyle(duelTag) {
+  if (duelTag === 'victoria_clara')    return 'border-amber-400 bg-amber-50';
+  if (duelTag === 'victoria_ajustada') return 'border-green-400 bg-green-50';
+  if (duelTag === 'derrota_ajustada')  return 'border-zelda-border bg-white';
+  if (duelTag === 'derrota')           return 'border-red-400 bg-red-50';
+  if (duelTag === 'ko')                return 'border-red-600 bg-red-100';
+  return 'border-zelda-border bg-white';
+}
+
+export function simularTorneo(build, _era, dificultad = 'normal') {
   const allMazmorras = getAllMazmorras();
-  const mazmorras = [...allMazmorras].sort(() => Math.random() - 0.5).slice(0, 10);
-  const rivales = buildBokoblinRivalesForEra(era, 10);
+  const rivales = buildLinksRivales();
   const dificultadMult = DIFICULTAD_MULT[dificultad] ?? 1.0;
 
-  const linkStats = { puntos: 0, victorias: 0, podios: 0, kos: 0, derrotas: 0, jefesVencidos: 0 };
-  const rivalStandings = rivales.map(b => ({ ...b, puntos: 0, victorias: 0 }));
+  const linkStats = {
+    puntos: 0,
+    victoriasLink: 0,
+    derrotasLink: 0,
+    jefesVencidos: 0,
+    kos: 0,
+  };
   const combatLog = [];
 
-  for (const mazmorra of mazmorras) {
+  for (const rival of rivales) {
+    // Pick a random mazmorra as the arena for this round
+    const mazmorra = allMazmorras[Math.floor(Math.random() * allMazmorras.length)];
     const ko = Math.random() < calcProbKO(build);
-    const linkPerf = ko ? -1 : calcLinkPerf(build, mazmorra);
-    const bokoblinPerfs = rivales.map(b => calcBokoblinPerf(b, mazmorra, dificultadMult));
 
-    // Full-field sort
-    const allPerfs = [
-      { id: 'link', name: 'Link', perf: linkPerf, ko },
-      ...rivales.map((b, i) => ({ id: b.id, name: b.name, perf: bokoblinPerfs[i], ko: false })),
-    ].sort((a, b) => {
-      if (a.ko && b.ko) return 0;
-      if (a.ko) return 1;
-      if (b.ko) return -1;
-      return b.perf - a.perf;
-    });
+    // --- Duel vs rival Link ---
+    const linkPerfDuel = ko ? -1 : calcLinkPerf(build, mazmorra);
+    const rivalPerf = calcRivalLinkPerf(rival, mazmorra, dificultadMult);
+    const duelo = duelResult(linkPerfDuel, rivalPerf, ko);
 
-    allPerfs.forEach((p, posIdx) => {
-      const pts = p.ko ? 0 : (PUNTOS_TRIFORCE[posIdx] ?? 0);
-      if (p.id === 'link') {
-        linkStats.puntos += pts;
-        if (!ko && posIdx === 0) linkStats.victorias++;
-        if (!ko && posIdx < 3) linkStats.podios++;
-        if (ko) linkStats.kos++;
-        if (!ko && posIdx >= 6) linkStats.derrotas++;
-      } else {
-        const rs = rivalStandings.find(r => r.id === p.id);
-        if (rs) {
-          rs.puntos += pts;
-          if (posIdx === 0) rs.victorias++;
-        }
-      }
-    });
+    linkStats.puntos += duelo.puntos;
+    if (ko) {
+      linkStats.kos++;
+    } else if (duelo.tag === 'victoria_clara' || duelo.tag === 'victoria_ajustada') {
+      linkStats.victoriasLink++;
+    } else {
+      linkStats.derrotasLink++;
+    }
 
-    const linkPos = allPerfs.findIndex(p => p.id === 'link') + 1;
-    const topRival = allPerfs.find(p => p.id !== 'link');
-    const puntosRonda = ko ? 0 : (PUNTOS_TRIFORCE[linkPos - 1] ?? 0);
-
-    // Boss combat
-    let bossResult = null;
-    const jefe = mazmorra.boss_id ? getJefeById(mazmorra.boss_id) : null;
-    if (jefe && !ko) {
-      const linkBossPerf = calcLinkPerf(build, mazmorra);
-      const bossPerf = calcBossPerf(jefe, mazmorra, dificultadMult);
-      const bossVictoria = linkBossPerf > bossPerf;
-      const bossResistencia = !bossVictoria && linkBossPerf > bossPerf * 0.75;
-      let bossBonus = 0;
-      if (bossVictoria) { bossBonus = BOSS_BONUS[0]; linkStats.jefesVencidos++; }
-      else if (bossResistencia) bossBonus = BOSS_BONUS[1];
-      else bossBonus = BOSS_BONUS[2];
-      linkStats.puntos += bossBonus;
-      bossResult = {
-        jefe: jefe.name,
-        emoji: jefe.emoji,
-        victoria: bossVictoria,
-        resistencia: bossResistencia,
-        bonus: bossBonus,
-        descripcion: makeBossDescription(linkBossPerf, bossPerf, jefe, false),
-      };
-    } else if (jefe && ko) {
-      bossResult = {
-        jefe: jefe.name,
-        emoji: jefe.emoji,
-        victoria: false,
-        resistencia: false,
-        bonus: 0,
-        descripcion: makeBossDescription(0, 1, jefe, true),
-      };
+    // --- Boss fight ---
+    const jefe = getJefeById(rival.boss_id);
+    let boss = null;
+    if (jefe) {
+      const linkPerfBoss = ko ? -1 : calcLinkPerf(build, mazmorra);
+      const jefePerf = calcBossPerf(jefe, mazmorra, dificultadMult);
+      boss = bossResult(linkPerfBoss, jefePerf, ko);
+      linkStats.puntos += boss.puntos;
+      if (boss.tag === 'victoria') linkStats.jefesVencidos++;
     }
 
     combatLog.push({
+      rival: { name: rival.name, alias: rival.alias, emoji: rival.emoji, game: rival.game, year: rival.year, equipamiento: rival.equipamiento },
+      jefe: jefe ? { name: jefe.name, emoji: jefe.emoji } : null,
       mazmorra: mazmorra.name,
-      emoji: mazmorra.emoji,
-      linkPos,
-      ko,
-      puntos: puntosRonda,
-      topRival: topRival?.name ?? '???',
-      resultado: resultadoTag(linkPos, ko),
-      descripcion: makeDescription(linkPos, mazmorra, ko, topRival?.name ?? 'un Bokoblin'),
-      bossResult,
+      arenaEmoji: mazmorra.emoji,
+      duelo,
+      boss,
+      puntosRonda: duelo.puntos + (boss?.puntos ?? 0),
+      duelDesc: makeDuelDesc(duelo.tag, 'Link', rival.name, rival.game),
+      bossDesc: jefe ? makeBossDesc(boss.tag, jefe.name) : null,
+      cardStyle: roundStyle(duelo.tag),
     });
   }
 
-  const clasificacion = [
-    { name: 'Link', isLink: true, ...linkStats },
-    ...rivalStandings,
-  ].sort((a, b) => b.puntos - a.puntos);
-
-  const linkClasifPos = clasificacion.findIndex(c => c.isLink) + 1;
+  const maxPuntos = rivales.length * (PUNTOS_DUELO.victoria_clara + PUNTOS_JEFE.victoria);
 
   return {
     combatLog,
-    clasificacion,
-    linkPos: linkClasifPos,
     linkStats,
-    totalCombates: mazmorras.length,
+    totalRondas: rivales.length,
+    maxPuntos,
   };
 }
