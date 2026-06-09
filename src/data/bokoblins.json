@@ -1,0 +1,222 @@
+[
+  {
+    "id": "bokoblin_clasica_rojo",
+    "name": "Bokoblin Rojo",
+    "generation": "era_clasica",
+    "year": 1986,
+    "game": "The Legend of Zelda",
+    "color": "rojo",
+    "bio": "El bokoblin original. Patrulla los campos de Hyrule con una lanza de madera. Primitivo pero numeroso.",
+    "attributes": { "fuerza": 28, "defensa": 20, "agilidad": 35, "astucia": 15, "resistencia": 25 }
+  },
+  {
+    "id": "bokoblin_clasica_azul",
+    "name": "Bokoblin Azul",
+    "generation": "era_clasica",
+    "year": 1991,
+    "game": "A Link to the Past",
+    "color": "azul",
+    "bio": "Versión más avanzada del bokoblin clásico. Más rápido y agresivo, equipado con arco.",
+    "attributes": { "fuerza": 40, "defensa": 28, "agilidad": 48, "astucia": 22, "resistencia": 35 }
+  },
+  {
+    "id": "bokoblin_clasica_verde",
+    "name": "Bokoblin Verde",
+    "generation": "era_clasica",
+    "year": 1993,
+    "game": "Link's Awakening",
+    "color": "verde",
+    "bio": "Bokoblin de la isla Koholint. Adaptado al terreno selvático, usa trampas de viento.",
+    "attributes": { "fuerza": 32, "defensa": 35, "agilidad": 40, "astucia": 30, "resistencia": 38 }
+  },
+  {
+    "id": "bokoblin_3d_madera",
+    "name": "Bokoblin de Madera",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "color": "madera",
+    "bio": "El primer bokoblin tridimensional. Porta un palo de madera y parece inofensivo... hasta que te rodean.",
+    "attributes": { "fuerza": 35, "defensa": 22, "agilidad": 42, "astucia": 25, "resistencia": 30 }
+  },
+  {
+    "id": "bokoblin_3d_escudo",
+    "name": "Bokoblin Escudero",
+    "generation": "era_3d",
+    "year": 2000,
+    "game": "Majora's Mask",
+    "color": "bronce",
+    "bio": "Bokoblin veterano de las Ciénagas del Sur. Usa escudo de madera y conoce técnicas de bloqueo.",
+    "attributes": { "fuerza": 42, "defensa": 52, "agilidad": 38, "astucia": 35, "resistencia": 45 }
+  },
+  {
+    "id": "bokoblin_3d_arco",
+    "name": "Bokoblin Arquero",
+    "generation": "era_3d",
+    "year": 2000,
+    "game": "Majora's Mask",
+    "color": "amarillo",
+    "bio": "Especialista en ataque a distancia. Prefiere disparar desde posiciones elevadas en los riscos.",
+    "attributes": { "fuerza": 30, "defensa": 25, "agilidad": 55, "astucia": 45, "resistencia": 32 }
+  },
+  {
+    "id": "bokoblin_viento_marino",
+    "name": "Bokoblin Marino",
+    "generation": "era_viento",
+    "year": 2002,
+    "game": "The Wind Waker",
+    "color": "marino",
+    "bio": "Bokoblin pirata de la Gran Mar. Experimentado en combate naval y abordaje de barcos.",
+    "attributes": { "fuerza": 48, "defensa": 38, "agilidad": 52, "astucia": 42, "resistencia": 44 }
+  },
+  {
+    "id": "bokoblin_viento_capitan",
+    "name": "Bokoblin Capitán",
+    "generation": "era_viento",
+    "year": 2002,
+    "game": "The Wind Waker",
+    "color": "naranja",
+    "bio": "Líder de la tripulación pirata de Ganondorf. Porta llave de barco y comanda a sus tropas con autoridad.",
+    "attributes": { "fuerza": 58, "defensa": 45, "agilidad": 45, "astucia": 55, "resistencia": 52 }
+  },
+  {
+    "id": "bokoblin_viento_celeste",
+    "name": "Bokoblin Celeste",
+    "generation": "era_viento",
+    "year": 2004,
+    "game": "Four Swords Adventures",
+    "color": "celeste",
+    "bio": "Procedente de las Sombras del Bosque. Puede dividirse en múltiples copias para confundir al enemigo.",
+    "attributes": { "fuerza": 38, "defensa": 30, "agilidad": 62, "astucia": 50, "resistencia": 36 }
+  },
+  {
+    "id": "bokoblin_crepusculo_hacha",
+    "name": "Bokoblin con Hacha",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "color": "gris",
+    "bio": "El bokoblin más brutal del Crepúsculo. Su hacha de piedra puede partir un escudo en dos golpes.",
+    "attributes": { "fuerza": 68, "defensa": 42, "agilidad": 35, "astucia": 28, "resistencia": 60 }
+  },
+  {
+    "id": "bokoblin_crepusculo_nocturno",
+    "name": "Bokoblin Nocturno",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "color": "negro",
+    "bio": "Prospera en la oscuridad del Crepúsculo. Sus ojos adaptados le dan ventaja en emboscadas nocturnas.",
+    "attributes": { "fuerza": 55, "defensa": 38, "agilidad": 58, "astucia": 62, "resistencia": 50 }
+  },
+  {
+    "id": "bokoblin_crepusculo_jinete",
+    "name": "Bokoblin Jinete",
+    "generation": "era_crepusculo",
+    "year": 2007,
+    "game": "Phantom Hourglass",
+    "color": "rojo_oscuro",
+    "bio": "Cabalga sobre jabalíes salvajes. Su velocidad a lomos de la montura lo hace difícil de alcanzar.",
+    "attributes": { "fuerza": 60, "defensa": 48, "agilidad": 72, "astucia": 40, "resistencia": 55 }
+  },
+  {
+    "id": "bokoblin_cielo_volador",
+    "name": "Bokoblin Volador",
+    "generation": "era_cielo",
+    "year": 2011,
+    "game": "Skyward Sword",
+    "color": "purpura",
+    "bio": "Evolucionado para sobrevivir en las Nubes del Cielo. Sus alas de Loftwing robadas le permiten volar.",
+    "attributes": { "fuerza": 50, "defensa": 32, "agilidad": 78, "astucia": 45, "resistencia": 42 }
+  },
+  {
+    "id": "bokoblin_cielo_mago",
+    "name": "Bokoblin Chamán",
+    "generation": "era_cielo",
+    "year": 2011,
+    "game": "Skyward Sword",
+    "color": "violeta",
+    "bio": "Raro bokoblin con poderes de magia oscura. Puede invocar a sus compañeros y lanzar maldiciones.",
+    "attributes": { "fuerza": 45, "defensa": 40, "agilidad": 48, "astucia": 80, "resistencia": 45 }
+  },
+  {
+    "id": "bokoblin_cielo_armado",
+    "name": "Bokoblin Armado del Cielo",
+    "generation": "era_cielo",
+    "year": 2011,
+    "game": "Skyward Sword",
+    "color": "dorado_palido",
+    "bio": "Porta armadura de cristal de las Ruinas Antiguas. Resistente a la mayoría de armas comunes.",
+    "attributes": { "fuerza": 62, "defensa": 70, "agilidad": 40, "astucia": 38, "resistencia": 68 }
+  },
+  {
+    "id": "bokoblin_abierta_rojo",
+    "name": "Bokoblin Rojo",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "color": "rojo",
+    "bio": "El bokoblin más común de Hyrule. Patrulla campamentos y es relativamente fácil de derrotar con cualquier arma.",
+    "attributes": { "fuerza": 45, "defensa": 30, "agilidad": 50, "astucia": 28, "resistencia": 40 }
+  },
+  {
+    "id": "bokoblin_abierta_azul",
+    "name": "Bokoblin Azul",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "color": "azul",
+    "bio": "Variante de élite con mayor resistencia. Suele liderar pequeños grupos y porta armas de mejor calidad.",
+    "attributes": { "fuerza": 58, "defensa": 45, "agilidad": 55, "astucia": 38, "resistencia": 55 }
+  },
+  {
+    "id": "bokoblin_abierta_negro",
+    "name": "Bokoblin Negro",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "color": "negro",
+    "bio": "Variante de alto rango con armas de acero forjadas. Requiere estrategia y equipo de calidad para derrotarlo.",
+    "attributes": { "fuerza": 72, "defensa": 58, "agilidad": 60, "astucia": 50, "resistencia": 68 }
+  },
+  {
+    "id": "bokoblin_abierta_plateado",
+    "name": "Bokoblin Plateado",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "color": "plateado",
+    "bio": "El más formidable de los bokoblins normales. Su armadura plateada resiste casi cualquier ataque frontal.",
+    "attributes": { "fuerza": 82, "defensa": 68, "agilidad": 65, "astucia": 55, "resistencia": 75 }
+  },
+  {
+    "id": "bokoblin_abierta_dorado",
+    "name": "Bokoblin Dorado",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "color": "dorado",
+    "bio": "La variante más poderosa conocida. Imbuido de energía de la Calamidad, solo aparece en las peores noches de Sangre.",
+    "attributes": { "fuerza": 92, "defensa": 78, "agilidad": 70, "astucia": 65, "resistencia": 85 }
+  },
+  {
+    "id": "bokoblin_totk_capitan",
+    "name": "Bokoblin Capitán",
+    "generation": "era_abierta",
+    "year": 2023,
+    "game": "Tears of the Kingdom",
+    "color": "escarlata",
+    "bio": "Líder del campamento. En TotK ha aprendido a construir catapultas con chatarra de Zonanio.",
+    "attributes": { "fuerza": 75, "defensa": 62, "agilidad": 58, "astucia": 72, "resistencia": 70 }
+  },
+  {
+    "id": "bokoblin_totk_gloom",
+    "name": "Bokoblin del Abismo",
+    "generation": "era_abierta",
+    "year": 2023,
+    "game": "Tears of the Kingdom",
+    "color": "penumbra",
+    "bio": "Corrompido por la Penumbra de las Profundidades. Su simple contacto reduce permanentemente los corazones.",
+    "attributes": { "fuerza": 85, "defensa": 55, "agilidad": 62, "astucia": 60, "resistencia": 78 }
+  }
+]

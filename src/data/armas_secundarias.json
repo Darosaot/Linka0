@@ -1,0 +1,72 @@
+[
+  {
+    "id": "boomerang_viento",
+    "name": "Boomerang del Viento",
+    "type": "arma_secundaria",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "Regresa automáticamente al lanzador. Puede aturdir enemigos y recoger objetos lejanos.",
+    "attributes": { "poder": 45, "velocidad": 80, "alcance": 85, "magia": 15 }
+  },
+  {
+    "id": "hacha_megaton",
+    "name": "Hacha Megaton",
+    "type": "arma_secundaria",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "Arma colosal del Goron Darunia. Su peso aplastante puede derribar enemigos de cualquier tamaño.",
+    "attributes": { "poder": 88, "velocidad": 30, "alcance": 50, "magia": 5 }
+  },
+  {
+    "id": "lanza_viento",
+    "name": "Lanza del Mar",
+    "type": "arma_secundaria",
+    "generation": "era_viento",
+    "year": 2002,
+    "game": "The Wind Waker",
+    "bio": "Lanza Zora heredada del Dios del Mar. Puede lanzar torrentes de agua y tiene alcance extraordinario.",
+    "attributes": { "poder": 62, "velocidad": 65, "alcance": 90, "magia": 40 }
+  },
+  {
+    "id": "garra_gancho",
+    "name": "Garra Gancho Oscura",
+    "type": "arma_secundaria",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "bio": "Permite engancharse a los enemigos y acercarse a ellos instantáneamente. Devastador a corta distancia.",
+    "attributes": { "poder": 70, "velocidad": 88, "alcance": 75, "magia": 20 }
+  },
+  {
+    "id": "bombas_remotas",
+    "name": "Bombas Remotas Sheikah",
+    "type": "arma_secundaria",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "Explosivos de tecnología Sheikah del Tablero Sheikah. Detonación a distancia, recarga ilimitada.",
+    "attributes": { "poder": 75, "velocidad": 55, "alcance": 80, "magia": 35 }
+  },
+  {
+    "id": "escudo_escudo_hylian",
+    "name": "Palo de Krog",
+    "type": "arma_secundaria",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "Arma improvisada favorita de los Krogs. Frágil, pero en manos de Link sorprende a los bokoblins.",
+    "attributes": { "poder": 18, "velocidad": 90, "alcance": 40, "magia": 5 }
+  },
+  {
+    "id": "konstrukt_lanza",
+    "name": "Lanza Konstrukt Zonai",
+    "type": "arma_secundaria",
+    "generation": "era_abierta",
+    "year": 2023,
+    "game": "Tears of the Kingdom",
+    "bio": "Lanza ensamblada con piezas Zonai. Puede modificarse en pleno combate mediante la habilidad Ultrahand.",
+    "attributes": { "poder": 72, "velocidad": 70, "alcance": 88, "magia": 45 }
+  }
+]
