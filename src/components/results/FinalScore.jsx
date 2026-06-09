@@ -10,10 +10,9 @@ function BuildSummary({ build }) {
         {SLOT_CONFIG.map(slot => {
           const item = build[slot.key];
           if (item === undefined || item === null) return null;
-          const isNumeric = slot.key === 'rupias' || slot.key === 'corazones';
-          const name = isNumeric ? `${item} pts` : item.name;
-          const sub = !isNumeric && item.game ? `${item.game}` : null;
-          const era = !isNumeric && item.generation ? item.generation.replace('era_', '').replace('_', ' ') : null;
+          const name = item.name;
+          const sub = item.game ? `${item.game}` : null;
+          const era = item.generation ? item.generation.replace('era_', '').replace('_', ' ') : null;
           return (
             <div key={slot.key} className="flex items-center justify-between px-4 py-2 text-sm gap-4">
               <div className="flex items-center gap-2 min-w-0">

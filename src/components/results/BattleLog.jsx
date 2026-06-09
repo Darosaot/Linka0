@@ -36,6 +36,11 @@ export default function BattleLog({ combatLog }) {
               <div>
                 <div className="font-black text-zelda-ink text-sm">{c.rival.name}</div>
                 <div className="text-xs text-zelda-muted">{c.rival.game} · {c.rival.year}</div>
+                {c.rivalRating != null && (
+                  <span className="inline-block mt-0.5 text-xs font-bold bg-slate-100 border border-slate-300 text-slate-700 rounded px-1.5 py-0.5">
+                    ★ {c.rivalRating} rival
+                  </span>
+                )}
               </div>
             </div>
             <div className="text-right">

@@ -49,26 +49,6 @@ function ItemCard({ slotKey, item, onPick, disabled }) {
   );
 }
 
-function SimpleCard({ slotKey, value, label, onPick, disabled, color = 'bg-green-100 text-green-800 border-green-300' }) {
-  return (
-    <div
-      className={`bg-white border-2 rounded-lg p-3 flex flex-col gap-2 transition-all duration-100
-        ${disabled
-          ? 'border-zelda-border opacity-40 cursor-not-allowed'
-          : 'border-zelda-border hover:border-zelda-ink cursor-pointer hover:shadow-md active:scale-[0.98]'
-        }`}
-      onClick={() => !disabled && onPick(slotKey, value)}
-    >
-      <div className="text-xs text-zelda-muted">{SLOT_LABELS[slotKey] || slotKey}</div>
-      <div className="flex items-center justify-between">
-        <div className="font-bold text-zelda-ink text-sm">{label}</div>
-        <RatingBadge value={value} />
-      </div>
-      <StatBar label={label} value={value} color={slotKey === 'rupias' ? 'bg-emerald-500' : 'bg-red-400'} />
-    </div>
-  );
-}
-
 export default function CardDisplay() {
   const { cartaActual, build, pickItem } = useGameStore();
 
@@ -91,24 +71,6 @@ export default function CardDisplay() {
           />
         );
       })}
-      {items.rupias !== undefined && (
-        <SimpleCard
-          slotKey="rupias"
-          value={items.rupias}
-          label="Rupias"
-          onPick={pickItem}
-          disabled={build.rupias !== undefined}
-        />
-      )}
-      {items.corazones !== undefined && (
-        <SimpleCard
-          slotKey="corazones"
-          value={items.corazones}
-          label="Corazones"
-          onPick={pickItem}
-          disabled={build.corazones !== undefined}
-        />
-      )}
     </div>
   );
 }

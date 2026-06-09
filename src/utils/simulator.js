@@ -28,9 +28,13 @@ function calcRivalLinkPerf(rival, mazmorra, dificultadMult) {
 }
 
 
-function calcProbKO(build) {
-  const corazones = build.corazones ?? 50;
-  return Math.max(0.02, (100 - corazones) / 100 * 0.12);
+function calcProbKO() {
+  return 0.05; // 5% fixed KO chance per round
+}
+
+function rivalBaseRating(rival) {
+  const { poder = 0, defensa = 0, agilidad = 0, magia = 0, resistencia = 0 } = rival.attributes;
+  return Math.round(poder * 0.35 + defensa * 0.20 + agilidad * 0.25 + magia * 0.15 + resistencia * 0.05);
 }
 
 function duelResult(linkPerf, rivalPerf, ko) {
@@ -78,7 +82,7 @@ export function simularTorneo(build, _era, dificultad = 'normal') {
 
   for (const rival of rivales) {
     const mazmorra = allMazmorras[Math.floor(Math.random() * allMazmorras.length)];
-    const ko = Math.random() < calcProbKO(build);
+    const ko = Math.random() < calcProbKO();
 
     const linkPerfDuel = ko ? -1 : calcLinkPerf(build, mazmorra);
     const rivalPerf = calcRivalLinkPerf(rival, mazmorra, dificultadMult);
@@ -99,6 +103,7 @@ export function simularTorneo(build, _era, dificultad = 'normal') {
       arenaEmoji: mazmorra.emoji,
       duelo,
       puntosRonda: duelo.puntos,
+      rivalRating: rivalBaseRating(rival),
       duelDesc: makeDuelDesc(duelo.tag, 'Link', rival.name, rival.game),
       cardStyle: roundStyle(duelo.tag),
     });
