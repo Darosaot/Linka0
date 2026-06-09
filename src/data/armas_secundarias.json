@@ -1,72 +1,184 @@
 [
   {
+    "id": "palo_deku",
+    "name": "Palo Deku",
+    "type": "arma_secundaria", "generation": "era_clasica", "year": 1998, "game": "Ocarina of Time",
+    "bio": "Rama de árbol Deku. Puede encenderse para quemar redes o usarse como antorcha en cuevas oscuras.",
+    "attributes": { "poder": 22, "velocidad": 88, "alcance": 50, "magia": 12 }
+  },
+  {
+    "id": "escudo_deku",
+    "name": "Escudo Deku",
+    "type": "arma_secundaria", "generation": "era_clasica", "year": 1998, "game": "Ocarina of Time",
+    "bio": "Escudo de madera Deku. Ligero y perfecto para bloquear flechas, aunque se quema ante el fuego.",
+    "attributes": { "poder": 18, "velocidad": 85, "alcance": 30, "magia": 5 }
+  },
+  {
     "id": "boomerang_viento",
     "name": "Boomerang del Viento",
-    "type": "arma_secundaria",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
+    "type": "arma_secundaria", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
     "bio": "Regresa automáticamente al lanzador. Puede aturdir enemigos y recoger objetos lejanos.",
     "attributes": { "poder": 45, "velocidad": 80, "alcance": 85, "magia": 15 }
   },
   {
     "id": "hacha_megaton",
     "name": "Hacha Megaton",
-    "type": "arma_secundaria",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
+    "type": "arma_secundaria", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
     "bio": "Arma colosal del Goron Darunia. Su peso aplastante puede derribar enemigos de cualquier tamaño.",
     "attributes": { "poder": 88, "velocidad": 30, "alcance": 50, "magia": 5 }
   },
   {
+    "id": "mazo_calavera",
+    "name": "Mazo Calavera",
+    "type": "arma_secundaria", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
+    "bio": "Mazo pesado obtenido de los Darknuts del Templo de la Tierra. Sus golpes hacen temblar el suelo.",
+    "attributes": { "poder": 82, "velocidad": 35, "alcance": 48, "magia": 8 }
+  },
+  {
     "id": "lanza_viento",
     "name": "Lanza del Mar",
-    "type": "arma_secundaria",
-    "generation": "era_viento",
-    "year": 2002,
-    "game": "The Wind Waker",
+    "type": "arma_secundaria", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
     "bio": "Lanza Zora heredada del Dios del Mar. Puede lanzar torrentes de agua y tiene alcance extraordinario.",
     "attributes": { "poder": 62, "velocidad": 65, "alcance": 90, "magia": 40 }
   },
   {
-    "id": "garra_gancho",
-    "name": "Garra Gancho Oscura",
-    "type": "arma_secundaria",
-    "generation": "era_crepusculo",
-    "year": 2006,
-    "game": "Twilight Princess",
-    "bio": "Permite engancharse a los enemigos y acercarse a ellos instantáneamente. Devastador a corta distancia.",
-    "attributes": { "poder": 70, "velocidad": 88, "alcance": 75, "magia": 20 }
+    "id": "bola_cadena",
+    "name": "Bola y Cadena",
+    "type": "arma_secundaria", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "Obtenida en las Ruinas de Snowpeak. Destruye bloques de hielo y aplasta a los enemigos más pesados.",
+    "attributes": { "poder": 92, "velocidad": 28, "alcance": 65, "magia": 8 }
+  },
+  {
+    "id": "spinner",
+    "name": "Giradorama",
+    "type": "arma_secundaria", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "Peonza mecánica de tecnología Sheikah. Puede montar sobre raíles especiales y arrollar a los enemigos.",
+    "attributes": { "poder": 68, "velocidad": 85, "alcance": 60, "magia": 30 }
+  },
+  {
+    "id": "garra_gancho_doble",
+    "name": "Garra Gancho Doble",
+    "type": "arma_secundaria", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "Versión dual de la garra gancho. Se lanza a dos objetivos simultáneamente para inmovilizar y acercarse.",
+    "attributes": { "poder": 75, "velocidad": 88, "alcance": 80, "magia": 22 }
+  },
+  {
+    "id": "vara_dominio",
+    "name": "Vara del Dominio",
+    "type": "arma_secundaria", "generation": "era_crepusculo", "year": 2007, "game": "Twilight Princess (HD)",
+    "bio": "Artefacto ancestral del Templo de Palacios. Permite controlar estatuas y elementos del entorno.",
+    "attributes": { "poder": 55, "velocidad": 60, "alcance": 85, "magia": 78 }
+  },
+  {
+    "id": "latigo_ss",
+    "name": "Látigo de Seda",
+    "type": "arma_secundaria", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "Látigo de seda encantada obtenido en el Bosque Ancestral. Inmoviliza a los enemigos y activa palancas.",
+    "attributes": { "poder": 52, "velocidad": 82, "alcance": 88, "magia": 35 }
+  },
+  {
+    "id": "beetle",
+    "name": "Escarabajo Mecánico",
+    "type": "arma_secundaria", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "Artefacto Sheikah volador. Se lanza como proyectil autónomo para recoger ítems y atacar puntos débiles.",
+    "attributes": { "poder": 55, "velocidad": 90, "alcance": 95, "magia": 35 }
+  },
+  {
+    "id": "fuelle_sagrado",
+    "name": "Fuelle Sagrado",
+    "type": "arma_secundaria", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "Fuelle con llama divina capaz de encender antorchas y expulsar chorros de fuego para quemar enemigos.",
+    "attributes": { "poder": 65, "velocidad": 70, "alcance": 60, "magia": 55 }
+  },
+  {
+    "id": "varita_arena",
+    "name": "Varita de Arena",
+    "type": "arma_secundaria", "generation": "era_crepusculo", "year": 2007, "game": "Phantom Hourglass",
+    "bio": "Varita de los templos del océano. Levanta columnas de arena bajo los pies del enemigo.",
+    "attributes": { "poder": 58, "velocidad": 72, "alcance": 78, "magia": 62 }
+  },
+  {
+    "id": "tornado_rod",
+    "name": "Vara del Tornado",
+    "type": "arma_secundaria", "generation": "era_cielo", "year": 2013, "game": "A Link Between Worlds",
+    "bio": "Vara que genera tornados. Eleva a Link y lanza a los enemigos por los aires con viento huracanado.",
+    "attributes": { "poder": 65, "velocidad": 78, "alcance": 70, "magia": 72 }
   },
   {
     "id": "bombas_remotas",
     "name": "Bombas Remotas Sheikah",
-    "type": "arma_secundaria",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
-    "bio": "Explosivos de tecnología Sheikah del Tablero Sheikah. Detonación a distancia, recarga ilimitada.",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Explosivos del Tablero Sheikah. Detonación a distancia con recarga ilimitada.",
     "attributes": { "poder": 75, "velocidad": 55, "alcance": 80, "magia": 35 }
   },
   {
-    "id": "escudo_escudo_hylian",
-    "name": "Palo de Krog",
-    "type": "arma_secundaria",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
-    "bio": "Arma improvisada favorita de los Krogs. Frágil, pero en manos de Link sorprende a los bokoblins.",
-    "attributes": { "poder": 18, "velocidad": 90, "alcance": 40, "magia": 5 }
+    "id": "hacha_antigua",
+    "name": "Hacha de Batalla Ancestral",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Hacha de los soldados Sheikah de la era anterior. Potente contra Guardianes y enemigos con armadura.",
+    "attributes": { "poder": 82, "velocidad": 40, "alcance": 58, "magia": 48 }
+  },
+  {
+    "id": "lanza_guardiana",
+    "name": "Lanza Guardiana",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Lanza de tecnología Sheikah de los Guardianes corrompidos. Pulsa con energía azul en cada golpe.",
+    "attributes": { "poder": 78, "velocidad": 62, "alcance": 85, "magia": 52 }
+  },
+  {
+    "id": "lanza_gerudo",
+    "name": "Lanza Gerudo",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Lanza de combate estándar de las guerreras Gerudo. Ligera, veloz y con la técnica del desierto.",
+    "attributes": { "poder": 68, "velocidad": 78, "alcance": 82, "magia": 18 }
+  },
+  {
+    "id": "boko_bat",
+    "name": "Palo Boko con Pinchos",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "El arma favorita de los Bokoblins. Rústica pero efectiva a corta distancia, especialmente con pinchos.",
+    "attributes": { "poder": 48, "velocidad": 75, "alcance": 35, "magia": 2 }
+  },
+  {
+    "id": "dragonbone_club",
+    "name": "Maza de Hueso de Dragón",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Maza Boko reforzada con hueso de dragón. El arma más poderosa de la colección Bokoblin estándar.",
+    "attributes": { "poder": 90, "velocidad": 32, "alcance": 45, "magia": 5 }
+  },
+  {
+    "id": "lanza_moblin",
+    "name": "Lanza de Moblin",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "La lanza tosca pero enorme de los Moblins. El alcance compensa la falta de precisión.",
+    "attributes": { "poder": 70, "velocidad": 45, "alcance": 92, "magia": 5 }
+  },
+  {
+    "id": "lanza_lizalfos",
+    "name": "Lanza de Lizalfos",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Lanza ágil de los Lizalfos. Los reptiles la manejan con velocidad y precisión de cazador.",
+    "attributes": { "poder": 60, "velocidad": 85, "alcance": 78, "magia": 10 }
   },
   {
     "id": "konstrukt_lanza",
     "name": "Lanza Konstrukt Zonai",
-    "type": "arma_secundaria",
-    "generation": "era_abierta",
-    "year": 2023,
-    "game": "Tears of the Kingdom",
-    "bio": "Lanza ensamblada con piezas Zonai. Puede modificarse en pleno combate mediante la habilidad Ultrahand.",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Lanza ensamblada con piezas Zonai. Puede modificarse en pleno combate con Ultrahand.",
     "attributes": { "poder": 72, "velocidad": 70, "alcance": 88, "magia": 45 }
+  },
+  {
+    "id": "thunder_lance",
+    "name": "Lanza del Trueno",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Lanza fusionada con una piedra de trueno. Descarga rayos eléctricos al impactar.",
+    "attributes": { "poder": 78, "velocidad": 65, "alcance": 82, "magia": 60 }
+  },
+  {
+    "id": "martillo_cobble",
+    "name": "Machacador de Piedra",
+    "type": "arma_secundaria", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Martillo Zonai para romper rocas. En combate aplana a los enemigos con golpes sísmicos.",
+    "attributes": { "poder": 85, "velocidad": 30, "alcance": 55, "magia": 20 }
   }
 ]
