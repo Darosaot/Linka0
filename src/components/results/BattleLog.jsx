@@ -1,9 +1,9 @@
 function DuelRow({ label, result, desc }) {
-  const color = (result?.tag === 'victoria_clara' || result?.tag === 'victoria')
+  const color = (result?.tag === 'victoria_clara')
     ? 'text-green-700'
     : (result?.tag === 'victoria_ajustada')
     ? 'text-amber-700'
-    : (result?.tag === 'derrota_ajustada' || result?.tag === 'resistencia')
+    : (result?.tag === 'derrota_ajustada')
     ? 'text-blue-700'
     : 'text-red-600';
 
@@ -40,7 +40,7 @@ export default function BattleLog({ combatLog }) {
             </div>
             <div className="text-right">
               <div className="text-xs text-zelda-muted">Arena: {c.arenaEmoji} {c.mazmorra}</div>
-              <div className="font-black text-zelda-gold text-sm">+{c.puntosRonda} ⭐ esta ronda</div>
+              <div className="font-black text-zelda-gold text-sm">+{c.puntosRonda} ⭐</div>
             </div>
           </div>
 
@@ -53,22 +53,12 @@ export default function BattleLog({ combatLog }) {
             ))}
           </div>
 
-          <div className="mt-2 border-t border-zelda-border pt-2 flex flex-col gap-0.5">
-            {/* Duel result */}
+          <div className="mt-2 border-t border-zelda-border pt-2">
             <DuelRow
               label={`⚔️ Duelo vs ${c.rival.alias ?? c.rival.name}`}
               result={c.duelo}
               desc={c.duelDesc}
             />
-
-            {/* Boss result */}
-            {c.jefe && (
-              <DuelRow
-                label={`${c.jefe.emoji} Jefe: ${c.jefe.name}`}
-                result={c.boss}
-                desc={c.bossDesc}
-              />
-            )}
           </div>
 
         </div>

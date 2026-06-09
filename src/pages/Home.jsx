@@ -90,7 +90,7 @@ export default function Home() {
           {[
             { n: '01', icon: '🎵', label: 'TOCA',   desc: 'Obtén ítems aleatorios de todas las eras de Zelda' },
             { n: '02', icon: '⚙️', label: 'EQUIPA', desc: 'Combina espadas, armaduras y compañeros de distintas generaciones' },
-            { n: '03', icon: '⚔️', label: 'SIMULA', desc: 'Derrota a los 10 Links rivales y sus jefes finales de cada era' },
+            { n: '03', icon: '⚔️', label: 'SIMULA', desc: 'Derrota a los 10 Links más poderosos de la historia de Hyrule' },
           ].map((s, i) => (
             <div key={s.n} className={`bg-white p-4 ${i < 2 ? 'border-r border-zelda-border' : ''}`}>
               <div className="text-zelda-gold font-black text-xs mb-1">{s.n} {s.icon} {s.label}</div>

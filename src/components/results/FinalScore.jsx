@@ -28,13 +28,12 @@ export default function FinalScore({ build, resultados }) {
       </div>
 
       {/* Stat cards */}
-      <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
         {[
-          { label: 'Puntos ⭐',         value: linkStats.puntos,        color: 'text-zelda-gold' },
-          { label: 'Victorias 🏆',      value: linkStats.victoriasLink,  color: 'text-green-700' },
-          { label: 'Jefes vencidos ⚔️', value: linkStats.jefesVencidos,  color: 'text-purple-700' },
-          { label: 'Derrotas ❌',       value: linkStats.derrotasLink,   color: 'text-red-500' },
-          { label: 'K.O. 💀',           value: linkStats.kos,            color: 'text-red-700' },
+          { label: 'Puntos ⭐',    value: linkStats.puntos,       color: 'text-zelda-gold' },
+          { label: 'Victorias 🏆', value: linkStats.victoriasLink, color: 'text-green-700' },
+          { label: 'Derrotas ❌',  value: linkStats.derrotasLink,  color: 'text-red-500' },
+          { label: 'K.O. 💀',      value: linkStats.kos,           color: 'text-red-700' },
         ].map(s => (
           <div key={s.label} className="bg-white border border-zelda-border rounded-lg p-3 text-center">
             <div className="text-xs text-zelda-muted">{s.label}</div>
