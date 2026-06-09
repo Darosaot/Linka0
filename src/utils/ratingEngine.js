@@ -104,11 +104,12 @@ export function calcTeamRating(build) {
   return Math.round(weightedScore / totalWeight);
 }
 
-export function getVeredicto(rating) {
-  if (rating >= 95) return { titulo: 'El Elegido', descripcion: 'Tu equipamiento es digno del portador de la Trifuerza. Ningún rival puede resistirte.' };
-  if (rating >= 85) return { titulo: 'Héroe del Tiempo', descripcion: 'Un equipamiento legendario. Los bardos cantarán tus hazañas durante generaciones.' };
-  if (rating >= 75) return { titulo: 'Campeón de Hyrule', descripcion: 'Un build sólido y temible. Los Links rivales tiemblan ante tu nombre.' };
-  if (rating >= 65) return { titulo: 'Aventurero Valiente', descripcion: 'Buen equipamiento. Ganarás la mayoría de tus combates con habilidad.' };
-  if (rating >= 55) return { titulo: 'Aprendiz de Héroe', descripcion: 'Equipamiento básico pero funcional. Necesitarás mucha habilidad para salir victorioso.' };
-  return { titulo: 'Aldeano con Espada de Madera', descripcion: 'Este equipamiento no impresionaría ni a un Bokoblin Rojo. ¡Prueba de nuevo!' };
+// pct: percentage of max tournament points scored (0–100)
+export function getVeredicto(pct) {
+  if (pct >= 85) return { titulo: 'El Elegido',             descripcion: 'Dominio absoluto. Ningún Link del pasado pudo resistirse a tu equipamiento.' };
+  if (pct >= 70) return { titulo: 'Héroe del Tiempo',       descripcion: 'Una actuación legendaria. Los bardos cantarán tus hazañas durante generaciones.' };
+  if (pct >= 55) return { titulo: 'Campeón de Hyrule',      descripcion: 'Más victorias que derrotas. Un verdadero héroe de Hyrule.' };
+  if (pct >= 40) return { titulo: 'Aventurero Valiente',    descripcion: 'Resultado ajustado. Con mejor equipamiento, la historia sería otra.' };
+  if (pct >= 25) return { titulo: 'Aprendiz de Héroe',      descripcion: 'Los Links del pasado fueron demasiado para ti esta vez. Vuelve más fuerte.' };
+  return              { titulo: 'Aldeano con Espada de Madera', descripcion: 'Una derrota absoluta. Hasta un Bokoblin Rojo te habría dado problemas. ¡Inténtalo de nuevo!' };
 }
