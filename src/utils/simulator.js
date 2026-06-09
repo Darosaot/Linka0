@@ -106,10 +106,18 @@ export function simularTorneo(build, _era, dificultad = 'normal') {
 
   const maxPuntos = rivales.length * PUNTOS_DUELO.victoria_clara;
 
+  const rivalAvgRating = Math.round(
+    rivales.reduce((sum, r) => {
+      const { poder = 0, defensa = 0, agilidad = 0, magia = 0, resistencia = 0 } = r.attributes;
+      return sum + (poder * 0.35 + defensa * 0.20 + agilidad * 0.25 + magia * 0.15 + resistencia * 0.05);
+    }, 0) / rivales.length
+  );
+
   return {
     combatLog,
     linkStats,
     totalRondas: rivales.length,
     maxPuntos,
+    rivalAvgRating,
   };
 }
