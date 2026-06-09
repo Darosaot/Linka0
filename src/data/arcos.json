@@ -1,82 +1,107 @@
 [
   {
+    "id": "arco_madera",
+    "name": "Arco de Madera",
+    "type": "arco", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
+    "bio": "El arco básico del héroe de Hyrule. Sin magia pero fiable: cada flecha cuenta cuando apunta bien.",
+    "attributes": { "poder": 30, "precision": 65, "velocidad_disparo": 80, "alcance": 55 }
+  },
+  {
+    "id": "arco_plata",
+    "name": "Arco de Plata",
+    "type": "arco", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
+    "bio": "Flechas de plata contra criaturas oscuras. Es el único arco que puede herir a Agahnim y sus fantasmas.",
+    "attributes": { "poder": 60, "precision": 78, "velocidad_disparo": 70, "alcance": 68 }
+  },
+  {
     "id": "arco_hadas",
     "name": "Arco de las Hadas",
-    "type": "arco",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
+    "type": "arco", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
     "bio": "El arco básico de Link en Hyrule. Rápido y fiable, dispara flechas de luz contra los no muertos.",
     "attributes": { "poder": 42, "precision": 75, "velocidad_disparo": 70, "alcance": 65 }
   },
   {
+    "id": "arco_fuego",
+    "name": "Arco de Fuego",
+    "type": "arco", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
+    "bio": "Flechas imbuidas de llama del Templo del Fuego. Derrite el hielo y quema las telas de araña de un disparo.",
+    "attributes": { "poder": 58, "precision": 72, "velocidad_disparo": 65, "alcance": 68 }
+  },
+  {
     "id": "arco_luz",
     "name": "Arco de Luz",
-    "type": "arco",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
+    "type": "arco", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
     "bio": "Las Flechas de Luz son la debilidad de Ganondorf. Un arco sagrado que solo puede empuñar el héroe verdadero.",
     "attributes": { "poder": 95, "precision": 85, "velocidad_disparo": 55, "alcance": 80 }
   },
   {
+    "id": "arco_bombas",
+    "name": "Arco con Flechas Bomba",
+    "type": "arco", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
+    "bio": "Combina el arco con el saco de bombas. Una flecha explosiva que abre muros y derriba grupos de enemigos.",
+    "attributes": { "poder": 75, "precision": 62, "velocidad_disparo": 50, "alcance": 72 }
+  },
+  {
     "id": "arco_viento",
     "name": "Arco del Viento",
-    "type": "arco",
-    "generation": "era_viento",
-    "year": 2002,
-    "game": "The Wind Waker",
+    "type": "arco", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
     "bio": "Arco ligero adaptado a la brisa marina. Sus flechas aprovechan el viento para ganar alcance y velocidad.",
     "attributes": { "poder": 55, "precision": 80, "velocidad_disparo": 85, "alcance": 78 }
   },
   {
     "id": "arco_hielo",
     "name": "Arco de Hielo",
-    "type": "arco",
-    "generation": "era_crepusculo",
-    "year": 2006,
-    "game": "Twilight Princess",
+    "type": "arco", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
     "bio": "Congela al blanco en el impacto. Ideal para inmovilizar bokoblins antes de atacar con la espada.",
     "attributes": { "poder": 65, "precision": 78, "velocidad_disparo": 60, "alcance": 72 }
   },
   {
+    "id": "arco_garra",
+    "name": "Arco de Garra Gancho",
+    "type": "arco", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "Combinación de arco y garra gancho. Puede enganchar a los enemigos a distancia y acercarlos al ataque.",
+    "attributes": { "poder": 60, "precision": 82, "velocidad_disparo": 68, "alcance": 85 }
+  },
+  {
     "id": "arco_sacred_llamas",
     "name": "Arco de la Llama Sagrada",
-    "type": "arco",
-    "generation": "era_cielo",
-    "year": 2011,
-    "game": "Skyward Sword",
+    "type": "arco", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
     "bio": "Bendecido en las tres Llamas Sagradas de Hyrule. Sus flechas arden con fuego divino inextinguible.",
     "attributes": { "poder": 80, "precision": 72, "velocidad_disparo": 65, "alcance": 70 }
   },
   {
+    "id": "arco_heroi",
+    "name": "Arco del Héroe",
+    "type": "arco", "generation": "era_cielo", "year": 2013, "game": "A Link Between Worlds",
+    "bio": "El arco legendario redescubierto en Lorule. Dispara flechas de energía que atraviesan múltiples enemigos.",
+    "attributes": { "poder": 72, "precision": 85, "velocidad_disparo": 78, "alcance": 82 }
+  },
+  {
     "id": "arco_ancient",
     "name": "Arco Ancestral",
-    "type": "arco",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
+    "type": "arco", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
     "bio": "Tecnología Sheikah de alta precisión. Sus flechas de energía ignoran la armadura y no se ven afectadas por el viento.",
     "attributes": { "poder": 88, "precision": 95, "velocidad_disparo": 72, "alcance": 90 }
   },
   {
     "id": "arco_lynel",
     "name": "Arco de Lynel Plateado",
-    "type": "arco",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
+    "type": "arco", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
     "bio": "El arco más poderoso que porta un Lynel de las praderas. Dispara tres flechas simultáneas.",
     "attributes": { "poder": 92, "precision": 80, "velocidad_disparo": 80, "alcance": 82 }
   },
   {
     "id": "arco_dragonite",
     "name": "Arco de Escama de Dragón",
-    "type": "arco",
-    "generation": "era_abierta",
-    "year": 2023,
-    "game": "Tears of the Kingdom",
+    "type": "arco", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
     "bio": "Forjado con escamas de Dinraal. Sus flechas llegan a fusionarse con elementos del entorno Zonai.",
     "attributes": { "poder": 85, "precision": 88, "velocidad_disparo": 75, "alcance": 88 }
+  },
+  {
+    "id": "arco_gloom",
+    "name": "Arco de la Penumbra",
+    "type": "arco", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Construido con Penumbra de las Profundidades. Sus flechas malditas reducen los corazones del blanco.",
+    "attributes": { "poder": 90, "precision": 82, "velocidad_disparo": 68, "alcance": 85 }
   }
 ]

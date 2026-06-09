@@ -1,62 +1,128 @@
 [
   {
-    "id": "botas_hierro",
-    "name": "Botas de Hierro",
-    "type": "botas",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
-    "bio": "Botas de acero que permiten caminar bajo el agua. En combate anclan a Link al suelo resistiendo empujones.",
-    "attributes": { "agilidad": 15, "sigilo": 10, "salto": 20, "resistencia_terreno": 92 }
-  },
-  {
     "id": "botas_pegaso",
     "name": "Botas Pegaso",
-    "type": "botas",
-    "generation": "era_clasica",
-    "year": 1991,
-    "game": "A Link to the Past",
+    "type": "botas", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
     "bio": "Las botas mágicas del héroe. Permiten lanzarse en carrera a velocidad sobrenatural derribando enemigos.",
     "attributes": { "agilidad": 92, "sigilo": 35, "salto": 70, "resistencia_terreno": 40 }
   },
   {
-    "id": "botas_escalada",
-    "name": "Equipo de Escalada",
-    "type": "botas",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
-    "bio": "Conjunto de almohadillas de escalada Sheikah. Permite trepar cualquier superficie, incluso bajo la lluvia.",
-    "attributes": { "agilidad": 75, "sigilo": 60, "salto": 88, "resistencia_terreno": 72 }
+    "id": "botas_buceo",
+    "name": "Aletas de Buceo",
+    "type": "botas", "generation": "era_clasica", "year": 1993, "game": "Link's Awakening",
+    "bio": "Aletas mágicas de las islas Koholint. Permiten zambullirse bajo el agua y nadar a gran velocidad.",
+    "attributes": { "agilidad": 70, "sigilo": 40, "salto": 45, "resistencia_terreno": 85 }
   },
   {
-    "id": "botas_sigilo",
-    "name": "Botas del Desierto",
-    "type": "botas",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
-    "bio": "Botas Gerudo diseñadas para el desierto. Movimiento silencioso sobre arena que confunde a los rastreadores.",
-    "attributes": { "agilidad": 65, "sigilo": 92, "salto": 55, "resistencia_terreno": 80 }
+    "id": "botas_hierro",
+    "name": "Botas de Hierro",
+    "type": "botas", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
+    "bio": "Botas de acero que permiten caminar bajo el agua. En combate anclan a Link al suelo resistiendo empujones.",
+    "attributes": { "agilidad": 15, "sigilo": 10, "salto": 20, "resistencia_terreno": 92 }
   },
   {
-    "id": "botas_cielo",
-    "name": "Aletas del Cielo",
-    "type": "botas",
-    "generation": "era_cielo",
-    "year": 2011,
-    "game": "Skyward Sword",
-    "bio": "Equipo de los Caballeros del Cielo. Permiten planear desde alturas y aterrizar sin daño de caída.",
-    "attributes": { "agilidad": 82, "sigilo": 45, "salto": 95, "resistencia_terreno": 55 }
+    "id": "botas_hover",
+    "name": "Botas Flotantes",
+    "type": "botas", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
+    "bio": "Botas de los seguidores de Ganondorf. Permiten flotar brevemente sobre el vacío, ideal para emboscadas.",
+    "attributes": { "agilidad": 62, "sigilo": 55, "salto": 88, "resistencia_terreno": 30 }
+  },
+  {
+    "id": "botas_conejo",
+    "name": "Botas de Conejo",
+    "type": "botas", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
+    "bio": "Las botas de la liebre del Rancho Romani. Duplican la velocidad de sprint y permiten esquivar rodando.",
+    "attributes": { "agilidad": 88, "sigilo": 42, "salto": 75, "resistencia_terreno": 50 }
+  },
+  {
+    "id": "botas_mar",
+    "name": "Botas del Navegante",
+    "type": "botas", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
+    "bio": "Calzado marinero del Gran Mar. Perfectas para correr sobre cubiertas mojadas sin perder el equilibrio.",
+    "attributes": { "agilidad": 72, "sigilo": 48, "salto": 60, "resistencia_terreno": 78 }
   },
   {
     "id": "botas_crepusculo",
     "name": "Botas del Crepúsculo",
-    "type": "botas",
-    "generation": "era_crepusculo",
-    "year": 2006,
-    "game": "Twilight Princess",
+    "type": "botas", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
     "bio": "Reforzadas con magia del reino sombrío. La oscuridad las vuelve invisibles y aumenta la velocidad de sprint.",
     "attributes": { "agilidad": 78, "sigilo": 85, "salto": 65, "resistencia_terreno": 68 }
+  },
+  {
+    "id": "botas_goron_tp",
+    "name": "Botas Goron",
+    "type": "botas", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "Calzado de roca volcánica Goron. Permiten caminar sobre lava y absorber el impacto de caídas brutales.",
+    "attributes": { "agilidad": 38, "sigilo": 15, "salto": 35, "resistencia_terreno": 95 }
+  },
+  {
+    "id": "botas_cielo",
+    "name": "Aletas del Cielo",
+    "type": "botas", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "Equipo de los Caballeros del Cielo. Permiten planear desde alturas y aterrizar sin daño de caída.",
+    "attributes": { "agilidad": 82, "sigilo": 45, "salto": 95, "resistencia_terreno": 55 }
+  },
+  {
+    "id": "botas_arena",
+    "name": "Botas de Arena",
+    "type": "botas", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Diseñadas para el desierto de Gerudo. Se deslizan sobre arena movediza sin hundirse ni perder velocidad.",
+    "attributes": { "agilidad": 80, "sigilo": 62, "salto": 55, "resistencia_terreno": 88 }
+  },
+  {
+    "id": "botas_sigilo",
+    "name": "Botas del Desierto",
+    "type": "botas", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Botas Gerudo diseñadas para el desierto. Movimiento silencioso sobre arena que confunde a los rastreadores.",
+    "attributes": { "agilidad": 65, "sigilo": 92, "salto": 55, "resistencia_terreno": 80 }
+  },
+  {
+    "id": "botas_escalada",
+    "name": "Equipo de Escalada",
+    "type": "botas", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Conjunto de almohadillas de escalada Sheikah. Permite trepar cualquier superficie, incluso bajo la lluvia.",
+    "attributes": { "agilidad": 75, "sigilo": 60, "salto": 88, "resistencia_terreno": 72 }
+  },
+  {
+    "id": "botas_nieve",
+    "name": "Botas de Nieve",
+    "type": "botas", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Calzado del conjunto Plumón Rito. No resbalan en hielo y mantienen los pies secos en la nieve profunda.",
+    "attributes": { "agilidad": 68, "sigilo": 55, "salto": 62, "resistencia_terreno": 90 }
+  },
+  {
+    "id": "botas_ember",
+    "name": "Botas de Llama",
+    "type": "botas", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Imbuidas con la llama del volcán Eldin. Permiten caminar sobre lava y no pierden velocidad en el calor.",
+    "attributes": { "agilidad": 72, "sigilo": 35, "salto": 60, "resistencia_terreno": 92 }
+  },
+  {
+    "id": "botas_ancient",
+    "name": "Botas Ancestrales",
+    "type": "botas", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Tecnología Sheikah de movimiento rápido. Aumentan la velocidad de carrera y el ataque de lanzamiento.",
+    "attributes": { "agilidad": 85, "sigilo": 50, "salto": 72, "resistencia_terreno": 65 }
+  },
+  {
+    "id": "botas_fierce_deity",
+    "name": "Botas de la Divinidad",
+    "type": "botas", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Las botas del dios de la guerra Fierce Deity. Aumentan la velocidad de ataque en un 30% sobre cualquier terreno.",
+    "attributes": { "agilidad": 88, "sigilo": 40, "salto": 80, "resistencia_terreno": 78 }
+  },
+  {
+    "id": "botas_zonaite",
+    "name": "Botas Zonaite",
+    "type": "botas", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Botas de tecnología Zonai con propulsores integrados. Permiten pequeños impulsos de vuelo al saltar.",
+    "attributes": { "agilidad": 82, "sigilo": 45, "salto": 92, "resistencia_terreno": 60 }
+  },
+  {
+    "id": "botas_rito",
+    "name": "Botas Rito",
+    "type": "botas", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Calzado artesanal de los Rito de Rito Village. Perfectas para planeo, con garras que dan agarre en roca.",
+    "attributes": { "agilidad": 78, "sigilo": 58, "salto": 88, "resistencia_terreno": 65 }
   }
 ]

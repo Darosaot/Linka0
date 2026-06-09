@@ -1,82 +1,114 @@
 [
   {
+    "id": "sabios_sello",
+    "name": "Los Siete Sabios",
+    "type": "maestro", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
+    "bio": "Los guardianes del Sello de los Siete Sabios. Su sabiduría colectiva guía al héroe en su misión más oscura.",
+    "attributes": { "sabiduria": 90, "tactica": 72, "moral": 95, "secretos": 88 }
+  },
+  {
+    "id": "gran_hada_clasica",
+    "name": "Gran Hada del Poder",
+    "type": "maestro", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
+    "bio": "La hada máxima de Hyrule. Potencia el ataque de Link con magia pura y le enseña el hechizo de luz sagrada.",
+    "attributes": { "sabiduria": 78, "tactica": 55, "moral": 88, "secretos": 80 }
+  },
+  {
     "id": "impa_oot",
     "name": "Impa",
-    "type": "maestro",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
+    "type": "maestro", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
     "bio": "La guardiana Sheikah de la princesa Zelda. Sus enseñanzas de combate secreto dan ventaja táctica decisiva.",
     "attributes": { "sabiduria": 88, "tactica": 85, "moral": 75, "secretos": 92 }
   },
   {
     "id": "gran_hada",
     "name": "Gran Hada",
-    "type": "maestro",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
+    "type": "maestro", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
     "bio": "Las Grandes Hadas potencian las habilidades de Link. Su magia mejora el ataque giratorio y la resistencia.",
     "attributes": { "sabiduria": 75, "tactica": 60, "moral": 88, "secretos": 70 }
   },
   {
+    "id": "darunia",
+    "name": "Darunia Hermano",
+    "type": "maestro", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
+    "bio": "El Patriarca Goron y hermano jurado de Link. Sus técnicas de combate con fuerza bruta son inimitables.",
+    "attributes": { "sabiduria": 62, "tactica": 82, "moral": 90, "secretos": 58 }
+  },
+  {
     "id": "guru_guru",
     "name": "Músico de la Torre del Reloj",
-    "type": "maestro",
-    "generation": "era_3d",
-    "year": 2000,
-    "game": "Majora's Mask",
+    "type": "maestro", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
     "bio": "El extraño músico que enseña melodías ocultas. Sus canciones pueden alterar el ritmo del combate.",
     "attributes": { "sabiduria": 65, "tactica": 52, "moral": 70, "secretos": 85 }
   },
   {
     "id": "rey_hadas_mar",
     "name": "Rey de las Hadas del Mar",
-    "type": "maestro",
-    "generation": "era_viento",
-    "year": 2002,
-    "game": "The Wind Waker",
+    "type": "maestro", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
     "bio": "El sabio guardián del Gran Mar. Sus bendiciones aumentan la defensa y permiten respirar bajo el agua.",
     "attributes": { "sabiduria": 80, "tactica": 68, "moral": 82, "secretos": 78 }
   },
   {
     "id": "orca",
     "name": "Orca el Maestro de Espadas",
-    "type": "maestro",
-    "generation": "era_viento",
-    "year": 2002,
-    "game": "The Wind Waker",
+    "type": "maestro", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
     "bio": "El veterano maestro espadachín de la Isla Ordona. Sus técnicas de espada son las más completas conocidas.",
     "attributes": { "sabiduria": 72, "tactica": 90, "moral": 78, "secretos": 80 }
   },
   {
     "id": "hero_shade",
     "name": "La Sombra del Héroe",
-    "type": "maestro",
-    "generation": "era_crepusculo",
-    "year": 2006,
-    "game": "Twilight Princess",
+    "type": "maestro", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
     "bio": "El espíritu del héroe original, incapaz de descansar. Enseña a Link las técnicas olvidadas de los héroes.",
     "attributes": { "sabiduria": 92, "tactica": 95, "moral": 85, "secretos": 98 }
   },
   {
     "id": "rusl",
     "name": "Rusl el Guardabosques",
-    "type": "maestro",
-    "generation": "era_crepusculo",
-    "year": 2006,
-    "game": "Twilight Princess",
+    "type": "maestro", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
     "bio": "El mentor de Link en la aldea Ordona. Sus técnicas básicas son sólidas y fiables en cualquier situación.",
     "attributes": { "sabiduria": 58, "tactica": 70, "moral": 80, "secretos": 55 }
   },
   {
+    "id": "gaepora",
+    "name": "Gaepora el Director",
+    "type": "maestro", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "Director de la Academia del Cielo y padre de Zelda. Sus consejos estratégicos preparan a Link para lo inevitable.",
+    "attributes": { "sabiduria": 85, "tactica": 75, "moral": 90, "secretos": 80 }
+  },
+  {
+    "id": "groose_maestro",
+    "name": "Groose",
+    "type": "maestro", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "El rival de Link que termina como su aliado más inesperado. Construye catapultas y mejora la artillería.",
+    "attributes": { "sabiduria": 50, "tactica": 78, "moral": 72, "secretos": 48 }
+  },
+  {
     "id": "impa_botw",
     "name": "Impa Anciana",
-    "type": "maestro",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
+    "type": "maestro", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
     "bio": "La vieja guardiana Sheikah espera a Link en la aldea de Kakariko. Su sabiduría acumulada en 100 años es invaluable.",
     "attributes": { "sabiduria": 98, "tactica": 82, "moral": 92, "secretos": 95 }
+  },
+  {
+    "id": "robbie",
+    "name": "Investigador Robbie",
+    "type": "maestro", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "El excéntrico Investigador Sheikah del Laboratorio de Akkala. Sus inventos anti-Guardián son decisivos.",
+    "attributes": { "sabiduria": 82, "tactica": 88, "moral": 68, "secretos": 90 }
+  },
+  {
+    "id": "purah",
+    "name": "Purah",
+    "type": "maestro", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "La Investigadora Sheikah rejuvenecida. Dirige el Centro de Investigación de Hyrule con tecnología Zonai.",
+    "attributes": { "sabiduria": 90, "tactica": 85, "moral": 80, "secretos": 92 }
+  },
+  {
+    "id": "rauru",
+    "name": "Rey Rauru",
+    "type": "maestro", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "El primer Rey de Hyrule, fundador del reino. Su poder Zonai es ancestral y su sabiduría, ilimitada.",
+    "attributes": { "sabiduria": 98, "tactica": 90, "moral": 98, "secretos": 95 }
   }
 ]

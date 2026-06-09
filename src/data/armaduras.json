@@ -1,81 +1,190 @@
 [
   {
+    "id": "cota_verde",
+    "name": "Cota de Mallas Verde",
+    "type": "armadura", "generation": "era_clasica", "year": 1986, "game": "The Legend of Zelda",
+    "bio": "La túnica verde icónica del héroe de Hyrule. Ligera, cómoda y símbolo del valor del portador.",
+    "attributes": { "defensa": 15, "durabilidad": 40, "resistencia": 18, "peso_reduccion": 92 }
+  },
+  {
+    "id": "blue_mail",
+    "name": "Correo Azul",
+    "type": "armadura", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
+    "bio": "Armadura mejorada del Palacio de Cristal. Reduce el daño recibido a la mitad respecto a la cota verde.",
+    "attributes": { "defensa": 48, "durabilidad": 62, "resistencia": 42, "peso_reduccion": 72 }
+  },
+  {
+    "id": "red_mail",
+    "name": "Correo Rojo",
+    "type": "armadura", "generation": "era_clasica", "year": 1991, "game": "A Link to the Past",
+    "bio": "La armadura más poderosa de la era clásica. Reduce el daño a una cuarta parte y da aspecto de llama.",
+    "attributes": { "defensa": 75, "durabilidad": 78, "resistencia": 65, "peso_reduccion": 55 }
+  },
+  {
     "id": "tunica_kokiri",
     "name": "Túnica Kokiri",
-    "type": "armadura",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
+    "type": "armadura", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
     "bio": "Ropa ligera de los Kokiri. Apenas protege, pero garantiza libertad de movimiento total.",
     "attributes": { "defensa": 18, "durabilidad": 45, "resistencia": 20, "peso_reduccion": 90 }
   },
   {
     "id": "armadura_zora",
     "name": "Armadura Zora",
-    "type": "armadura",
-    "generation": "era_3d",
-    "year": 1998,
-    "game": "Ocarina of Time",
+    "type": "armadura", "generation": "era_3d", "year": 1998, "game": "Ocarina of Time",
     "bio": "Escamas de los Zora tejidas en forma de armadura. Permite respirar bajo el agua y nado veloz.",
     "attributes": { "defensa": 35, "durabilidad": 60, "resistencia": 45, "peso_reduccion": 70 }
   },
   {
+    "id": "armadura_magica_oot",
+    "name": "Armadura Mágica",
+    "type": "armadura", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
+    "bio": "Armadura de oro que convierte el daño en magia. Invulnerable mientras haya magia en reserva.",
+    "attributes": { "defensa": 70, "durabilidad": 68, "resistencia": 58, "peso_reduccion": 38 }
+  },
+  {
+    "id": "tunica_deku",
+    "name": "Máscara Deku",
+    "type": "armadura", "generation": "era_3d", "year": 2000, "game": "Majora's Mask",
+    "bio": "Transforma a Link en Deku Scrub. Cuerpo resistente a venenos y permite volar brevemente sobre flores.",
+    "attributes": { "defensa": 25, "durabilidad": 50, "resistencia": 35, "peso_reduccion": 82 }
+  },
+  {
+    "id": "tunica_pez_enlazado",
+    "name": "Armadura del Pez Enlazado",
+    "type": "armadura", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
+    "bio": "Tejida con escamas del Gran Pez del Mar. Permite respirar bajo el mar y acelera el nado en corrientes.",
+    "attributes": { "defensa": 32, "durabilidad": 55, "resistencia": 48, "peso_reduccion": 75 }
+  },
+  {
+    "id": "armadura_magica_ww",
+    "name": "Armadura Mágica (Mar)",
+    "type": "armadura", "generation": "era_viento", "year": 2002, "game": "The Wind Waker",
+    "bio": "Armadura dorada que consume rupias al recibir daño. Cuanto más dinero, más invulnerable.",
+    "attributes": { "defensa": 68, "durabilidad": 72, "resistencia": 60, "peso_reduccion": 42 }
+  },
+  {
+    "id": "armadura_zora_tp",
+    "name": "Armadura Zora (Crepúsculo)",
+    "type": "armadura", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "Heredada del Príncipe Ralis. Permite nadar a velocidad Zora incluso en aguas gélidas y turbulentas.",
+    "attributes": { "defensa": 42, "durabilidad": 62, "resistencia": 55, "peso_reduccion": 68 }
+  },
+  {
     "id": "armadura_goron",
     "name": "Armadura Goron",
-    "type": "armadura",
-    "generation": "era_crepusculo",
-    "year": 2006,
-    "game": "Twilight Princess",
+    "type": "armadura", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
     "bio": "Forjada con piedra volcánica Goron. Resistente al fuego y a los golpes físicos más brutales.",
     "attributes": { "defensa": 72, "durabilidad": 80, "resistencia": 65, "peso_reduccion": 25 }
   },
   {
     "id": "armadura_crepusculo",
     "name": "Armadura del Crepúsculo",
-    "type": "armadura",
-    "generation": "era_crepusculo",
-    "year": 2006,
-    "game": "Twilight Princess",
+    "type": "armadura", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
     "bio": "La armadura de Hero's Shade, mejorada en el reino del Crepúsculo. Equilibrio entre protección y agilidad.",
     "attributes": { "defensa": 65, "durabilidad": 70, "resistencia": 58, "peso_reduccion": 52 }
   },
   {
+    "id": "armadura_magica_tp",
+    "name": "Armadura de Cristal",
+    "type": "armadura", "generation": "era_crepusculo", "year": 2006, "game": "Twilight Princess",
+    "bio": "Armadura mágica con cristal de la era del Crepúsculo. Su brillo cegador distrae a los atacantes.",
+    "attributes": { "defensa": 60, "durabilidad": 66, "resistencia": 62, "peso_reduccion": 48 }
+  },
+  {
     "id": "armadura_cielo",
     "name": "Armadura del Caballero del Cielo",
-    "type": "armadura",
-    "generation": "era_cielo",
-    "year": 2011,
-    "game": "Skyward Sword",
+    "type": "armadura", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
     "bio": "La armadura legendaria de la Academia del Cielo. Ligera y con protecciones de alas replegables.",
     "attributes": { "defensa": 55, "durabilidad": 62, "resistencia": 50, "peso_reduccion": 68 }
   },
   {
+    "id": "tunica_bosque_ss",
+    "name": "Túnica del Bosque Sagrado",
+    "type": "armadura", "generation": "era_cielo", "year": 2011, "game": "Skyward Sword",
+    "bio": "Bendecida por la Gran Hada del Bosque. Aumenta la resistencia a venenos y ralentiza el desgaste.",
+    "attributes": { "defensa": 48, "durabilidad": 58, "resistencia": 65, "peso_reduccion": 72 }
+  },
+  {
     "id": "tunica_salvaje",
     "name": "Túnica del Salvaje",
-    "type": "armadura",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
+    "type": "armadura", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
     "bio": "La armadura de los Campeones de Hyrule. Maximiza el daño de cada golpe con ataque en movimiento.",
     "attributes": { "defensa": 60, "durabilidad": 55, "resistencia": 72, "peso_reduccion": 60 }
   },
   {
+    "id": "armadura_soldado",
+    "name": "Armadura de Soldado",
+    "type": "armadura", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Armadura estándar de los soldados del Castillo de Hyrule. Robusta y probada en mil batallas.",
+    "attributes": { "defensa": 52, "durabilidad": 60, "resistencia": 50, "peso_reduccion": 55 }
+  },
+  {
+    "id": "armadura_caballero",
+    "name": "Armadura de Caballero",
+    "type": "armadura", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "La armadura de los Caballeros reales de Hyrule. Mayor protección que la de soldado con mejor movilidad.",
+    "attributes": { "defensa": 65, "durabilidad": 68, "resistencia": 58, "peso_reduccion": 50 }
+  },
+  {
+    "id": "armadura_real",
+    "name": "Armadura Real de la Guardia",
+    "type": "armadura", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "La armadura de los guardias personales de la familia real. Insignia dorada con máxima protección.",
+    "attributes": { "defensa": 72, "durabilidad": 74, "resistencia": 65, "peso_reduccion": 45 }
+  },
+  {
+    "id": "armadura_voe_desierto",
+    "name": "Armadura Voe del Desierto",
+    "type": "armadura", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Atuendo de los hombres prohibidos en Gerudo Town. Ideal para sobrevivir el calor del desierto de Gerudo.",
+    "attributes": { "defensa": 45, "durabilidad": 52, "resistencia": 78, "peso_reduccion": 68 }
+  },
+  {
+    "id": "armadura_nieve",
+    "name": "Conjunto de Plumón",
+    "type": "armadura", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Plumas de Rito que aíslan del frío polar. Permite sobrevivir en las cimas nevadas del Monte Lanayru.",
+    "attributes": { "defensa": 50, "durabilidad": 58, "resistencia": 82, "peso_reduccion": 62 }
+  },
+  {
+    "id": "armadura_goma",
+    "name": "Armadura de Goma",
+    "type": "armadura", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
+    "bio": "Forjada con materiales eléctricos del Faro de Akkala. Aísla completamente los ataques de rayo.",
+    "attributes": { "defensa": 55, "durabilidad": 60, "resistencia": 70, "peso_reduccion": 58 }
+  },
+  {
     "id": "armadura_ancient",
     "name": "Armadura Ancestral",
-    "type": "armadura",
-    "generation": "era_abierta",
-    "year": 2017,
-    "game": "Breath of the Wild",
+    "type": "armadura", "generation": "era_abierta", "year": 2017, "game": "Breath of the Wild",
     "bio": "Fabricada por los Investigadores Sheikah. Maximiza el daño contra Guardianes y reduce sus disparos.",
     "attributes": { "defensa": 78, "durabilidad": 75, "resistencia": 68, "peso_reduccion": 45 }
   },
   {
+    "id": "armadura_rito",
+    "name": "Armadura Rito",
+    "type": "armadura", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Ligera como el viento y resistente al frío glacial del Monte Hebra. Favorita de los guerreros Rito.",
+    "attributes": { "defensa": 58, "durabilidad": 62, "resistencia": 75, "peso_reduccion": 78 }
+  },
+  {
+    "id": "armadura_divinidad",
+    "name": "Armadura de la Divinidad",
+    "type": "armadura", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Armadura del dios Fierce Deity de las leyendas Kokiri. Concentra el poder de todas las máscaras.",
+    "attributes": { "defensa": 88, "durabilidad": 85, "resistencia": 80, "peso_reduccion": 40 }
+  },
+  {
+    "id": "armadura_zonaite",
+    "name": "Armadura Zonaite",
+    "type": "armadura", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
+    "bio": "Forjada con mineral Zonaite de las Profundidades. Potencia las habilidades del Templo Zonai.",
+    "attributes": { "defensa": 82, "durabilidad": 80, "resistencia": 72, "peso_reduccion": 48 }
+  },
+  {
     "id": "armadura_profundidades",
     "name": "Armadura de las Profundidades",
-    "type": "armadura",
-    "generation": "era_abierta",
-    "year": 2023,
-    "game": "Tears of the Kingdom",
+    "type": "armadura", "generation": "era_abierta", "year": 2023, "game": "Tears of the Kingdom",
     "bio": "Encontrada en las Profundidades de Hyrule. Resistente a la Penumbra y con propiedades de absorción.",
     "attributes": { "defensa": 85, "durabilidad": 80, "resistencia": 80, "peso_reduccion": 38 }
   }

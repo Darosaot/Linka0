@@ -9,6 +9,7 @@ import maestrosData from '../data/maestros.json';
 import arcosData from '../data/arcos.json';
 import generacionesData from '../data/generaciones.json';
 import mazmorrrasData from '../data/mazmorras.json';
+import jefesData from '../data/jefes.json';
 
 export const ITEM_TYPES = {
   espada1: espadasData,
@@ -91,6 +92,14 @@ export function getAllMazmorras() {
 
 export function getMazmorrById(id) {
   return mazmorrrasData.find(m => m.id === id);
+}
+
+export function getAllJefes() {
+  return jefesData;
+}
+
+export function getJefeById(id) {
+  return jefesData.find(j => j.id === id);
 }
 
 export const ERA_LABELS = {

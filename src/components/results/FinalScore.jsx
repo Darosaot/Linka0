@@ -25,12 +25,13 @@ export default function FinalScore({ build, resultados }) {
       </div>
 
       {/* Combat stats */}
-      <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
         {[
           { label: 'Puntos ⭐', value: linkStats.puntos, color: 'text-zelda-gold' },
           { label: 'Victorias 🏆', value: linkStats.victorias, color: 'text-green-700' },
           { label: 'Podios 🥈', value: linkStats.podios, color: 'text-blue-700' },
           { label: 'K.O. 💀', value: linkStats.kos, color: 'text-red-600' },
+          { label: 'Jefes ⚔️', value: linkStats.jefesVencidos ?? 0, color: 'text-purple-700' },
         ].map(s => (
           <div key={s.label} className="bg-white border border-zelda-border rounded-lg p-3 text-center">
             <div className="text-xs text-zelda-muted">{s.label}</div>
