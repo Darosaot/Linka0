@@ -1,0 +1,62 @@
+[
+  {
+    "id": "botas_hierro",
+    "name": "Botas de Hierro",
+    "type": "botas",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "Botas de acero que permiten caminar bajo el agua. En combate anclan a Link al suelo resistiendo empujones.",
+    "attributes": { "agilidad": 15, "sigilo": 10, "salto": 20, "resistencia_terreno": 92 }
+  },
+  {
+    "id": "botas_pegaso",
+    "name": "Botas Pegaso",
+    "type": "botas",
+    "generation": "era_clasica",
+    "year": 1991,
+    "game": "A Link to the Past",
+    "bio": "Las botas mágicas del héroe. Permiten lanzarse en carrera a velocidad sobrenatural derribando enemigos.",
+    "attributes": { "agilidad": 92, "sigilo": 35, "salto": 70, "resistencia_terreno": 40 }
+  },
+  {
+    "id": "botas_escalada",
+    "name": "Equipo de Escalada",
+    "type": "botas",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "Conjunto de almohadillas de escalada Sheikah. Permite trepar cualquier superficie, incluso bajo la lluvia.",
+    "attributes": { "agilidad": 75, "sigilo": 60, "salto": 88, "resistencia_terreno": 72 }
+  },
+  {
+    "id": "botas_sigilo",
+    "name": "Botas del Desierto",
+    "type": "botas",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "Botas Gerudo diseñadas para el desierto. Movimiento silencioso sobre arena que confunde a los rastreadores.",
+    "attributes": { "agilidad": 65, "sigilo": 92, "salto": 55, "resistencia_terreno": 80 }
+  },
+  {
+    "id": "botas_cielo",
+    "name": "Aletas del Cielo",
+    "type": "botas",
+    "generation": "era_cielo",
+    "year": 2011,
+    "game": "Skyward Sword",
+    "bio": "Equipo de los Caballeros del Cielo. Permiten planear desde alturas y aterrizar sin daño de caída.",
+    "attributes": { "agilidad": 82, "sigilo": 45, "salto": 95, "resistencia_terreno": 55 }
+  },
+  {
+    "id": "botas_crepusculo",
+    "name": "Botas del Crepúsculo",
+    "type": "botas",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "bio": "Reforzadas con magia del reino sombrío. La oscuridad las vuelve invisibles y aumenta la velocidad de sprint.",
+    "attributes": { "agilidad": 78, "sigilo": 85, "salto": 65, "resistencia_terreno": 68 }
+  }
+]

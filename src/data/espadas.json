@@ -1,0 +1,122 @@
+[
+  {
+    "id": "espada_kokiri",
+    "name": "Espada Kokiri",
+    "type": "espada",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "La primera espada de Link. Pequeña pero bien equilibrada, perfecta para un joven héroe.",
+    "attributes": { "poder": 28, "velocidad": 72, "alcance": 35, "magia": 5 }
+  },
+  {
+    "id": "espada_gilded",
+    "name": "Espada Dorada",
+    "type": "espada",
+    "generation": "era_3d",
+    "year": 2000,
+    "game": "Majora's Mask",
+    "bio": "Forjada en las fraguas de la Montaña Muerte con Polvo de Biggoron. La espada más poderosa de Termina.",
+    "attributes": { "poder": 88, "velocidad": 65, "alcance": 60, "magia": 20 }
+  },
+  {
+    "id": "espada_maestra_oot",
+    "name": "Espada Maestra",
+    "type": "espada",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "La espada que aleja el mal, forjada en los tiempos primordiales. Su poder se despierta con el Coraje.",
+    "attributes": { "poder": 92, "velocidad": 70, "alcance": 65, "magia": 88 }
+  },
+  {
+    "id": "espada_viento",
+    "name": "Espada del Viento",
+    "type": "espada",
+    "generation": "era_viento",
+    "year": 2002,
+    "game": "The Wind Waker",
+    "bio": "La Espada Maestra heredada del Rey de las Hadas del Mar. Brilla con luz dorada al enfrentarse al mal.",
+    "attributes": { "poder": 85, "velocidad": 75, "alcance": 70, "magia": 90 }
+  },
+  {
+    "id": "espada_medianoche",
+    "name": "Espada de Medianoche",
+    "type": "espada",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "bio": "Una espada oscura de las tierras del Crepúsculo. Canaliza la energía de las sombras en cada golpe.",
+    "attributes": { "poder": 78, "velocidad": 62, "alcance": 55, "magia": 45 }
+  },
+  {
+    "id": "espada_maestra_tp",
+    "name": "Espada Maestra (Crepúsculo)",
+    "type": "espada",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "bio": "La mítica Espada Maestra en su forma más poderosa. Purificada en el Templo del Tiempo, arde con luz sagrada.",
+    "attributes": { "poder": 95, "velocidad": 68, "alcance": 72, "magia": 92 }
+  },
+  {
+    "id": "espada_cielo",
+    "name": "Espada del Cielo",
+    "type": "espada",
+    "generation": "era_cielo",
+    "year": 2011,
+    "game": "Skyward Sword",
+    "bio": "El origen de la Espada Maestra. Dotada del espíritu de Fi, puede cargarse con energía de Sello.",
+    "attributes": { "poder": 80, "velocidad": 78, "alcance": 62, "magia": 95 }
+  },
+  {
+    "id": "espada_lynel",
+    "name": "Espada de Lynel Salvaje",
+    "type": "espada",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "El arma más poderosa que porta un Lynel de las llanuras. Su filo puede destrozar cualquier armadura.",
+    "attributes": { "poder": 98, "velocidad": 60, "alcance": 75, "magia": 10 }
+  },
+  {
+    "id": "espada_maestra_botw",
+    "name": "Espada Maestra (Era Abierta)",
+    "type": "espada",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "Tras 100 años de sueño, recupera su poder completo. La única arma que nunca se rompe en las manos del Elegido.",
+    "attributes": { "poder": 96, "velocidad": 72, "alcance": 68, "magia": 98 }
+  },
+  {
+    "id": "espada_ancient",
+    "name": "Espada Ancestral",
+    "type": "espada",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "Forjada con tecnología Sheikah por Robbie. Especialmente efectiva contra la Calamidad y los Guardianes.",
+    "attributes": { "poder": 82, "velocidad": 65, "alcance": 60, "magia": 55 }
+  },
+  {
+    "id": "espada_zonai",
+    "name": "Espada de Zonanio",
+    "type": "espada",
+    "generation": "era_abierta",
+    "year": 2023,
+    "game": "Tears of the Kingdom",
+    "bio": "Forjada con el misterioso Zonanio de las Profundidades. Su energía verde nunca se agota completamente.",
+    "attributes": { "poder": 88, "velocidad": 70, "alcance": 65, "magia": 72 }
+  },
+  {
+    "id": "espada_gloom",
+    "name": "Espada de la Penumbra",
+    "type": "espada",
+    "generation": "era_abierta",
+    "year": 2023,
+    "game": "Tears of the Kingdom",
+    "bio": "Impregnada de Penumbra de las Profundidades. Devastadora pero peligrosa incluso para quien la empuña.",
+    "attributes": { "poder": 94, "velocidad": 55, "alcance": 70, "magia": 80 }
+  }
+]

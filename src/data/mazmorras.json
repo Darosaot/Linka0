@@ -1,0 +1,218 @@
+[
+  {
+    "id": "templo_bosque",
+    "name": "Templo del Bosque",
+    "game": "Ocarina of Time",
+    "generation": "era_3d",
+    "emoji": "🌳",
+    "type": "selva",
+    "modifiers": {
+      "fuerza_weight": 0.6,
+      "defensa_weight": 0.5,
+      "agilidad_weight": 0.9,
+      "magia_weight": 0.7,
+      "lluvia_probability": 0.35,
+      "emboscada_probability": 0.55,
+      "dificultad_huida": 0.6,
+      "penalizacion_corazones": 0.3
+    }
+  },
+  {
+    "id": "templo_fuego",
+    "name": "Templo del Fuego",
+    "game": "Ocarina of Time",
+    "generation": "era_3d",
+    "emoji": "🔥",
+    "type": "volcan",
+    "modifiers": {
+      "fuerza_weight": 1.0,
+      "defensa_weight": 0.8,
+      "agilidad_weight": 0.5,
+      "magia_weight": 0.5,
+      "lluvia_probability": 0.05,
+      "emboscada_probability": 0.3,
+      "dificultad_huida": 0.8,
+      "penalizacion_corazones": 0.55
+    }
+  },
+  {
+    "id": "templo_agua",
+    "name": "Templo del Agua",
+    "game": "Ocarina of Time",
+    "generation": "era_3d",
+    "emoji": "💧",
+    "type": "acuatico",
+    "modifiers": {
+      "fuerza_weight": 0.7,
+      "defensa_weight": 0.9,
+      "agilidad_weight": 0.7,
+      "magia_weight": 0.8,
+      "lluvia_probability": 0.7,
+      "emboscada_probability": 0.4,
+      "dificultad_huida": 0.7,
+      "penalizacion_corazones": 0.4
+    }
+  },
+  {
+    "id": "barco_fantasma",
+    "name": "Barco Fantasma",
+    "game": "The Wind Waker",
+    "generation": "era_viento",
+    "emoji": "⛵",
+    "type": "naval",
+    "modifiers": {
+      "fuerza_weight": 0.8,
+      "defensa_weight": 0.6,
+      "agilidad_weight": 0.8,
+      "magia_weight": 0.6,
+      "lluvia_probability": 0.5,
+      "emboscada_probability": 0.6,
+      "dificultad_huida": 0.5,
+      "penalizacion_corazones": 0.35
+    }
+  },
+  {
+    "id": "templo_dios_viento",
+    "name": "Templo del Dios del Viento",
+    "game": "The Wind Waker",
+    "generation": "era_viento",
+    "emoji": "🌀",
+    "type": "aéreo",
+    "modifiers": {
+      "fuerza_weight": 0.6,
+      "defensa_weight": 0.5,
+      "agilidad_weight": 1.0,
+      "magia_weight": 0.9,
+      "lluvia_probability": 0.4,
+      "emboscada_probability": 0.35,
+      "dificultad_huida": 0.4,
+      "penalizacion_corazones": 0.25
+    }
+  },
+  {
+    "id": "fortaleza_arbiter",
+    "name": "Fortaleza de Arbitro",
+    "game": "Twilight Princess",
+    "generation": "era_crepusculo",
+    "emoji": "💀",
+    "type": "oscura",
+    "modifiers": {
+      "fuerza_weight": 0.9,
+      "defensa_weight": 0.8,
+      "agilidad_weight": 0.6,
+      "magia_weight": 0.7,
+      "lluvia_probability": 0.2,
+      "emboscada_probability": 0.7,
+      "dificultad_huida": 0.9,
+      "penalizacion_corazones": 0.6
+    }
+  },
+  {
+    "id": "palacio_crepusculo",
+    "name": "Palacio del Crepúsculo",
+    "game": "Twilight Princess",
+    "generation": "era_crepusculo",
+    "emoji": "🌑",
+    "type": "sombra",
+    "modifiers": {
+      "fuerza_weight": 0.8,
+      "defensa_weight": 0.7,
+      "agilidad_weight": 0.7,
+      "magia_weight": 1.0,
+      "lluvia_probability": 0.15,
+      "emboscada_probability": 0.65,
+      "dificultad_huida": 0.85,
+      "penalizacion_corazones": 0.55
+    }
+  },
+  {
+    "id": "templo_anciano",
+    "name": "Templo Antiguo",
+    "game": "Skyward Sword",
+    "generation": "era_cielo",
+    "emoji": "🏛️",
+    "type": "ruinas",
+    "modifiers": {
+      "fuerza_weight": 0.8,
+      "defensa_weight": 0.8,
+      "agilidad_weight": 0.7,
+      "magia_weight": 0.8,
+      "lluvia_probability": 0.3,
+      "emboscada_probability": 0.45,
+      "dificultad_huida": 0.65,
+      "penalizacion_corazones": 0.45
+    }
+  },
+  {
+    "id": "castillo_hyrule_botw",
+    "name": "Castillo de Hyrule",
+    "game": "Breath of the Wild",
+    "generation": "era_abierta",
+    "emoji": "🏰",
+    "type": "fortaleza",
+    "modifiers": {
+      "fuerza_weight": 0.9,
+      "defensa_weight": 0.8,
+      "agilidad_weight": 0.6,
+      "magia_weight": 0.9,
+      "lluvia_probability": 0.25,
+      "emboscada_probability": 0.5,
+      "dificultad_huida": 0.9,
+      "penalizacion_corazones": 0.65
+    }
+  },
+  {
+    "id": "cima_akkala",
+    "name": "Fortaleza de las Tierras Rojas",
+    "game": "Breath of the Wild",
+    "generation": "era_abierta",
+    "emoji": "⛰️",
+    "type": "montaña",
+    "modifiers": {
+      "fuerza_weight": 0.85,
+      "defensa_weight": 0.75,
+      "agilidad_weight": 0.75,
+      "magia_weight": 0.5,
+      "lluvia_probability": 0.4,
+      "emboscada_probability": 0.45,
+      "dificultad_huida": 0.6,
+      "penalizacion_corazones": 0.4
+    }
+  },
+  {
+    "id": "profundidades_hyrule",
+    "name": "Las Profundidades",
+    "game": "Tears of the Kingdom",
+    "generation": "era_abierta",
+    "emoji": "🕳️",
+    "type": "subterraneo",
+    "modifiers": {
+      "fuerza_weight": 0.8,
+      "defensa_weight": 0.9,
+      "agilidad_weight": 0.7,
+      "magia_weight": 0.8,
+      "lluvia_probability": 0.0,
+      "emboscada_probability": 0.75,
+      "dificultad_huida": 0.85,
+      "penalizacion_corazones": 0.75
+    }
+  },
+  {
+    "id": "islas_cielo_totk",
+    "name": "Islas del Cielo",
+    "game": "Tears of the Kingdom",
+    "generation": "era_abierta",
+    "emoji": "☁️",
+    "type": "aéreo",
+    "modifiers": {
+      "fuerza_weight": 0.6,
+      "defensa_weight": 0.5,
+      "agilidad_weight": 1.0,
+      "magia_weight": 0.7,
+      "lluvia_probability": 0.45,
+      "emboscada_probability": 0.3,
+      "dificultad_huida": 0.3,
+      "penalizacion_corazones": 0.2
+    }
+  }
+]

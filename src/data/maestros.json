@@ -1,0 +1,82 @@
+[
+  {
+    "id": "impa_oot",
+    "name": "Impa",
+    "type": "maestro",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "La guardiana Sheikah de la princesa Zelda. Sus enseñanzas de combate secreto dan ventaja táctica decisiva.",
+    "attributes": { "sabiduria": 88, "tactica": 85, "moral": 75, "secretos": 92 }
+  },
+  {
+    "id": "gran_hada",
+    "name": "Gran Hada",
+    "type": "maestro",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "Las Grandes Hadas potencian las habilidades de Link. Su magia mejora el ataque giratorio y la resistencia.",
+    "attributes": { "sabiduria": 75, "tactica": 60, "moral": 88, "secretos": 70 }
+  },
+  {
+    "id": "guru_guru",
+    "name": "Músico de la Torre del Reloj",
+    "type": "maestro",
+    "generation": "era_3d",
+    "year": 2000,
+    "game": "Majora's Mask",
+    "bio": "El extraño músico que enseña melodías ocultas. Sus canciones pueden alterar el ritmo del combate.",
+    "attributes": { "sabiduria": 65, "tactica": 52, "moral": 70, "secretos": 85 }
+  },
+  {
+    "id": "rey_hadas_mar",
+    "name": "Rey de las Hadas del Mar",
+    "type": "maestro",
+    "generation": "era_viento",
+    "year": 2002,
+    "game": "The Wind Waker",
+    "bio": "El sabio guardián del Gran Mar. Sus bendiciones aumentan la defensa y permiten respirar bajo el agua.",
+    "attributes": { "sabiduria": 80, "tactica": 68, "moral": 82, "secretos": 78 }
+  },
+  {
+    "id": "orca",
+    "name": "Orca el Maestro de Espadas",
+    "type": "maestro",
+    "generation": "era_viento",
+    "year": 2002,
+    "game": "The Wind Waker",
+    "bio": "El veterano maestro espadachín de la Isla Ordona. Sus técnicas de espada son las más completas conocidas.",
+    "attributes": { "sabiduria": 72, "tactica": 90, "moral": 78, "secretos": 80 }
+  },
+  {
+    "id": "hero_shade",
+    "name": "La Sombra del Héroe",
+    "type": "maestro",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "bio": "El espíritu del héroe original, incapaz de descansar. Enseña a Link las técnicas olvidadas de los héroes.",
+    "attributes": { "sabiduria": 92, "tactica": 95, "moral": 85, "secretos": 98 }
+  },
+  {
+    "id": "rusl",
+    "name": "Rusl el Guardabosques",
+    "type": "maestro",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "bio": "El mentor de Link en la aldea Ordona. Sus técnicas básicas son sólidas y fiables en cualquier situación.",
+    "attributes": { "sabiduria": 58, "tactica": 70, "moral": 80, "secretos": 55 }
+  },
+  {
+    "id": "impa_botw",
+    "name": "Impa Anciana",
+    "type": "maestro",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "La vieja guardiana Sheikah espera a Link en la aldea de Kakariko. Su sabiduría acumulada en 100 años es invaluable.",
+    "attributes": { "sabiduria": 98, "tactica": 82, "moral": 92, "secretos": 95 }
+  }
+]

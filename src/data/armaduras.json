@@ -1,0 +1,82 @@
+[
+  {
+    "id": "tunica_kokiri",
+    "name": "Túnica Kokiri",
+    "type": "armadura",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "Ropa ligera de los Kokiri. Apenas protege, pero garantiza libertad de movimiento total.",
+    "attributes": { "defensa": 18, "durabilidad": 45, "resistencia": 20, "peso_reduccion": 90 }
+  },
+  {
+    "id": "armadura_zora",
+    "name": "Armadura Zora",
+    "type": "armadura",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "Escamas de los Zora tejidas en forma de armadura. Permite respirar bajo el agua y nado veloz.",
+    "attributes": { "defensa": 35, "durabilidad": 60, "resistencia": 45, "peso_reduccion": 70 }
+  },
+  {
+    "id": "armadura_goron",
+    "name": "Armadura Goron",
+    "type": "armadura",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "bio": "Forjada con piedra volcánica Goron. Resistente al fuego y a los golpes físicos más brutales.",
+    "attributes": { "defensa": 72, "durabilidad": 80, "resistencia": 65, "peso_reduccion": 25 }
+  },
+  {
+    "id": "armadura_crepusculo",
+    "name": "Armadura del Crepúsculo",
+    "type": "armadura",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "bio": "La armadura de Hero's Shade, mejorada en el reino del Crepúsculo. Equilibrio entre protección y agilidad.",
+    "attributes": { "defensa": 65, "durabilidad": 70, "resistencia": 58, "peso_reduccion": 52 }
+  },
+  {
+    "id": "armadura_cielo",
+    "name": "Armadura del Caballero del Cielo",
+    "type": "armadura",
+    "generation": "era_cielo",
+    "year": 2011,
+    "game": "Skyward Sword",
+    "bio": "La armadura legendaria de la Academia del Cielo. Ligera y con protecciones de alas replegables.",
+    "attributes": { "defensa": 55, "durabilidad": 62, "resistencia": 50, "peso_reduccion": 68 }
+  },
+  {
+    "id": "tunica_salvaje",
+    "name": "Túnica del Salvaje",
+    "type": "armadura",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "La armadura de los Campeones de Hyrule. Maximiza el daño de cada golpe con ataque en movimiento.",
+    "attributes": { "defensa": 60, "durabilidad": 55, "resistencia": 72, "peso_reduccion": 60 }
+  },
+  {
+    "id": "armadura_ancient",
+    "name": "Armadura Ancestral",
+    "type": "armadura",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "Fabricada por los Investigadores Sheikah. Maximiza el daño contra Guardianes y reduce sus disparos.",
+    "attributes": { "defensa": 78, "durabilidad": 75, "resistencia": 68, "peso_reduccion": 45 }
+  },
+  {
+    "id": "armadura_profundidades",
+    "name": "Armadura de las Profundidades",
+    "type": "armadura",
+    "generation": "era_abierta",
+    "year": 2023,
+    "game": "Tears of the Kingdom",
+    "bio": "Encontrada en las Profundidades de Hyrule. Resistente a la Penumbra y con propiedades de absorción.",
+    "attributes": { "defensa": 85, "durabilidad": 80, "resistencia": 80, "peso_reduccion": 38 }
+  }
+]

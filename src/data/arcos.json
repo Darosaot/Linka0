@@ -1,0 +1,82 @@
+[
+  {
+    "id": "arco_hadas",
+    "name": "Arco de las Hadas",
+    "type": "arco",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "El arco básico de Link en Hyrule. Rápido y fiable, dispara flechas de luz contra los no muertos.",
+    "attributes": { "poder": 42, "precision": 75, "velocidad_disparo": 70, "alcance": 65 }
+  },
+  {
+    "id": "arco_luz",
+    "name": "Arco de Luz",
+    "type": "arco",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "Las Flechas de Luz son la debilidad de Ganondorf. Un arco sagrado que solo puede empuñar el héroe verdadero.",
+    "attributes": { "poder": 95, "precision": 85, "velocidad_disparo": 55, "alcance": 80 }
+  },
+  {
+    "id": "arco_viento",
+    "name": "Arco del Viento",
+    "type": "arco",
+    "generation": "era_viento",
+    "year": 2002,
+    "game": "The Wind Waker",
+    "bio": "Arco ligero adaptado a la brisa marina. Sus flechas aprovechan el viento para ganar alcance y velocidad.",
+    "attributes": { "poder": 55, "precision": 80, "velocidad_disparo": 85, "alcance": 78 }
+  },
+  {
+    "id": "arco_hielo",
+    "name": "Arco de Hielo",
+    "type": "arco",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "bio": "Congela al blanco en el impacto. Ideal para inmovilizar bokoblins antes de atacar con la espada.",
+    "attributes": { "poder": 65, "precision": 78, "velocidad_disparo": 60, "alcance": 72 }
+  },
+  {
+    "id": "arco_sacred_llamas",
+    "name": "Arco de la Llama Sagrada",
+    "type": "arco",
+    "generation": "era_cielo",
+    "year": 2011,
+    "game": "Skyward Sword",
+    "bio": "Bendecido en las tres Llamas Sagradas de Hyrule. Sus flechas arden con fuego divino inextinguible.",
+    "attributes": { "poder": 80, "precision": 72, "velocidad_disparo": 65, "alcance": 70 }
+  },
+  {
+    "id": "arco_ancient",
+    "name": "Arco Ancestral",
+    "type": "arco",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "Tecnología Sheikah de alta precisión. Sus flechas de energía ignoran la armadura y no se ven afectadas por el viento.",
+    "attributes": { "poder": 88, "precision": 95, "velocidad_disparo": 72, "alcance": 90 }
+  },
+  {
+    "id": "arco_lynel",
+    "name": "Arco de Lynel Plateado",
+    "type": "arco",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "El arco más poderoso que porta un Lynel de las praderas. Dispara tres flechas simultáneas.",
+    "attributes": { "poder": 92, "precision": 80, "velocidad_disparo": 80, "alcance": 82 }
+  },
+  {
+    "id": "arco_dragonite",
+    "name": "Arco de Escama de Dragón",
+    "type": "arco",
+    "generation": "era_abierta",
+    "year": 2023,
+    "game": "Tears of the Kingdom",
+    "bio": "Forjado con escamas de Dinraal. Sus flechas llegan a fusionarse con elementos del entorno Zonai.",
+    "attributes": { "poder": 85, "precision": 88, "velocidad_disparo": 75, "alcance": 88 }
+  }
+]

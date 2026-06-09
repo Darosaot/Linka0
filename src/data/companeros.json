@@ -1,0 +1,90 @@
+[
+  {
+    "id": "navi",
+    "name": "Navi",
+    "type": "companero",
+    "generation": "era_3d",
+    "year": 1998,
+    "game": "Ocarina of Time",
+    "bio": "¡Hey! ¡Listen! El hada de Link en Ocarina of Time. Marca objetivos y proporciona información crítica en combate.",
+    "bonus": 62,
+    "attributes": { "guia": 88, "combate": 35, "magia": 50, "moral": 72 }
+  },
+  {
+    "id": "tatl",
+    "name": "Tatl",
+    "type": "companero",
+    "generation": "era_3d",
+    "year": 2000,
+    "game": "Majora's Mask",
+    "bio": "El hada de Skull Kid, después compañera de Link. Cínica pero leal, con habilidades para aturdir enemigos.",
+    "bonus": 65,
+    "attributes": { "guia": 82, "combate": 48, "magia": 55, "moral": 60 }
+  },
+  {
+    "id": "midna",
+    "name": "Midna",
+    "type": "companero",
+    "generation": "era_crepusculo",
+    "year": 2006,
+    "game": "Twilight Princess",
+    "bio": "La Princesa del Crepúsculo. La compañera más poderosa que Link haya tenido, con magia del reino oscuro.",
+    "bonus": 92,
+    "attributes": { "guia": 90, "combate": 88, "magia": 95, "moral": 78 }
+  },
+  {
+    "id": "fi",
+    "name": "Fi",
+    "type": "companero",
+    "generation": "era_cielo",
+    "year": 2011,
+    "game": "Skyward Sword",
+    "bio": "El espíritu de la Espada del Cielo. Analiza a los enemigos con precisión y potencia los ataques cargados.",
+    "bonus": 80,
+    "attributes": { "guia": 98, "combate": 72, "magia": 85, "moral": 65 }
+  },
+  {
+    "id": "zelda_botw",
+    "name": "Zelda (Voz de la Sabiduría)",
+    "type": "companero",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "La princesa guía a Link a través de su memoria. Su poder sellado durante 100 años potencia la luz sagrada.",
+    "bonus": 88,
+    "attributes": { "guia": 95, "combate": 65, "magia": 92, "moral": 90 }
+  },
+  {
+    "id": "urbosa",
+    "name": "Urbosa",
+    "type": "companero",
+    "generation": "era_abierta",
+    "year": 2017,
+    "game": "Breath of the Wild",
+    "bio": "La Campeona Gerudo. Su Furia desata tormentas eléctricas devastadoras que aturden a múltiples enemigos.",
+    "bonus": 85,
+    "attributes": { "guia": 75, "combate": 92, "magia": 80, "moral": 85 }
+  },
+  {
+    "id": "tulin",
+    "name": "Tulin",
+    "type": "companero",
+    "generation": "era_abierta",
+    "year": 2023,
+    "game": "Tears of the Kingdom",
+    "bio": "El joven Rito Campeón. Sus ráfagas de viento potencian los ataques en el aire y ralentizan a los enemigos.",
+    "bonus": 75,
+    "attributes": { "guia": 72, "combate": 78, "magia": 70, "moral": 80 }
+  },
+  {
+    "id": "sidon",
+    "name": "Príncipe Sidon",
+    "type": "companero",
+    "generation": "era_abierta",
+    "year": 2023,
+    "game": "Tears of the Kingdom",
+    "bio": "El príncipe Zora siempre en el lugar correcto. Su aura acuática forma escudos que absorben el daño.",
+    "bonus": 78,
+    "attributes": { "guia": 70, "combate": 82, "magia": 75, "moral": 92 }
+  }
+]
