@@ -3,9 +3,9 @@ import useGameStore from '../stores/gameStore.js';
 import Button from '../components/ui/Button.jsx';
 
 const DIFICULTADES = [
-  { id: 'explorador', label: '🌿 Explorador', desc: 'Los Bokoblins son más débiles. Ideal para empezar.' },
+  { id: 'explorador', label: '🌿 Explorador', desc: 'Los Links rivales y sus jefes son más débiles. Ideal para empezar.' },
   { id: 'normal',     label: '⚔️ Héroe',       desc: 'El desafío equilibrado de un verdadero aventurero.' },
-  { id: 'leyenda',    label: '💀 Leyenda',     desc: 'Solo los más fuertes sobreviven. Los Bokoblins no perdonan.' },
+  { id: 'leyenda',    label: '💀 Leyenda',     desc: 'Solo los más fuertes sobreviven. Los Links del pasado no perdonan.' },
 ];
 
 export default function Home() {
@@ -34,12 +34,12 @@ export default function Home() {
           <p className="text-zelda-ink font-black text-xl sm:text-2xl mt-3 uppercase leading-tight">
             TIRA LA OCARINA.<br />
             EQUIPA AL HÉROE.<br />
-            DERROTA A LOS BOKOBLINS.
+            DERROTA A LOS LINKS DEL PASADO.
           </p>
           <p className="text-zelda-muted text-sm mt-4 max-w-lg leading-relaxed">
-            Tira la ocarina: te aparece un ítem de cualquier era de Zelda. Elige uno,
-            completa los 10 huecos con ítems de distintas generaciones y simula —
-            ¿puede Link ganar el torneo de las generaciones?
+            Equipa a Link con ítems de cualquier era. Luego enfrenta a los 10 Links
+            más poderosos de la historia de Hyrule — cada uno con su jefe final.
+            ¿Tu build puede con todos ellos?
           </p>
         </div>
 
@@ -74,9 +74,9 @@ export default function Home() {
         {/* Stats strip */}
         <div className="mt-10 pt-6 border-t border-zelda-border grid grid-cols-3 gap-4 text-center max-w-sm">
           {[
-            { n: '21', label: 'bokoblins' },
-            { n: '60+', label: 'ítems únicos' },
-            { n: '12', label: 'mazmorras' },
+            { n: '10', label: 'Links rivales' },
+            { n: '175+', label: 'ítems únicos' },
+            { n: '22', label: 'mazmorras' },
           ].map(s => (
             <div key={s.label}>
               <div className="font-black text-xl text-zelda-ink">{s.n}</div>
@@ -90,7 +90,7 @@ export default function Home() {
           {[
             { n: '01', icon: '🎵', label: 'TOCA',   desc: 'Obtén ítems aleatorios de todas las eras de Zelda' },
             { n: '02', icon: '⚙️', label: 'EQUIPA', desc: 'Combina espadas, armaduras y compañeros de distintas generaciones' },
-            { n: '03', icon: '⚔️', label: 'SIMULA', desc: 'Compite contra Bokoblins de toda la historia de Hyrule' },
+            { n: '03', icon: '⚔️', label: 'SIMULA', desc: 'Derrota a los 10 Links rivales y sus jefes finales de cada era' },
           ].map((s, i) => (
             <div key={s.n} className={`bg-white p-4 ${i < 2 ? 'border-r border-zelda-border' : ''}`}>
               <div className="text-zelda-gold font-black text-xs mb-1">{s.n} {s.icon} {s.label}</div>

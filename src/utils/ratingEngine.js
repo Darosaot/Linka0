@@ -117,9 +117,9 @@ export function calcTeamRating(build) {
 }
 
 export function getVeredicto(rating) {
-  if (rating >= 95) return { titulo: 'El Elegido', descripcion: 'Tu equipamiento es digno del portador de la Trifuerza. Ningún Bokoblin puede resistirte.' };
+  if (rating >= 95) return { titulo: 'El Elegido', descripcion: 'Tu equipamiento es digno del portador de la Trifuerza. Ningún rival puede resistirte.' };
   if (rating >= 85) return { titulo: 'Héroe del Tiempo', descripcion: 'Un equipamiento legendario. Los bardos cantarán tus hazañas durante generaciones.' };
-  if (rating >= 75) return { titulo: 'Campeón de Hyrule', descripcion: 'Un build sólido y temible. Los Bokoblins huyen ante tu nombre.' };
+  if (rating >= 75) return { titulo: 'Campeón de Hyrule', descripcion: 'Un build sólido y temible. Los Links rivales tiemblan ante tu nombre.' };
   if (rating >= 65) return { titulo: 'Aventurero Valiente', descripcion: 'Buen equipamiento. Ganarás la mayoría de tus combates con habilidad.' };
   if (rating >= 55) return { titulo: 'Aprendiz de Héroe', descripcion: 'Equipamiento básico pero funcional. Necesitarás mucha habilidad para salir victorioso.' };
   return { titulo: 'Aldeano con Espada de Madera', descripcion: 'Este equipamiento no impresionaría ni a un Bokoblin Rojo. ¡Prueba de nuevo!' };
