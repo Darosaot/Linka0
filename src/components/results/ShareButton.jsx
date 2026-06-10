@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { buildShareUrl } from '../../utils/shareEncoder.js';
 import Button from '../ui/Button.jsx';
 
-export default function ShareButton({ build, era }) {
+export default function ShareButton({ build }) {
   const [copied, setCopied] = useState(false);
 
   function handleShare() {
-    const url = buildShareUrl(build, era);
+    const url = buildShareUrl(build);
     navigator.clipboard?.writeText(url).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);

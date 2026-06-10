@@ -1,23 +1,15 @@
 import { create } from 'zustand';
 import { ITEM_TYPES } from '../utils/dataQueries.js';
 import { simularTorneo } from '../utils/simulator.js';
-import { SLOT_CONFIG } from '../utils/ratingEngine.js';
+import { SLOT_KEYS } from '../utils/ratingEngine.js';
 
-const ITEM_SLOTS = ['espada1', 'espada2', 'armadura', 'habilidad', 'companero', 'botas', 'maestro', 'arco'];
+const EMPTY_BUILD = Object.fromEntries(SLOT_KEYS.map(key => [key, undefined]));
 
-const EMPTY_BUILD = {
-  espada1: undefined,
-  espada2: undefined,
-  armadura: undefined,
-  habilidad: undefined,
-  companero: undefined,
-  botas: undefined,
-  maestro: undefined,
-  arco: undefined,
-};
+const SIM_DELAY_MS = 1400;
+
+let simTimeout = null;
 
 const useGameStore = create((set, get) => ({
-  // Config — era removed from build, only dificultad remains
   dificultad: 'normal',
 
   // Game state
@@ -25,7 +17,6 @@ const useGameStore = create((set, get) => ({
   build: { ...EMPTY_BUILD },
   ocaRinasRestantes: 3,
   cartaActual: null,
-  rollCount: 0,
 
   // Results
   resultados: null,
@@ -33,12 +24,12 @@ const useGameStore = create((set, get) => ({
   setDificultad: (dificultad) => set({ dificultad }),
 
   startGame: () => {
+    clearTimeout(simTimeout);
     set({
       fase: 'draft',
       build: { ...EMPTY_BUILD },
       ocaRinasRestantes: 3,
       cartaActual: null,
-      rollCount: 0,
       resultados: null,
     });
     get().rollCard();
@@ -47,7 +38,7 @@ const useGameStore = create((set, get) => ({
   rollCard: () => {
     const { build } = get();
 
-    const emptySlots = ITEM_SLOTS.filter(slot => build[slot] === undefined);
+    const emptySlots = SLOT_KEYS.filter(slot => build[slot] === undefined);
 
     if (emptySlots.length === 0) {
       get().triggerSimulation();
@@ -63,17 +54,14 @@ const useGameStore = create((set, get) => ({
       }
     }
 
-    set(state => ({
-      cartaActual: { items },
-      rollCount: state.rollCount + 1,
-    }));
+    set({ cartaActual: { items } });
   },
 
   pickItem: (slotKey, item) => {
     const { build } = get();
     const newBuild = { ...build, [slotKey]: item };
 
-    const allFilled = ITEM_SLOTS.every(s => newBuild[s] !== undefined);
+    const allFilled = SLOT_KEYS.every(s => newBuild[s] !== undefined);
 
     set({ build: newBuild, cartaActual: null });
 
@@ -95,31 +83,28 @@ const useGameStore = create((set, get) => ({
     set({ fase: 'simulacion' });
     const { build, dificultad } = get();
 
-    setTimeout(() => {
-      const resultados = simularTorneo(build, 'todas', dificultad);
+    clearTimeout(simTimeout);
+    simTimeout = setTimeout(() => {
+      const resultados = simularTorneo(build, dificultad);
       set({ resultados, fase: 'resultados' });
-    }, 1400);
+    }, SIM_DELAY_MS);
+  },
+
+  // Entry point for shared "?build=" links: load the build and run the tournament
+  loadSharedBuild: (build) => {
+    set({ build: { ...build }, cartaActual: null, resultados: null });
+    get().triggerSimulation();
   },
 
   resetGame: () => {
+    clearTimeout(simTimeout);
     set({
       fase: 'inicio',
       build: { ...EMPTY_BUILD },
       ocaRinasRestantes: 3,
       cartaActual: null,
-      rollCount: 0,
       resultados: null,
     });
-  },
-
-  getEmptySlots: () => {
-    const { build } = get();
-    return SLOT_CONFIG.filter(s => build[s.key] === undefined);
-  },
-
-  getFilledSlotCount: () => {
-    const { build } = get();
-    return SLOT_CONFIG.filter(s => build[s.key] !== undefined).length;
   },
 }));
 

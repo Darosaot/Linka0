@@ -1,4 +1,5 @@
 import setsData from '../data/sets.json';
+import { SLOT_KEYS } from './ratingEngine.js';
 
 // Reverse lookup: item_id → set_id
 const ITEM_TO_SET_ID = {};
@@ -9,8 +10,6 @@ for (const set of setsData) {
 }
 
 const SET_BY_ID = Object.fromEntries(setsData.map(s => [s.id, s]));
-
-const BUILD_SLOTS = ['espada1', 'espada2', 'armadura', 'habilidad', 'companero', 'botas', 'maestro', 'arco'];
 
 // Colors per era for UI badges
 export const SET_ERA_COLORS = {
@@ -30,7 +29,7 @@ export function getSetForItem(itemId) {
 
 function countPiecesInBuild(build) {
   const counts = {};
-  for (const slot of BUILD_SLOTS) {
+  for (const slot of SLOT_KEYS) {
     const item = build[slot];
     if (!item?.id) continue;
     const setId = ITEM_TO_SET_ID[item.id];

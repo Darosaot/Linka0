@@ -32,7 +32,7 @@ function SetProgress({ partialSets }) {
 }
 
 export default function BuildSlots() {
-  const { build } = useGameStore();
+  const build = useGameStore(state => state.build);
   const partialSets = getPartialSets(build);
 
   return (

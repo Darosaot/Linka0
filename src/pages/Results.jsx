@@ -5,7 +5,10 @@ import ShareButton from '../components/results/ShareButton.jsx';
 import Button from '../components/ui/Button.jsx';
 
 export default function Results() {
-  const { resultados, build, dificultad, resetGame } = useGameStore();
+  const resultados = useGameStore(state => state.resultados);
+  const build = useGameStore(state => state.build);
+  const dificultad = useGameStore(state => state.dificultad);
+  const resetGame = useGameStore(state => state.resetGame);
 
   const difLabel = { explorador: '🌿 Explorador', normal: '⚔️ Héroe', leyenda: '💀 Leyenda' };
 
@@ -30,7 +33,7 @@ export default function Results() {
           <Button onClick={resetGame} size="lg">
             🔄 Nueva Aventura
           </Button>
-          <ShareButton build={build} era="todas" />
+          <ShareButton build={build} />
         </div>
       </div>
     </div>

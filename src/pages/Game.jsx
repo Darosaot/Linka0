@@ -5,8 +5,9 @@ import OcarinaButton from '../components/game/OcarinaButton.jsx';
 import { SLOT_CONFIG } from '../utils/ratingEngine.js';
 
 export default function Game() {
-  const { build, getFilledSlotCount, cartaActual } = useGameStore();
-  const filledCount = getFilledSlotCount();
+  const build = useGameStore(state => state.build);
+  const cartaActual = useGameStore(state => state.cartaActual);
+  const filledCount = SLOT_CONFIG.filter(s => build[s.key] !== undefined).length;
   const totalSlots = SLOT_CONFIG.length;
   const progress = Math.round((filledCount / totalSlots) * 100);
 
