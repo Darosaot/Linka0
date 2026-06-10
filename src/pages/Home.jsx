@@ -1,6 +1,13 @@
 import { useState } from 'react';
 import useGameStore from '../stores/gameStore.js';
 import Button from '../components/ui/Button.jsx';
+import { ITEM_TYPES, getAllLinksRivales, getAllMazmorras } from '../utils/dataQueries.js';
+
+const STATS = [
+  { n: String(getAllLinksRivales().length), label: 'Links rivales' },
+  { n: `${Object.values(ITEM_TYPES).reduce((sum, pool) => sum + pool.length, 0)}`, label: 'ítems únicos' },
+  { n: String(getAllMazmorras().length), label: 'mazmorras' },
+];
 
 const DIFICULTADES = [
   { id: 'explorador', label: '🌿 Explorador', desc: 'Los Links rivales y sus jefes son más débiles. Ideal para empezar.' },
@@ -9,7 +16,8 @@ const DIFICULTADES = [
 ];
 
 export default function Home() {
-  const { setDificultad, startGame } = useGameStore();
+  const setDificultad = useGameStore(state => state.setDificultad);
+  const startGame = useGameStore(state => state.startGame);
   const [selDif, setSelDif] = useState('normal');
 
   function handleStart() {
@@ -38,7 +46,7 @@ export default function Home() {
           </p>
           <p className="text-zelda-muted text-sm mt-4 max-w-lg leading-relaxed">
             Equipa a Link con ítems de cualquier era. Luego enfrenta a los 10 Links
-            más poderosos de la historia de Hyrule — cada uno con su jefe final.
+            más poderosos de la historia de Hyrule, cada uno en una mazmorra distinta.
             ¿Tu build puede con todos ellos?
           </p>
         </div>
@@ -73,11 +81,7 @@ export default function Home() {
 
         {/* Stats strip */}
         <div className="mt-10 pt-6 border-t border-zelda-border grid grid-cols-3 gap-4 text-center max-w-sm">
-          {[
-            { n: '10', label: 'Links rivales' },
-            { n: '175+', label: 'ítems únicos' },
-            { n: '22', label: 'mazmorras' },
-          ].map(s => (
+          {STATS.map(s => (
             <div key={s.label}>
               <div className="font-black text-xl text-zelda-ink">{s.n}</div>
               <div className="text-zelda-muted text-xs uppercase tracking-wider">{s.label}</div>

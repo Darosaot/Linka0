@@ -1,15 +1,4 @@
-// Slot weights — must sum to 1.0
-export const SLOT_WEIGHTS = {
-  espada1: 0.26,
-  armadura: 0.18,
-  habilidad: 0.17,
-  espada2: 0.11,
-  companero: 0.11,
-  botas: 0.07,
-  maestro: 0.05,
-  arco: 0.05,
-};
-
+// Slot weights must sum to 1.0
 export const SLOT_CONFIG = [
   { key: 'espada1',   label: '⚔️ Espada Principal',   weight: 0.26 },
   { key: 'armadura',  label: '🛡️ Armadura',            weight: 0.18 },
@@ -20,6 +9,8 @@ export const SLOT_CONFIG = [
   { key: 'maestro',   label: '📜 Maestro',             weight: 0.05 },
   { key: 'arco',      label: '🏹 Arco',                weight: 0.05 },
 ];
+
+export const SLOT_KEYS = SLOT_CONFIG.map(s => s.key);
 
 function scoreEspada(item) {
   if (!item) return 0;

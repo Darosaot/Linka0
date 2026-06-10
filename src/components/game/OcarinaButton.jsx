@@ -2,7 +2,8 @@ import useGameStore from '../../stores/gameStore.js';
 import Button from '../ui/Button.jsx';
 
 export default function OcarinaButton() {
-  const { ocaRinasRestantes, useOcarina } = useGameStore();
+  const ocaRinasRestantes = useGameStore(state => state.ocaRinasRestantes);
+  const useOcarina = useGameStore(state => state.useOcarina);
   const disabled = ocaRinasRestantes <= 0;
 
   return (

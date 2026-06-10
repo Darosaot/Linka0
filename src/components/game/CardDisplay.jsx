@@ -1,7 +1,7 @@
 import StatBar from '../ui/StatBar.jsx';
 import GenerationBadge from '../ui/GenerationBadge.jsx';
 import { SLOT_LABELS } from '../../utils/dataQueries.js';
-import { calcSlotScore } from '../../utils/ratingEngine.js';
+import { calcSlotScore, SLOT_KEYS } from '../../utils/ratingEngine.js';
 import { getSetForItem, getPartialSets, SET_ERA_COLORS } from '../../utils/setEngine.js';
 import useGameStore from '../../stores/gameStore.js';
 
@@ -53,13 +53,15 @@ function ItemCard({ slotKey, item, onPick, disabled, build }) {
   const avg = Math.round(calcSlotScore(slotKey, item));
 
   return (
-    <div
-      className={`bg-white border-2 rounded-lg p-3 flex flex-col gap-2 transition-all duration-100
+    <button
+      type="button"
+      disabled={disabled}
+      className={`bg-white border-2 rounded-lg p-3 flex flex-col gap-2 text-left transition-all duration-100
         ${disabled
           ? 'border-zelda-border opacity-40 cursor-not-allowed'
           : 'border-zelda-border hover:border-zelda-ink cursor-pointer hover:shadow-md active:scale-[0.98]'
         }`}
-      onClick={() => !disabled && onPick(slotKey, item)}
+      onClick={() => onPick(slotKey, item)}
     >
       <div className="text-xs text-zelda-muted">{label}</div>
       <div className="flex items-start justify-between gap-1">
@@ -74,21 +76,22 @@ function ItemCard({ slotKey, item, onPick, disabled, build }) {
           <StatBar key={k} label={k} value={v} />
         ))}
       </div>
-    </div>
+    </button>
   );
 }
 
 export default function CardDisplay() {
-  const { cartaActual, build, pickItem } = useGameStore();
+  const cartaActual = useGameStore(state => state.cartaActual);
+  const build = useGameStore(state => state.build);
+  const pickItem = useGameStore(state => state.pickItem);
 
   if (!cartaActual) return null;
 
   const { items } = cartaActual;
-  const ITEM_SLOTS = ['espada1', 'espada2', 'armadura', 'habilidad', 'companero', 'botas', 'maestro', 'arco'];
 
   return (
     <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-      {ITEM_SLOTS.map(slot => {
+      {SLOT_KEYS.map(slot => {
         if (!items[slot]) return null;
         return (
           <ItemCard
