@@ -78,6 +78,37 @@ export function calcSlotScore(slotKey, item) {
   return scorer(item);
 }
 
+// Combat profile of a build across the four dimensions dungeons modify.
+// Each dimension aggregates the item attributes that express it, so a build
+// can be strong overall yet weak in the stat a given dungeon rewards.
+export function calcBuildProfile(build) {
+  const attr = (slot, key) => build[slot]?.attributes?.[key] ?? 0;
+  return {
+    fuerza:
+      attr('espada1', 'poder') * 0.45 +
+      attr('espada2', 'poder') * 0.25 +
+      attr('arco', 'poder') * 0.20 +
+      attr('companero', 'combate') * 0.10,
+    defensa:
+      attr('armadura', 'defensa') * 0.45 +
+      attr('armadura', 'durabilidad') * 0.25 +
+      attr('armadura', 'resistencia') * 0.20 +
+      attr('botas', 'resistencia_terreno') * 0.10,
+    agilidad:
+      attr('botas', 'agilidad') * 0.35 +
+      attr('espada1', 'velocidad') * 0.25 +
+      attr('botas', 'salto') * 0.15 +
+      attr('arco', 'velocidad_disparo') * 0.15 +
+      attr('botas', 'sigilo') * 0.10,
+    magia:
+      attr('habilidad', 'poder') * 0.35 +
+      attr('companero', 'magia') * 0.25 +
+      attr('espada1', 'magia') * 0.20 +
+      attr('espada2', 'magia') * 0.10 +
+      attr('habilidad', 'versatilidad') * 0.10,
+  };
+}
+
 export function calcTeamRating(build) {
   let totalWeight = 0;
   let weightedScore = 0;

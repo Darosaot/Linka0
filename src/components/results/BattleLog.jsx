@@ -1,3 +1,5 @@
+import { STAT_LABELS } from '../../utils/dataQueries.js';
+
 // Presentation mapping for duel result tags produced by the simulator
 const DUEL_PRESENTATION = {
   victoria_clara:    { label: '🏆 Victoria',           color: 'text-amber-700', card: 'border-amber-400 bg-amber-50' },
@@ -63,6 +65,18 @@ export default function BattleLog({ combatLog }) {
               </div>
               <div className="text-right">
                 <div className="text-xs text-zelda-muted">Arena: {c.arenaEmoji} {c.mazmorra}</div>
+                {c.terreno && (
+                  <div className="text-xs mt-0.5">
+                    <span className="text-zelda-muted">favorece {STAT_LABELS[c.terreno.favorece] ?? c.terreno.favorece} · </span>
+                    <span className={`font-bold ${
+                      c.terreno.linkAfinidad > c.terreno.rivalAfinidad ? 'text-green-700'
+                      : c.terreno.linkAfinidad < c.terreno.rivalAfinidad ? 'text-red-600'
+                      : 'text-zelda-muted'
+                    }`}>
+                      afinidad {c.terreno.linkAfinidad} vs {c.terreno.rivalAfinidad}
+                    </span>
+                  </div>
+                )}
               </div>
             </div>
 

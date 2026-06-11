@@ -2,7 +2,8 @@ import useGameStore from '../stores/gameStore.js';
 import CardDisplay from '../components/game/CardDisplay.jsx';
 import BuildSlots from '../components/game/BuildSlots.jsx';
 import OcarinaButton from '../components/game/OcarinaButton.jsx';
-import { SLOT_CONFIG, calcTeamRating } from '../utils/ratingEngine.js';
+import { SLOT_CONFIG, calcTeamRating, calcBuildProfile } from '../utils/ratingEngine.js';
+import { STAT_LABELS } from '../utils/dataQueries.js';
 
 export default function Game() {
   const build = useGameStore(state => state.build);
@@ -46,7 +47,18 @@ export default function Game() {
 
         {/* Build overview */}
         <div>
-          <p className="text-zelda-muted text-xs font-bold uppercase tracking-widest mb-2">Tu Equipamiento</p>
+          <div className="flex items-center justify-between flex-wrap gap-2 mb-2">
+            <p className="text-zelda-muted text-xs font-bold uppercase tracking-widest">Tu Equipamiento</p>
+            {filledCount > 0 && (
+              <div className="flex gap-3 text-xs text-zelda-muted">
+                {Object.entries(calcBuildProfile(build)).map(([stat, value]) => (
+                  <span key={stat} title={`Las mazmorras que favorecen ${stat} premian este valor`}>
+                    {STAT_LABELS[stat]} <span className="font-bold text-zelda-ink">{Math.round(value)}</span>
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
           <BuildSlots />
         </div>
 

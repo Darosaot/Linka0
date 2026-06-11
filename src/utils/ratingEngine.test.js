@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { SLOT_CONFIG, SLOT_KEYS, calcSlotScore, calcTeamRating, getVeredicto } from './ratingEngine.js';
+import { SLOT_CONFIG, SLOT_KEYS, calcBuildProfile, calcSlotScore, calcTeamRating, getVeredicto } from './ratingEngine.js';
 import { ITEM_TYPES } from './dataQueries.js';
 
 describe('SLOT_CONFIG', () => {
@@ -64,5 +64,24 @@ describe('getVeredicto', () => {
     expect(getVeredicto(40).titulo).toBe('Aventurero Valiente');
     expect(getVeredicto(25).titulo).toBe('Aprendiz de Héroe');
     expect(getVeredicto(0).titulo).toBe('Aldeano con Espada de Madera');
+  });
+});
+
+describe('calcBuildProfile', () => {
+  it('returns zeroed dimensions for an empty build', () => {
+    expect(calcBuildProfile({})).toEqual({ fuerza: 0, defensa: 0, agilidad: 0, magia: 0 });
+  });
+
+  it('keeps every dimension within 0-100 for any full build', () => {
+    for (let i = 0; i < 50; i++) {
+      const build = Object.fromEntries(
+        SLOT_KEYS.map(s => [s, ITEM_TYPES[s][Math.floor(Math.random() * ITEM_TYPES[s].length)]])
+      );
+      const profile = calcBuildProfile(build);
+      for (const [dim, value] of Object.entries(profile)) {
+        expect(value, dim).toBeGreaterThanOrEqual(0);
+        expect(value, dim).toBeLessThanOrEqual(100);
+      }
+    }
   });
 });

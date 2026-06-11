@@ -14,8 +14,10 @@ the 10 most powerful Links in Hyrule's history, each duel fought in a random dun
    that grant a performance bonus (stacking, capped at +35%). Once you own a piece of a
    set, the ocarina *resonates* with it: rolls for empty slots have a 35% chance of
    offering one of that set's missing pieces, so chasing sets is a real strategy.
-3. **Simula** — your build's weighted rating faces each rival Link across random
-   dungeons with terrain modifiers, ambushes and a flat 5% K.O. chance per round.
+3. **Simula** — duels are revealed one by one. Each rival is fought in a random
+   dungeon whose terrain weights (fuerza / defensa / agilidad / magia) are crossed
+   with both fighters' stat profiles, so the same build shines or struggles
+   depending on the arena — plus ambushes and a flat 5% K.O. chance per round.
    Points decide your final verdict, from *Aldeano con Espada de Madera* to *El Elegido*.
 
 Difficulty scales the rivals: *Explorador* is winnable with decent drafting, *Héroe*
