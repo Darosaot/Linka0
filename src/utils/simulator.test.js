@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest';
-import { duelResult, rivalRating, simularTorneo, PUNTOS_DUELO } from './simulator.js';
-import { getAllLinksRivales, ITEM_TYPES } from './dataQueries.js';
+import { duelResult, rivalRating, rivalProfile, terrainScore, favoredStat, simularTorneo, PUNTOS_DUELO } from './simulator.js';
+import { getAllLinksRivales, getAllMazmorras, ITEM_TYPES } from './dataQueries.js';
 import { SLOT_KEYS } from './ratingEngine.js';
 
 describe('duelResult', () => {
@@ -39,6 +39,37 @@ describe('rivalRating', () => {
   });
 });
 
+describe('terrain', () => {
+  it('terrainScore rewards the stats the dungeon weighs most', () => {
+    const mods = { fuerza_weight: 1.0, defensa_weight: 0.5, agilidad_weight: 0.5, magia_weight: 0.5 };
+    const bruiser = { fuerza: 90, defensa: 50, agilidad: 50, magia: 50 };
+    const mage = { fuerza: 50, defensa: 50, agilidad: 50, magia: 90 };
+    expect(terrainScore(bruiser, mods)).toBeGreaterThan(terrainScore(mage, mods));
+  });
+
+  it('favoredStat picks the highest-weighted dimension of every dungeon', () => {
+    for (const maz of getAllMazmorras()) {
+      const stat = favoredStat(maz.modifiers);
+      expect(['fuerza', 'defensa', 'agilidad', 'magia']).toContain(stat);
+      const weights = {
+        fuerza: maz.modifiers.fuerza_weight,
+        defensa: maz.modifiers.defensa_weight,
+        agilidad: maz.modifiers.agilidad_weight,
+        magia: maz.modifiers.magia_weight,
+      };
+      expect(weights[stat], maz.id).toBe(Math.max(...Object.values(weights)));
+    }
+  });
+
+  it('rivalProfile maps rival attributes onto the four dungeon dimensions', () => {
+    for (const rival of getAllLinksRivales()) {
+      const profile = rivalProfile(rival);
+      expect(profile.fuerza).toBe(rival.attributes.poder);
+      expect(profile.magia).toBe(rival.attributes.magia);
+    }
+  });
+});
+
 describe('simularTorneo', () => {
   const fullBuild = Object.fromEntries(SLOT_KEYS.map(slot => [slot, ITEM_TYPES[slot][0]]));
 
@@ -71,6 +102,15 @@ describe('simularTorneo', () => {
     const res = simularTorneo(fullBuild, 'explorador');
     for (const c of res.combatLog) {
       expect(tags).toContain(c.duelo.tag);
+    }
+  });
+
+  it('every combat log entry reports the terrain affinity duel', () => {
+    const res = simularTorneo(fullBuild, 'normal');
+    for (const c of res.combatLog) {
+      expect(['fuerza', 'defensa', 'agilidad', 'magia']).toContain(c.terreno.favorece);
+      expect(c.terreno.linkAfinidad).toBeTypeOf('number');
+      expect(c.terreno.rivalAfinidad).toBeTypeOf('number');
     }
   });
 });

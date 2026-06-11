@@ -1,5 +1,5 @@
 import { getAllMazmorras } from './dataQueries.js';
-import { calcTeamRating } from './ratingEngine.js';
+import { calcTeamRating, calcBuildProfile } from './ratingEngine.js';
 import { buildLinksRivales } from './rivalBuilder.js';
 import { calcSetMultiplier, getActiveSets } from './setEngine.js';
 
@@ -12,29 +12,57 @@ const DIFICULTAD_MULT = { explorador: 0.78, normal: 0.92, leyenda: 1.10 };
 
 const PROB_KO = 0.05; // 5% fixed KO chance per round
 
-function avgModifier(mods) {
-  return (mods.fuerza_weight + mods.defensa_weight + mods.agilidad_weight + mods.magia_weight) / 4;
-}
+// How much of each fighter's performance comes from terrain affinity (the
+// dungeon's stat weights crossed with their profile) vs overall rating.
+const TERRAIN_BLEND = 0.4;
 
 export function rivalRating(rival) {
   const { poder = 0, defensa = 0, agilidad = 0, magia = 0, resistencia = 0 } = rival.attributes;
   return poder * 0.35 + defensa * 0.20 + agilidad * 0.25 + magia * 0.15 + resistencia * 0.05;
 }
 
-function calcLinkPerf(build, mazmorra, setMult) {
-  const base = calcTeamRating(build);
-  const mod = avgModifier(mazmorra.modifiers);
-  const rainBonus = Math.random() < mazmorra.modifiers.lluvia_probability && build.botas ? 3 : 0;
-  const variance = (Math.random() - 0.5) * 18;
-  return Math.max(0, base * mod * setMult + rainBonus + variance);
+// Weighted average of a fighter's profile using the dungeon's stat weights:
+// high when the fighter is strong in the stats this dungeon rewards.
+export function terrainScore(profile, mods) {
+  const weighted =
+    profile.fuerza * mods.fuerza_weight +
+    profile.defensa * mods.defensa_weight +
+    profile.agilidad * mods.agilidad_weight +
+    profile.magia * mods.magia_weight;
+  const totalWeight = mods.fuerza_weight + mods.defensa_weight + mods.agilidad_weight + mods.magia_weight;
+  return totalWeight > 0 ? weighted / totalWeight : 0;
+}
+
+export function rivalProfile(rival) {
+  const { poder = 0, defensa = 0, agilidad = 0, magia = 0 } = rival.attributes;
+  return { fuerza: poder, defensa, agilidad, magia };
+}
+
+// The dungeon dimension that matters most for this duel
+export function favoredStat(mods) {
+  const entries = [
+    ['fuerza', mods.fuerza_weight],
+    ['defensa', mods.defensa_weight],
+    ['agilidad', mods.agilidad_weight],
+    ['magia', mods.magia_weight],
+  ];
+  return entries.reduce((best, e) => (e[1] > best[1] ? e : best))[0];
+}
+
+function calcLinkPerf(base, terrain, mazmorra, setMult, hasBotas) {
+  const effective = base * (1 - TERRAIN_BLEND) + terrain * TERRAIN_BLEND;
+  const rainBonus = Math.random() < mazmorra.modifiers.lluvia_probability && hasBotas ? 3 : 0;
+  const variance = (Math.random() - 0.5) * 14;
+  return Math.max(0, effective * setMult + rainBonus + variance);
 }
 
 function calcRivalLinkPerf(rival, mazmorra, dificultadMult) {
   const base = rivalRating(rival);
-  const mod = avgModifier(mazmorra.modifiers);
+  const terrain = terrainScore(rivalProfile(rival), mazmorra.modifiers);
+  const effective = base * (1 - TERRAIN_BLEND) + terrain * TERRAIN_BLEND;
   const ambushBonus = Math.random() < mazmorra.modifiers.emboscada_probability ? 4 : 0;
-  const variance = (Math.random() - 0.5) * 16;
-  return Math.max(0, base * mod * dificultadMult + ambushBonus + variance);
+  const variance = (Math.random() - 0.5) * 12;
+  return Math.max(0, effective * dificultadMult + ambushBonus + variance);
 }
 
 export function duelResult(linkPerf, rivalPerf, ko) {
@@ -59,12 +87,16 @@ export function simularTorneo(build, dificultad = 'normal') {
   };
   const combatLog = [];
   const setMult = calcSetMultiplier(build);
+  const linkBase = calcTeamRating(build);
+  const linkProfile = calcBuildProfile(build);
 
   for (const rival of rivales) {
     const mazmorra = allMazmorras[Math.floor(Math.random() * allMazmorras.length)];
     const ko = Math.random() < PROB_KO;
 
-    const linkPerfDuel = ko ? -1 : calcLinkPerf(build, mazmorra, setMult);
+    const linkTerrain = terrainScore(linkProfile, mazmorra.modifiers);
+    const rivalTerrain = terrainScore(rivalProfile(rival), mazmorra.modifiers);
+    const linkPerfDuel = ko ? -1 : calcLinkPerf(linkBase, linkTerrain, mazmorra, setMult, Boolean(build.botas));
     const rivalPerf = calcRivalLinkPerf(rival, mazmorra, dificultadMult);
     const duelo = duelResult(linkPerfDuel, rivalPerf, ko);
 
@@ -81,6 +113,11 @@ export function simularTorneo(build, dificultad = 'normal') {
       rival: { name: rival.name, alias: rival.alias, emoji: rival.emoji, game: rival.game, year: rival.year, equipamiento: rival.equipamiento },
       mazmorra: mazmorra.name,
       arenaEmoji: mazmorra.emoji,
+      terreno: {
+        favorece: favoredStat(mazmorra.modifiers),
+        linkAfinidad: Math.round(linkTerrain),
+        rivalAfinidad: Math.round(rivalTerrain),
+      },
       duelo,
       puntosRonda: duelo.puntos,
       rivalRating: Math.round(rivalRating(rival)),

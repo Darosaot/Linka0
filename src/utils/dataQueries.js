@@ -43,6 +43,14 @@ export const ERA_LABELS = {
   era_abierta: 'Era Abierta',
 };
 
+// The four dimensions dungeons reward (see simulator terrainScore)
+export const STAT_LABELS = {
+  fuerza: '💪 fuerza',
+  defensa: '🛡️ defensa',
+  agilidad: '🏃 agilidad',
+  magia: '✨ magia',
+};
+
 export const SLOT_LABELS = {
   espada1: '⚔️ Espada Principal',
   espada2: '🗡️ Arma Secundaria',

@@ -39,12 +39,12 @@ describe('draft flow', () => {
       const { cartaActual, pickItem } = useGameStore.getState();
       pickItem(slot, cartaActual.items[slot]);
     }
-    expect(useGameStore.getState().fase).toBe('simulacion');
-
-    vi.runAllTimers();
     const { fase, resultados } = useGameStore.getState();
-    expect(fase).toBe('resultados');
+    expect(fase).toBe('simulacion');
     expect(resultados.combatLog.length).toBeGreaterThan(0);
+
+    useGameStore.getState().finishSimulation();
+    expect(useGameStore.getState().fase).toBe('resultados');
   });
 
   it('pickItem ignores picks for an already-filled slot', () => {
@@ -71,11 +71,8 @@ describe('draft flow', () => {
 describe('loadSharedBuild', () => {
   it('runs the tournament for a shared build', () => {
     useGameStore.getState().loadSharedBuild(fullBuild);
-    expect(useGameStore.getState().fase).toBe('simulacion');
-
-    vi.runAllTimers();
     const { fase, resultados, build } = useGameStore.getState();
-    expect(fase).toBe('resultados');
+    expect(fase).toBe('simulacion');
     expect(build.espada1).toBe(fullBuild.espada1);
     expect(resultados).not.toBeNull();
   });
@@ -87,15 +84,19 @@ describe('loadSharedBuild', () => {
 });
 
 describe('resetGame', () => {
-  it('cancels a pending simulation so stale results never appear', () => {
+  it('clears results and returns to the start screen', () => {
     useGameStore.getState().loadSharedBuild(fullBuild);
     expect(useGameStore.getState().fase).toBe('simulacion');
 
     useGameStore.getState().resetGame();
-    vi.runAllTimers();
 
     const { fase, resultados } = useGameStore.getState();
     expect(fase).toBe('inicio');
     expect(resultados).toBeNull();
+
+    // A stale finishSimulation (e.g. from an unmounting reveal screen)
+    // must not flip the phase after a reset
+    useGameStore.getState().finishSimulation();
+    expect(useGameStore.getState().fase).toBe('inicio');
   });
 });

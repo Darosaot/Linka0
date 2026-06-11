@@ -6,13 +6,9 @@ import { getMissingSetPieces } from '../utils/setEngine.js';
 
 const EMPTY_BUILD = Object.fromEntries(SLOT_KEYS.map(key => [key, undefined]));
 
-const SIM_DELAY_MS = 1400;
-
 // Chance that an empty slot's roll "resonates" with a set the player already
 // started, offering one of its missing pieces instead of a fully random item.
 const RESONANCE_PROB = 0.35;
-
-let simTimeout = null;
 
 const useGameStore = create((set, get) => ({
   dificultad: 'normal',
@@ -29,7 +25,6 @@ const useGameStore = create((set, get) => ({
   setDificultad: (dificultad) => set({ dificultad }),
 
   startGame: () => {
-    clearTimeout(simTimeout);
     set({
       fase: 'draft',
       build: { ...EMPTY_BUILD },
@@ -93,15 +88,17 @@ const useGameStore = create((set, get) => ({
     get().rollCard();
   },
 
+  // Runs the tournament immediately; the simulacion phase replays the
+  // duels one by one and calls finishSimulation when the reveal is done.
   triggerSimulation: () => {
-    set({ fase: 'simulacion' });
     const { build, dificultad } = get();
+    const resultados = simularTorneo(build, dificultad);
+    set({ resultados, fase: 'simulacion' });
+  },
 
-    clearTimeout(simTimeout);
-    simTimeout = setTimeout(() => {
-      const resultados = simularTorneo(build, dificultad);
-      set({ resultados, fase: 'resultados' });
-    }, SIM_DELAY_MS);
+  finishSimulation: () => {
+    if (get().fase !== 'simulacion') return;
+    set({ fase: 'resultados' });
   },
 
   // Entry point for shared "?build=" links: load the build and run the
@@ -112,7 +109,6 @@ const useGameStore = create((set, get) => ({
   },
 
   resetGame: () => {
-    clearTimeout(simTimeout);
     set({
       fase: 'inicio',
       build: { ...EMPTY_BUILD },
