@@ -1,7 +1,7 @@
 // Presentation mapping for duel result tags produced by the simulator
 const DUEL_PRESENTATION = {
-  victoria_clara:    { label: '🏆 Victoria',           color: 'text-green-700', card: 'border-amber-400 bg-amber-50' },
-  victoria_ajustada: { label: '⚔️ Victoria ajustada',  color: 'text-amber-700', card: 'border-green-400 bg-green-50' },
+  victoria_clara:    { label: '🏆 Victoria',           color: 'text-amber-700', card: 'border-amber-400 bg-amber-50' },
+  victoria_ajustada: { label: '⚔️ Victoria ajustada',  color: 'text-green-700', card: 'border-green-400 bg-green-50' },
   derrota_ajustada:  { label: '🛡️ Resistió',           color: 'text-blue-700',  card: 'border-zelda-border bg-white' },
   derrota:           { label: '❌ Derrota',             color: 'text-red-600',   card: 'border-red-400 bg-red-50' },
   ko:                { label: '💀 K.O.',                color: 'text-red-600',   card: 'border-red-600 bg-red-100' },

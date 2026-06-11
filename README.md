@@ -10,14 +10,21 @@ the 10 most powerful Links in Hyrule's history, each duel fought in a random dun
 ## How it plays
 
 1. **Toca** — each "ocarina roll" deals one random item per empty slot. You get 3 rerolls.
-2. **Equipa** — pick one item per roll; matching pieces from the same era can complete
-   one of 22 **sets** that grant a rating bonus (stacking, capped at +35%).
+2. **Equipa** — pick one item per roll; matching pieces can complete one of 22 **sets**
+   that grant a performance bonus (stacking, capped at +35%). Once you own a piece of a
+   set, the ocarina *resonates* with it: rolls for empty slots have a 35% chance of
+   offering one of that set's missing pieces, so chasing sets is a real strategy.
 3. **Simula** — your build's weighted rating faces each rival Link across random
    dungeons with terrain modifiers, ambushes and a flat 5% K.O. chance per round.
    Points decide your final verdict, from *Aldeano con Espada de Madera* to *El Elegido*.
 
+Difficulty scales the rivals: *Explorador* is winnable with decent drafting, *Héroe*
+makes you fight for the top verdicts, and *Leyenda* practically requires completed sets
+(tuned via the Monte Carlo regression in `src/utils/balance.test.js`).
+
 Finished runs can be shared: **Compartir Build** copies a URL with the build encoded in
-the `?build=` query param, and opening that link replays the tournament with that build.
+the `?build=` query param (and the difficulty in `&dif=`); opening that link replays
+the tournament with that build at that difficulty.
 
 ## Tech stack
 

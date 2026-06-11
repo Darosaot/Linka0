@@ -12,7 +12,7 @@ const STATS = [
 const DIFICULTADES = [
   { id: 'explorador', label: '🌿 Explorador', desc: 'Los Links rivales y sus jefes son más débiles. Ideal para empezar.' },
   { id: 'normal',     label: '⚔️ Héroe',       desc: 'El desafío equilibrado de un verdadero aventurero.' },
-  { id: 'leyenda',    label: '💀 Leyenda',     desc: 'Solo los más fuertes sobreviven. Los Links del pasado no perdonan.' },
+  { id: 'leyenda',    label: '💀 Leyenda',     desc: 'Los Links del pasado no perdonan. Necesitarás completar sets para tener opciones.' },
 ];
 
 export default function Home() {

@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { ALL_SETS, calcSetMultiplier, getActiveSets, getPartialSets, getSetForItem } from './setEngine.js';
+import { ALL_SETS, calcSetMultiplier, getActiveSets, getMissingSetPieces, getPartialSets, getSetForItem } from './setEngine.js';
 import { resolveItem } from './dataQueries.js';
 import { SLOT_KEYS } from './ratingEngine.js';
 
@@ -57,6 +57,27 @@ describe('getActiveSets / getPartialSets', () => {
     const partial = getPartialSets(build).find(p => p.set.id === set.id);
     expect(partial.count).toBe(set.piezas.length - 1);
     expect(partial.complete).toBe(false);
+  });
+});
+
+describe('getMissingSetPieces', () => {
+  it('returns nothing for an empty build', () => {
+    expect(getMissingSetPieces({})).toEqual([]);
+  });
+
+  it('lists the remaining pieces of a started set', () => {
+    const set = ALL_SETS.find(s => s.piezas.length >= 2);
+    const build = buildWithSet(set);
+    const firstSlot = Object.keys(build)[0];
+    const removedId = build[firstSlot].id;
+    delete build[firstSlot];
+
+    expect(getMissingSetPieces(build)).toEqual([removedId]);
+  });
+
+  it('returns nothing once the set is complete', () => {
+    const build = buildWithSet(ALL_SETS[0]);
+    expect(getMissingSetPieces(build)).toEqual([]);
   });
 });
 

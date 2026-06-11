@@ -21,11 +21,15 @@ export function decodeBuild(encoded) {
   }
 }
 
-// Parses a "?build=<code>" query string and resolves item ids back to full
-// items. Returns a complete build object, or null if the code is missing,
-// malformed, or references unknown items.
+const DIFICULTADES_VALIDAS = ['explorador', 'normal', 'leyenda'];
+
+// Parses a "?build=<code>&dif=<dificultad>" query string and resolves item
+// ids back to full items. Returns { build, dificultad }, or null if the code
+// is missing, malformed, or references unknown items. Links without a (valid)
+// "dif" param replay on normal.
 export function parseSharedBuild(search) {
-  const code = new URLSearchParams(search).get('build');
+  const params = new URLSearchParams(search);
+  const code = params.get('build');
   if (!code) return null;
 
   const payload = decodeBuild(code);
@@ -37,11 +41,16 @@ export function parseSharedBuild(search) {
     if (!item) return null;
     build[slot] = item;
   }
-  return build;
+
+  const dif = params.get('dif');
+  const dificultad = DIFICULTADES_VALIDAS.includes(dif) ? dif : 'normal';
+
+  return { build, dificultad };
 }
 
-export function buildShareUrl(build) {
+export function buildShareUrl(build, dificultad) {
   const code = encodeBuild(build);
   if (!code) return window.location.origin;
-  return `${window.location.origin}?build=${code}`;
+  const dif = DIFICULTADES_VALIDAS.includes(dificultad) ? `&dif=${dificultad}` : '';
+  return `${window.location.origin}?build=${code}${dif}`;
 }

@@ -47,6 +47,15 @@ describe('draft flow', () => {
     expect(resultados.combatLog.length).toBeGreaterThan(0);
   });
 
+  it('pickItem ignores picks for an already-filled slot', () => {
+    useGameStore.getState().startGame();
+    const { cartaActual, pickItem } = useGameStore.getState();
+    const picked = cartaActual.items.espada1;
+    pickItem('espada1', picked);
+    pickItem('espada1', ITEM_TYPES.espada1[1]);
+    expect(useGameStore.getState().build.espada1).toBe(picked);
+  });
+
   it('useOcarina redeals and spends a use, but never goes below zero', () => {
     useGameStore.getState().startGame();
     const { useOcarina } = useGameStore.getState();
@@ -69,6 +78,11 @@ describe('loadSharedBuild', () => {
     expect(fase).toBe('resultados');
     expect(build.espada1).toBe(fullBuild.espada1);
     expect(resultados).not.toBeNull();
+  });
+
+  it('replays the tournament at the shared difficulty', () => {
+    useGameStore.getState().loadSharedBuild(fullBuild, 'leyenda');
+    expect(useGameStore.getState().dificultad).toBe('leyenda');
   });
 });
 
