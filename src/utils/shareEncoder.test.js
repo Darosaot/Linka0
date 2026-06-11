@@ -22,10 +22,17 @@ describe('encodeBuild / decodeBuild', () => {
 describe('parseSharedBuild', () => {
   it('resolves a shared query string back into full items', () => {
     const search = `?build=${encodeBuild(fullBuild)}`;
-    const build = parseSharedBuild(search);
+    const { build, dificultad } = parseSharedBuild(search);
     for (const slot of SLOT_KEYS) {
       expect(build[slot]).toEqual(fullBuild[slot]);
     }
+    expect(dificultad).toBe('normal');
+  });
+
+  it('preserves the shared difficulty and rejects invalid ones', () => {
+    const code = encodeBuild(fullBuild);
+    expect(parseSharedBuild(`?build=${code}&dif=leyenda`).dificultad).toBe('leyenda');
+    expect(parseSharedBuild(`?build=${code}&dif=imposible`).dificultad).toBe('normal');
   });
 
   it('returns null when the param is missing', () => {

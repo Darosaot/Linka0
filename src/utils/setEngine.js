@@ -55,6 +55,23 @@ export function getPartialSets(build) {
   }));
 }
 
+// Ids of pieces that would advance a set the build already started.
+// Pieces for already-filled slots are naturally excluded by the caller,
+// since it only rolls for empty slots.
+export function getMissingSetPieces(build) {
+  const counts = countPiecesInBuild(build);
+  const owned = new Set(SLOT_KEYS.map(s => build[s]?.id).filter(Boolean));
+  const missing = [];
+  for (const [setId, count] of Object.entries(counts)) {
+    const set = SET_BY_ID[setId];
+    if (count >= set.piezas.length) continue;
+    for (const pieza of set.piezas) {
+      if (!owned.has(pieza)) missing.push(pieza);
+    }
+  }
+  return missing;
+}
+
 // Returns combined bonus multiplier (additive bonuses, capped at +35%)
 export function calcSetMultiplier(build) {
   const active = getActiveSets(build);

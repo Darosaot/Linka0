@@ -1,5 +1,5 @@
 import { calcTeamRating, getVeredicto, SLOT_CONFIG } from '../../utils/ratingEngine.js';
-import { SET_ERA_COLORS } from '../../utils/setEngine.js';
+import { SET_ERA_COLORS, calcSetMultiplier } from '../../utils/setEngine.js';
 
 function BuildSummary({ build }) {
   return (
@@ -42,12 +42,14 @@ function RatingBar({ value, max = 100, color = 'bg-zelda-gold' }) {
   );
 }
 
-function ActiveSetsPanel({ activeSets }) {
+function ActiveSetsPanel({ activeSets, build }) {
   if (!activeSets?.length) return null;
+  const totalBonus = Math.round((calcSetMultiplier(build) - 1) * 100);
   return (
     <div className="bg-white border-2 border-zelda-gold rounded-xl overflow-hidden">
-      <div className="px-4 py-2 font-bold text-zelda-ink text-sm border-b border-amber-200 bg-amber-50">
-        ⚡ Sets Activados ({activeSets.length})
+      <div className="px-4 py-2 font-bold text-zelda-ink text-sm border-b border-amber-200 bg-amber-50 flex items-center justify-between">
+        <span>⚡ Sets Activados ({activeSets.length})</span>
+        <span className="text-zelda-gold font-black">+{totalBonus}% al rendimiento</span>
       </div>
       <div className="divide-y divide-zelda-border">
         {activeSets.map(set => {
@@ -167,7 +169,7 @@ export default function FinalScore({ build, resultados }) {
       </div>
 
       {/* Active set bonuses */}
-      <ActiveSetsPanel activeSets={activeSets} />
+      <ActiveSetsPanel activeSets={activeSets} build={build} />
 
       {/* Build summary */}
       <BuildSummary build={build} />

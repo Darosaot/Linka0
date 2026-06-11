@@ -2,7 +2,7 @@ import useGameStore from '../stores/gameStore.js';
 import CardDisplay from '../components/game/CardDisplay.jsx';
 import BuildSlots from '../components/game/BuildSlots.jsx';
 import OcarinaButton from '../components/game/OcarinaButton.jsx';
-import { SLOT_CONFIG } from '../utils/ratingEngine.js';
+import { SLOT_CONFIG, calcTeamRating } from '../utils/ratingEngine.js';
 
 export default function Game() {
   const build = useGameStore(state => state.build);
@@ -10,6 +10,7 @@ export default function Game() {
   const filledCount = SLOT_CONFIG.filter(s => build[s.key] !== undefined).length;
   const totalSlots = SLOT_CONFIG.length;
   const progress = Math.round((filledCount / totalSlots) * 100);
+  const rating = filledCount > 0 ? calcTeamRating(build) : null;
 
   return (
     <div className="min-h-screen bg-zelda-bg px-4 py-6">
@@ -21,9 +22,17 @@ export default function Game() {
             <p className="text-zelda-muted text-xs tracking-widest uppercase">Fase de Preparación</p>
             <h1 className="text-xl font-black text-zelda-ink mt-0.5">Equipamiento de Link</h1>
           </div>
-          <div className="text-right">
-            <div className="font-bold text-zelda-ink">{filledCount}/{totalSlots} huecos</div>
-            <div className="text-xs text-zelda-muted">{progress}% completado</div>
+          <div className="flex items-center gap-4">
+            {rating !== null && (
+              <div className="text-right">
+                <div className="font-black text-zelda-gold text-lg leading-none">★ {rating}</div>
+                <div className="text-xs text-zelda-muted">rating actual</div>
+              </div>
+            )}
+            <div className="text-right">
+              <div className="font-bold text-zelda-ink">{filledCount}/{totalSlots} huecos</div>
+              <div className="text-xs text-zelda-muted">{progress}% completado</div>
+            </div>
           </div>
         </div>
 
@@ -60,7 +69,8 @@ export default function Game() {
         </div>
 
         <p className="text-xs text-zelda-muted text-center">
-          Haz clic en un ítem para añadirlo a tu build. La era del ítem se muestra en cada carta.
+          Haz clic en un ítem para añadirlo a tu build. Si ya tienes piezas de un set,
+          la ocarina resonará con él y ofrecerá sus piezas restantes más a menudo. 🎵
         </p>
       </div>
     </div>

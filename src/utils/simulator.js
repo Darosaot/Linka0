@@ -5,7 +5,10 @@ import { calcSetMultiplier, getActiveSets } from './setEngine.js';
 
 export const PUNTOS_DUELO = { victoria_clara: 25, victoria_ajustada: 18, derrota_ajustada: 8, derrota: 4, ko: 0 };
 
-const DIFICULTAD_MULT = { explorador: 0.80, normal: 1.00, leyenda: 1.22 };
+// Tuned via Monte Carlo (see balance.test.js): a player who drafts well
+// should comfortably win on explorador, fight for Campeón/Héroe on normal,
+// and need completed sets to stand a chance on leyenda.
+const DIFICULTAD_MULT = { explorador: 0.78, normal: 0.92, leyenda: 1.10 };
 
 const PROB_KO = 0.05; // 5% fixed KO chance per round
 
