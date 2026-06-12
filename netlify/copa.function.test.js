@@ -1,6 +1,6 @@
 import { describe, it, expect, vi, beforeEach } from 'vitest';
-import { ITEM_TYPES } from '../../src/utils/dataQueries.js';
-import { SLOT_KEYS } from '../../src/utils/ratingEngine.js';
+import { ITEM_TYPES } from '../src/utils/dataQueries.js';
+import { SLOT_KEYS } from '../src/utils/ratingEngine.js';
 
 // In-memory stand-in for Netlify Blobs so the whole HTTP surface of the
 // function can be exercised in CI.
@@ -12,7 +12,7 @@ vi.mock('@netlify/blobs', () => ({
   }),
 }));
 
-const { default: handler } = await import('./copa.mjs');
+const { default: handler } = await import('./functions/copa.mjs');
 
 const post = (body) =>
   handler(new Request('http://localhost/api/copa', {
