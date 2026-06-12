@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client'
 import './index.css'
 import App from './App.jsx'
 import useGameStore from './stores/gameStore.js'
+import useCopaStore from './stores/copaStore.js'
 import { parseSharedBuild } from './utils/shareEncoder.js'
 
 // If the URL carries a shared build (?build=...), load it and run the
@@ -12,6 +13,9 @@ const shared = parseSharedBuild(window.location.search)
 if (shared) {
   useGameStore.getState().loadSharedBuild(shared.build, shared.dificultad)
   window.history.replaceState(null, '', window.location.pathname)
+} else if (useCopaStore.getState().code) {
+  // An ongoing cup session survives page refreshes
+  useGameStore.getState().goToCopa()
 }
 
 createRoot(document.getElementById('root')).render(

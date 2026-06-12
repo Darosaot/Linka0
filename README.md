@@ -28,6 +28,20 @@ Finished runs can be shared: **Compartir Build** copies a URL with the build enc
 the `?build=` query param (and the difficulty in `&dif=`); opening that link replays
 the tournament with that build at that difficulty.
 
+## Copa Online
+
+**Copa Online** is a multiplayer knockout cup for 4 or 8 participants. The host
+creates a room and shares its 5-letter code; each player who joins drafts a build on
+their own device, and any empty slots are filled with CPU Links that draft by
+themselves. When the last build arrives the bracket is simulated **once, server-side**
+(seeded RNG, so every client renders the same result) using the same head-to-head
+engine: best-of-5 duels across random dungeons with terrain affinity.
+
+It runs on Netlify Functions + Netlify Blobs (no external services): the room API
+lives in `netlify/functions/copa.mjs`, all game rules in `src/utils/copaRoom.js` and
+`src/utils/versus.js`, and clients poll room state every few seconds. To exercise it
+locally run `npx netlify dev` (plain `npm run dev` serves the SPA without the API).
+
 ## Tech stack
 
 - [React 18](https://react.dev) + [Vite](https://vitejs.dev)
