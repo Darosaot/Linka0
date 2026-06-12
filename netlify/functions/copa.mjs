@@ -28,7 +28,10 @@ async function loadRoom(store, code) {
 const saveRoom = (store, room) => store.setJSON(room.code, room);
 
 export default async (req) => {
-  const store = getStore('copas');
+  // Strong consistency is required: with the default (eventual) reads, a
+  // room created in one invocation may be invisible to the next one for
+  // up to a minute, breaking join/start right after create.
+  const store = getStore({ name: 'copas', consistency: 'strong' });
 
   try {
     if (req.method === 'GET') {
