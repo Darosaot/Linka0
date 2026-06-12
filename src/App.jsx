@@ -3,6 +3,7 @@ import Home from './pages/Home.jsx';
 import Game from './pages/Game.jsx';
 import Simulation from './pages/Simulation.jsx';
 import Results from './pages/Results.jsx';
+import Copa from './pages/Copa.jsx';
 
 export default function App() {
   const fase = useGameStore(state => state.fase);
@@ -11,6 +12,7 @@ export default function App() {
   if (fase === 'draft') return <Game />;
   if (fase === 'simulacion') return <Simulation />;
   if (fase === 'resultados') return <Results />;
+  if (fase === 'copa') return <Copa />;
 
   return <Home />;
 }

@@ -18,6 +18,7 @@ const DIFICULTADES = [
 export default function Home() {
   const setDificultad = useGameStore(state => state.setDificultad);
   const startGame = useGameStore(state => state.startGame);
+  const goToCopa = useGameStore(state => state.goToCopa);
   const [selDif, setSelDif] = useState('normal');
 
   function handleStart() {
@@ -75,9 +76,17 @@ export default function Home() {
         </div>
 
         {/* CTA */}
-        <Button onClick={handleStart} size="lg">
-          JUGAR AHORA →
-        </Button>
+        <div className="flex flex-wrap gap-3 items-center">
+          <Button onClick={handleStart} size="lg">
+            JUGAR AHORA →
+          </Button>
+          <Button onClick={goToCopa} size="lg" variant="secondary">
+            🏆 COPA ONLINE
+          </Button>
+        </div>
+        <p className="text-xs text-zelda-muted mt-2">
+          Copa online: crea una sala, comparte el código y compite contra hasta 8 jugadores. Las plazas vacías las ocupan CPUs.
+        </p>
 
         {/* Stats strip */}
         <div className="mt-10 pt-6 border-t border-zelda-border grid grid-cols-3 gap-4 text-center max-w-sm">
