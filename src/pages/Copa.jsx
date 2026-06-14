@@ -5,6 +5,7 @@ import Button from '../components/ui/Button.jsx';
 import { SLOT_KEYS } from '../utils/ratingEngine.js';
 import { STAT_LABELS } from '../utils/dataQueries.js';
 import { COPA_SIZES } from '../utils/copaRoom.js';
+import { buildCopaInviteUrl } from '../utils/shareEncoder.js';
 
 const POLL_MS = 3000;
 
@@ -45,17 +46,29 @@ function Menu() {
   const unirse = useCopaStore(s => s.unirse);
   const busy = useCopaStore(s => s.busy);
   const error = useCopaStore(s => s.error);
+  const pendingInvite = useCopaStore(s => s.pendingInvite);
   const resetGame = useGameStore(s => s.resetGame);
 
   const [name, setName] = useState('');
   const [size, setSize] = useState(4);
-  const [joinCode, setJoinCode] = useState('');
+  const [joinCode, setJoinCode] = useState(pendingInvite ?? '');
 
   const inputClass = 'border border-zelda-border rounded px-3 py-2 text-sm bg-white text-zelda-ink w-full focus:outline-none focus:border-zelda-ink';
 
   return (
-    <Shell title="Elige tu copa" subtitle="Crea una sala y comparte el código, o únete con uno" onExit={resetGame}>
+    <Shell
+      title={pendingInvite ? 'Te han invitado a una copa' : 'Elige tu copa'}
+      subtitle={pendingInvite ? 'Escribe tu nombre y únete a la sala' : 'Crea una sala y comparte el código, o únete con uno'}
+      onExit={resetGame}
+    >
       <ErrorBanner error={error} />
+
+      {pendingInvite && (
+        <div className="bg-amber-50 border-2 border-zelda-gold rounded-xl px-4 py-3 text-center">
+          <div className="text-xs text-zelda-muted uppercase tracking-widest">🎟️ Invitación a la sala</div>
+          <div className="text-2xl font-black text-zelda-ink tracking-[0.3em] mt-1">{pendingInvite}</div>
+        </div>
+      )}
 
       <div className="bg-white border border-zelda-border rounded-xl p-4 flex flex-col gap-3">
         <label className="text-xs font-bold text-zelda-muted uppercase tracking-widest">Tu nombre</label>
@@ -97,7 +110,7 @@ function Menu() {
           placeholder="ABCDE"
           onChange={e => setJoinCode(e.target.value.toUpperCase())}
         />
-        <Button onClick={() => unirse(joinCode, name)} disabled={busy || !name.trim() || joinCode.trim().length < 5} variant="secondary">
+        <Button onClick={() => unirse(joinCode, name)} disabled={busy || !name.trim() || joinCode.trim().length < 5} variant={pendingInvite ? 'primary' : 'secondary'}>
           {busy ? 'Entrando…' : 'Unirse a la sala →'}
         </Button>
       </div>
@@ -130,6 +143,7 @@ function Sala({ view, onExit }) {
   const busy = useCopaStore(s => s.busy);
   const error = useCopaStore(s => s.error);
   const [copied, setCopied] = useState(false);
+  const [linkShared, setLinkShared] = useState(false);
 
   const soyHost = view.miId === view.players[0]?.id;
   const cpusNecesarias = view.size - view.players.length;
@@ -138,6 +152,28 @@ function Sala({ view, onExit }) {
     navigator.clipboard?.writeText(view.code).then(() => {
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+    });
+  }
+
+  // Native share sheet on mobile, clipboard fallback elsewhere
+  async function shareInvite() {
+    const url = buildCopaInviteUrl(view.code);
+    if (navigator.share) {
+      try {
+        await navigator.share({
+          title: 'Linka0 — Copa Online',
+          text: `Únete a mi copa en Linka0 (código ${view.code})`,
+          url,
+        });
+        return;
+      } catch {
+        // user cancelled the share sheet — nothing to do
+        return;
+      }
+    }
+    navigator.clipboard?.writeText(url).then(() => {
+      setLinkShared(true);
+      setTimeout(() => setLinkShared(false), 2000);
     });
   }
 
@@ -153,6 +189,10 @@ function Sala({ view, onExit }) {
         <div className="text-4xl font-black text-zelda-ink tracking-[0.3em]">{view.code}</div>
         <div className="text-xs text-zelda-gold font-bold mt-1">{copied ? '✅ ¡Copiado!' : '📋 Toca para copiar'}</div>
       </button>
+
+      <Button onClick={shareInvite} variant="secondary">
+        {linkShared ? '✅ ¡Enlace copiado!' : '🔗 Compartir enlace de invitación'}
+      </Button>
 
       <div className="bg-white border border-zelda-border rounded-xl overflow-hidden">
         <div className="px-4 py-2 text-sm font-bold text-zelda-ink bg-zelda-surface border-b border-zelda-border">

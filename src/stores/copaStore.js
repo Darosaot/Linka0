@@ -34,6 +34,12 @@ const useCopaStore = create((set, get) => ({
   error: null,
   busy: false,
   enviando: false,
+  // Code carried in from a "?copa=" invite link, pre-fills the join field
+  pendingInvite: null,
+
+  setPendingInvite(code) {
+    set({ pendingInvite: code });
+  },
 
   async crear(name, size) {
     set({ busy: true, error: null });
@@ -51,7 +57,7 @@ const useCopaStore = create((set, get) => ({
     try {
       const res = await copaApi.join(code.trim().toUpperCase(), name);
       saveSession(res.code, res.token);
-      set({ code: res.code, token: res.token, view: res.view, busy: false });
+      set({ code: res.code, token: res.token, view: res.view, busy: false, pendingInvite: null });
     } catch (e) {
       set({ error: e.message, busy: false });
     }
@@ -103,7 +109,7 @@ const useCopaStore = create((set, get) => ({
 
   salir() {
     saveSession(null);
-    set({ code: null, token: null, view: null, error: null, busy: false, enviando: false });
+    set({ code: null, token: null, view: null, error: null, busy: false, enviando: false, pendingInvite: null });
   },
 }));
 

@@ -54,3 +54,20 @@ export function buildShareUrl(build, dificultad) {
   const dif = DIFICULTADES_VALIDAS.includes(dificultad) ? `&dif=${dificultad}` : '';
   return `${window.location.origin}?build=${code}${dif}`;
 }
+
+// Direct invite link to an online cup: "?copa=<code>". Opening it drops the
+// guest straight into the cup join screen with the code pre-filled.
+export function buildCopaInviteUrl(code) {
+  if (!code) return window.location.origin;
+  return `${window.location.origin}?copa=${encodeURIComponent(code)}`;
+}
+
+// Reads a "?copa=<code>" invite from a query string. Returns the normalized
+// (upper-cased) room code, or null when absent or obviously malformed. The
+// server still validates the code on join, so this only filters junk.
+export function parseCopaInvite(search) {
+  const raw = new URLSearchParams(search).get('copa');
+  if (!raw) return null;
+  const code = raw.trim().toUpperCase();
+  return /^[A-Z0-9]{4,8}$/.test(code) ? code : null;
+}
